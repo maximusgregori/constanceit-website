@@ -25,6 +25,6 @@ jobs:
             set ftp:ssl-force no;
             set ftp:passive-mode yes;
             open -u ${FTP_USER},${FTP_PASS} ${FTP_HOST};
-            mirror --reverse --delete --exclude health/ --exclude .private/ --exclude .git/ --verbose ./ /;
+            mirror --reverse --delete --exclude health/ --exclude .private/ --exclude .git/ --exclude .github/ --verbose ./ /;
             quit
           "
