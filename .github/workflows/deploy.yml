@@ -20,6 +20,10 @@ jobs:
             set ftp:ssl-allow yes;
             set ftp:ssl-force no;
             set ftp:passive-mode yes;
-            mirror --reverse --delete --exclude health/ --exclude .private/ --exclude .git/ --verbose ./ /public_html/;
+            pwd;
+            ls;
+            cd /public_html;
+            pwd;
+            ls;
             quit
           "
