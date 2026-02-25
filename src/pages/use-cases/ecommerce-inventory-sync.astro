@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout title="Inventory Sync Automation" description="Automate inventory sync across Shopify, Amazon, and eBay. Real-time updates, zero oversells, and automatic reorder alerts for e-commerce businesses.">
+
+  <!-- ════════════════════════════════════════
+       Section 1: Hero
+       ════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
+    <div class="container">
+      <div class="hero__content hero-animate">
+        <SectionBadge text="E-COMMERCE USE CASE" variant="feature" />
+        <h1 class="hero__title">Inventory Sync <span class="accent-violet glow-heavy-violet">Automation</span></h1>
+        <p class="hero__subtitle">Selling on Shopify, Amazon, and eBay with inventory that doesn't match is a ticking time bomb.</p>
+        <div class="hero__actions">
+          <a href="#contact-form" class="btn btn--primary">Get a Free Assessment</a>
+          <a href="#uc-solution" class="btn btn--ghost">See How It Works &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 2: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section uc-problem">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>You're selling on multiple channels with inventory that's always <span class="accent-coral glow-medium-coral">wrong.</span></h2>
+        <p class="text-large text-secondary">Manual updates take hours daily. Oversells happen. Customers get cancellation emails instead of shipment confirmations.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">OVERSELLS</span>
+          <p class="card__text">A product sells on Amazon and Shopify at the same time. You don't have two. Someone gets a cancellation email and a refund. Your seller rating drops.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">MANUAL UPDATES</span>
+          <p class="card__text">Every sale means logging into each platform and updating counts by hand. 4+ hours a day spent on data entry that should be instant.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">REORDER BLINDNESS</span>
+          <p class="card__text">You don't know you're running low until you're out. No alerts, no forecasting. Stockouts mean lost sales and frustrated customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 3: The Solution
+       ════════════════════════════════════════ -->
+  <section class="section uc-solution" id="uc-solution">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE SOLUTION" variant="solution" />
+        <h2>Real-time inventory sync across every <span class="accent-emerald glow-medium-emerald">channel.</span></h2>
+        <p class="text-large text-secondary">One system of record. Every sale updates every platform instantly. Reorder alerts before you run out.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: refresh-cw -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M3 21v-5h5"/></svg>
+          </div>
+          <h3 class="card__title">Real-Time Sync</h3>
+          <p class="card__text">Inventory counts update across Shopify, Amazon, eBay, and your warehouse the moment a sale happens. Zero lag. Zero oversells.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: package -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" y1="22" x2="12" y2="12"/></svg>
+          </div>
+          <h3 class="card__title">Automated SKU Management</h3>
+          <p class="card__text">Product variants, bundles, and kits tracked automatically. SKU mapping across platforms handled by the system. No spreadsheets.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: bell -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
+          </div>
+          <h3 class="card__title">Reorder Alerts</h3>
+          <p class="card__text">Low-stock alerts triggered automatically based on velocity. Reorder points calculated per product. Never caught off guard by a stockout.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: Results
+       ════════════════════════════════════════ -->
+  <section class="section uc-results">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="RESULTS" variant="info" />
+      </div>
+
+      <div class="uc-stats animate-on-scroll">
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--emerald">0</span>
+          <span class="uc-stats__label">Oversells</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--violet">4+ hrs</span>
+          <span class="uc-stats__label">Saved per day</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--blue">99.9%</span>
+          <span class="uc-stats__label">Inventory accuracy</span>
+        </div>
+      </div>
+
+      <p class="uc-results__note animate-on-scroll">Typical results based on industry benchmarks. Individual outcomes vary.</p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 5: CTA + Contact Form
+       ════════════════════════════════════════ -->
+  <section class="section uc-cta" id="contact-form">
+    <div class="uc-cta__glow"></div>
+    <div class="container">
+      <div class="uc-cta__inner animate-on-scroll">
+        <h2 class="uc-cta__headline">Ready to stop overselling and start <span class="accent-blue glow-medium-blue">scaling?</span></h2>
+        <p class="uc-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="ecommerce-inventory-sync" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ──────────────────────────────────────
+     Use Case Page — Scoped Styles
+     ────────────────────────────────────── */
+
+  /* Hero ambient glows */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section Headers ── */
+  .uc-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .uc-section-header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-section-header p {
+    margin-bottom: 0;
+  }
+
+  /* ── Solution Cards ── */
+  .uc-solution .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-solution .card__title {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Stats Strip ── */
+  .uc-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: var(--space-lg) 0;
+  }
+
+  .uc-stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .uc-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .uc-results__note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-lg);
+    opacity: 0.7;
+  }
+
+  /* ── CTA Section ── */
+  .uc-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uc-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(55, 147, 255, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .uc-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .uc-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
+  @media (min-width: 768px) {
+    .uc-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .uc-cta__headline {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .uc-cta__headline {
+      font-size: 2.5rem;
+    }
+  }
+</style>
