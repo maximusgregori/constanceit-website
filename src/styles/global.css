@@ -444,6 +444,27 @@ p {
   background-color: var(--bg-subtle);
 }
 
+.nav-dropdown-view-all {
+  color: var(--accent-blue) !important;
+  font-size: 0.875rem !important;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: var(--space-xs);
+  padding-bottom: var(--space-sm) !important;
+}
+.nav-dropdown-view-all:hover,
+.nav-dropdown-view-all:focus-visible {
+  color: var(--accent-blue-hover) !important;
+}
+
+.nav-mobile-view-all {
+  color: var(--accent-blue) !important;
+  font-size: 0.875rem;
+}
+.nav-mobile-view-all:hover,
+.nav-mobile-view-all:focus-visible {
+  color: var(--accent-blue-hover) !important;
+}
+
 /* Button-as-nav-link reset */
 button.nav-link {
   background: none;
@@ -1761,6 +1782,7 @@ button.nav-link {
   font-size: 2.5rem;
   font-weight: 700;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .stat-number--blue {
