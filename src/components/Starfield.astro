@@ -44,16 +44,32 @@
     const MAX_SPEED = 0.2;
     const DOT_MIN_RADIUS = 0.8;
     const DOT_MAX_RADIUS = 1.8;
-    const DOT_MIN_OPACITY = 0.15;
-    const DOT_MAX_OPACITY = 0.4;
-    const LINE_OPACITY = 0.04;
+    const DOT_MIN_OPACITY = 0.25;
+    const DOT_MAX_OPACITY = 0.55;
+    const LINE_OPACITY = 0.09;
     const LINE_WIDTH = 0.5;
     const GROUP_SPREAD = 80; // max px offset of dots within a group
+
+    // Accent colors for twinkling
+    const ACCENT_COLORS = [
+      '#3793FF', // blue
+      '#B5B2FF', // violet
+      '#4ADE80', // emerald
+      '#FF6B6B', // coral
+      '#F59E0B', // amber
+    ];
+    const TWINKLE_INTERVAL_MIN = 2000; // ms
+    const TWINKLE_INTERVAL_MAX = 4000; // ms
+    const TWINKLE_FADE_DURATION = 1000; // ms
 
     let width, height;
     let constellationGroups = [];
     let soloDots = [];
     let animationId = null;
+
+    // Twinkle state
+    let twinkleTarget = null; // { type: 'group'|'solo', groupIdx, dotIdx, color, startTime, fadeStart }
+    let nextTwinkleTime = 0;
 
     // --- Helpers ---
     function rand(min, max) {
@@ -155,20 +171,71 @@
       }
     }
 
+    // --- Twinkle helpers ---
+    function pickTwinkleTarget(now) {
+      // Randomly pick a solo dot or a group dot
+      var allDots = [];
+      for (var i = 0; i < soloDots.length; i++) {
+        allDots.push({ type: 'solo', idx: i });
+      }
+      for (var gi = 0; gi < constellationGroups.length; gi++) {
+        for (var di = 0; di < constellationGroups[gi].dots.length; di++) {
+          allDots.push({ type: 'group', groupIdx: gi, dotIdx: di });
+        }
+      }
+      var pick = allDots[Math.floor(Math.random() * allDots.length)];
+      var color = ACCENT_COLORS[Math.floor(Math.random() * ACCENT_COLORS.length)];
+      twinkleTarget = {
+        type: pick.type,
+        idx: pick.idx,
+        groupIdx: pick.groupIdx,
+        dotIdx: pick.dotIdx,
+        color: color,
+        startTime: now,
+        fadeStart: now + 200, // brief bright phase, then fade back
+      };
+      nextTwinkleTime = now + rand(TWINKLE_INTERVAL_MIN, TWINKLE_INTERVAL_MAX);
+    }
+
+    function getTwinkleColor(now) {
+      if (!twinkleTarget) return null;
+      var elapsed = now - twinkleTarget.fadeStart;
+      if (elapsed < 0) {
+        // In bright phase
+        return { color: twinkleTarget.color, alpha: 0.9, radius: 2.5 };
+      }
+      var progress = elapsed / TWINKLE_FADE_DURATION;
+      if (progress >= 1) {
+        twinkleTarget = null;
+        return null;
+      }
+      var alpha = 0.9 * (1 - progress);
+      var radiusBoost = 2.5 - 0.7 * progress;
+      return { color: twinkleTarget.color, alpha: alpha, radius: radiusBoost };
+    }
+
     // --- Draw ---
-    function draw() {
+    function draw(now) {
       ctx.clearRect(0, 0, width, height);
 
+      // Update twinkle state
+      if (!prefersReducedMotion && now) {
+        if (!twinkleTarget && now >= nextTwinkleTime) {
+          pickTwinkleTarget(now);
+        }
+      }
+      var twinkle = now ? getTwinkleColor(now) : null;
+
       // Draw constellation groups
-      for (let i = 0; i < constellationGroups.length; i++) {
-        const g = constellationGroups[i];
+      for (var i = 0; i < constellationGroups.length; i++) {
+        var g = constellationGroups[i];
 
         // Draw lines
         ctx.strokeStyle = 'rgba(255, 255, 255, ' + LINE_OPACITY + ')';
         ctx.lineWidth = LINE_WIDTH;
-        for (let l = 0; l < g.lines.length; l++) {
-          const a = g.dots[g.lines[l][0]];
-          const b = g.dots[g.lines[l][1]];
+        for (var l = 0; l < g.lines.length; l++) {
+          var a = g.dots[g.lines[l][0]];
+          var b = g.dots[g.lines[l][1]];
           ctx.beginPath();
           ctx.moveTo(g.x + a.offsetX, g.y + a.offsetY);
           ctx.lineTo(g.x + b.offsetX, g.y + b.offsetY);
@@ -176,29 +243,71 @@
         }
 
         // Draw dots
-        for (let d = 0; d < g.dots.length; d++) {
-          const dot = g.dots[d];
-          ctx.beginPath();
-          ctx.arc(g.x + dot.offsetX, g.y + dot.offsetY, dot.radius, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(255, 255, 255, ' + dot.opacity + ')';
-          ctx.fill();
+        for (var d = 0; d < g.dots.length; d++) {
+          var dot = g.dots[d];
+          var isTwinkling = twinkle && twinkleTarget && twinkleTarget.type === 'group' && twinkleTarget.groupIdx === i && twinkleTarget.dotIdx === d;
+          var dx = g.x + dot.offsetX;
+          var dy = g.y + dot.offsetY;
+
+          if (isTwinkling) {
+            // Draw glow
+            ctx.beginPath();
+            ctx.arc(dx, dy, twinkle.radius * 2.5, 0, Math.PI * 2);
+            ctx.fillStyle = twinkle.color.replace(')', ', ' + twinkle.alpha * 0.3 + ')').replace('rgb', 'rgba').replace('#', '');
+            // Use hex to rgba conversion
+            ctx.fillStyle = hexToRgba(twinkle.color, twinkle.alpha * 0.3);
+            ctx.fill();
+            // Draw bright dot
+            ctx.beginPath();
+            ctx.arc(dx, dy, twinkle.radius, 0, Math.PI * 2);
+            ctx.fillStyle = hexToRgba(twinkle.color, twinkle.alpha);
+            ctx.fill();
+          } else {
+            ctx.beginPath();
+            ctx.arc(dx, dy, dot.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 255, 255, ' + dot.opacity + ')';
+            ctx.fill();
+          }
         }
       }
 
       // Draw solo dots
-      for (let i = 0; i < soloDots.length; i++) {
-        const d = soloDots[i];
-        ctx.beginPath();
-        ctx.arc(d.x, d.y, d.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255, 255, 255, ' + d.opacity + ')';
-        ctx.fill();
+      for (var i = 0; i < soloDots.length; i++) {
+        var sd = soloDots[i];
+        var isTwinkling = twinkle && twinkleTarget && twinkleTarget.type === 'solo' && twinkleTarget.idx === i;
+
+        if (isTwinkling) {
+          // Draw glow
+          ctx.beginPath();
+          ctx.arc(sd.x, sd.y, twinkle.radius * 2.5, 0, Math.PI * 2);
+          ctx.fillStyle = hexToRgba(twinkle.color, twinkle.alpha * 0.3);
+          ctx.fill();
+          // Draw bright dot
+          ctx.beginPath();
+          ctx.arc(sd.x, sd.y, twinkle.radius, 0, Math.PI * 2);
+          ctx.fillStyle = hexToRgba(twinkle.color, twinkle.alpha);
+          ctx.fill();
+        } else {
+          ctx.beginPath();
+          ctx.arc(sd.x, sd.y, sd.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255, 255, 255, ' + sd.opacity + ')';
+          ctx.fill();
+        }
       }
     }
 
+    // --- Hex to rgba helper ---
+    function hexToRgba(hex, alpha) {
+      var r = parseInt(hex.slice(1, 3), 16);
+      var g = parseInt(hex.slice(3, 5), 16);
+      var b = parseInt(hex.slice(5, 7), 16);
+      return 'rgba(' + r + ', ' + g + ', ' + b + ', ' + alpha + ')';
+    }
+
     // --- Animation loop ---
-    function animate() {
+    function animate(now) {
       update();
-      draw();
+      draw(now);
       animationId = requestAnimationFrame(animate);
     }
 
@@ -207,12 +316,13 @@
       resize();
       createGroups();
       createSoloDots();
+      nextTwinkleTime = performance.now() + rand(TWINKLE_INTERVAL_MIN, TWINKLE_INTERVAL_MAX);
 
       if (prefersReducedMotion) {
-        // Static render — draw once, no animation
-        draw();
+        // Static render — draw once, no animation, no twinkling
+        draw(0);
       } else {
-        animate();
+        animate(performance.now());
       }
     }
 
