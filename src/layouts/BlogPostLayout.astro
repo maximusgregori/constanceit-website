@@ -1,5 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
 
 const { frontmatter, readingTime = 5, relatedPosts = [] } = Astro.props;
@@ -9,6 +10,19 @@ const formattedDate = frontmatter.date.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+
+/**
+ * Map blog category to CSS class suffix for colored left-borders on related post cards.
+ */
+function getCategoryClass(category: string): string {
+  switch (category) {
+    case 'AI & Automation': return 'blog-card--ai';
+    case 'Managed IT': return 'blog-card--managed-it';
+    case 'Infrastructure': return 'blog-card--infrastructure';
+    case 'Industry News': return 'blog-card--industry-news';
+    default: return 'blog-card--ai';
+  }
+}
 ---
 
 <BaseLayout title={frontmatter.title} description={frontmatter.excerpt}>
@@ -36,6 +50,8 @@ const formattedDate = frontmatter.date.toLocaleDateString('en-US', {
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
        Post Body
        ════════════════════════════════════════ -->
@@ -46,6 +62,8 @@ const formattedDate = frontmatter.date.toLocaleDateString('en-US', {
       </div>
     </div>
   </article>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Author Section
@@ -67,25 +85,30 @@ const formattedDate = frontmatter.date.toLocaleDateString('en-US', {
        Related Posts
        ════════════════════════════════════════ -->
   {relatedPosts.length > 0 && (
-    <section class="section blog-related">
-      <div class="container">
-        <h2 class="blog-related__heading animate-on-scroll">You might also like</h2>
-        <div class="blog-related__grid stagger-children">
-          {relatedPosts.map((related: any) => (
-            <a href={`/blog/${related.id}/`} class="blog-card">
-              <span class="blog-card__category">{related.data.category}</span>
-              <h3 class="blog-card__title">{related.data.title}</h3>
-              <p class="blog-card__excerpt">{related.data.excerpt}</p>
-              <span class="blog-card__read-more">
-                Read More
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-              </span>
-            </a>
-          ))}
+    <>
+      <SectionDivider />
+      <section class="section blog-related">
+        <div class="container">
+          <h2 class="blog-related__heading animate-on-scroll">You might also like</h2>
+          <div class="blog-related__grid stagger-children">
+            {relatedPosts.map((related: any) => (
+              <a href={`/blog/${related.id}/`} class={`blog-card ${getCategoryClass(related.data.category)}`}>
+                <span class="blog-card__category">{related.data.category}</span>
+                <h3 class="blog-card__title">{related.data.title}</h3>
+                <p class="blog-card__excerpt">{related.data.excerpt}</p>
+                <span class="blog-card__read-more">
+                  Read More
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )}
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        CTA Section
