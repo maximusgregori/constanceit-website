@@ -714,6 +714,24 @@ p {
   transform: scale(1.02);
 }
 
+.btn--amber {
+  background-color: transparent;
+  color: var(--accent-amber);
+  padding: 14px 28px;
+  border: 1px solid var(--accent-amber);
+  box-shadow: 0 0 15px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.15);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--amber:hover,
+.btn--amber:focus-visible {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--accent-amber-hover);
+  border-color: var(--accent-amber-hover);
+  box-shadow: 0 0 20px var(--accent-amber-glow), 0 0 60px rgba(245, 158, 11, 0.25);
+  transform: scale(1.02);
+}
+
 .btn--ghost {
   background-color: transparent;
   border: 1px solid var(--border-subtle);

@@ -1,42 +1,61 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTASection from '../../components/CTASection.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
 
-<BaseLayout title="IT Infrastructure Buildouts" description="Cabling, network design, office buildouts, hardware deployment. Physical IT work done right by Cisco-certified technicians. Texas-wide infrastructure services for SMBs.">
+<BaseLayout title="IT Infrastructure Buildouts" description="Cabling, network design, office buildouts, hardware deployment. Physical IT work done right by Cisco-certified technicians. Texas-wide infrastructure services.">
 
   <!-- ════════════════════════════════════════
        Section 1: Hero
        ════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero__glow hero__glow--1"></div>
-    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__glow hero__glow--amber"></div>
+    <div class="hero__glow hero__glow--violet"></div>
     <div class="container">
       <div class="hero__content hero-animate">
-        <span class="section-label">IT Infrastructure</span>
-        <h1 class="hero__title">We show up and build it right.</h1>
-        <p class="hero__subtitle">When you're building a new office, upgrading your network, or setting up infrastructure from scratch — you need people who show up, do the work, and get it done. We handle cabling, hardware deployment, server setup, network design, and office buildouts. Physical IT work done the right way, the first time.</p>
+        <h1 class="hero__title">We show up and <span class="accent-violet glow-heavy-violet">build it right.</span></h1>
+        <p class="hero__subtitle">Cabling, hardware deployment, server setup, network design, and office buildouts. Physical IT work done the right way, the first time.</p>
         <div class="hero__actions">
-          <a href="/contact/" class="btn btn--primary">Request a Quote</a>
-          <a href="#services" class="btn btn--ghost">What We Build</a>
+          <a href="#contact-form" class="btn btn--amber">Request a Quote</a>
+          <a href="#services" class="btn btn--ghost">What We Build &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
        Section 2: The Problem
        ════════════════════════════════════════ -->
-  <section class="section section--alt">
+  <section class="section infra-problem">
     <div class="container">
-      <div class="infra-problem animate-on-scroll">
-        <span class="section-label">The Problem</span>
-        <h2>Bad infrastructure compounds over time.</h2>
-        <p class="text-large">Cut corners on infrastructure now. You pay 10x more fixing it later. Bad cabling, poor design, messy installs create technical debt that takes months to untangle.</p>
-        <p class="text-large">Do it right the first time — plan it, spec it, install it carefully. It takes expertise and attention to detail. It pays for itself in avoided downtime, easier upgrades, and a productive team.</p>
+      <div class="infra-problem__header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>Bad infrastructure <span class="accent-coral glow-medium-coral">compounds</span> over time.</h2>
+        <p class="text-large text-secondary">Cut corners now — pay 10x more fixing it later.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">TECHNICAL DEBT</span>
+          <p class="card__text">Bad cabling, poor design, messy installs. It takes months to untangle and costs a fortune.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">DOWNTIME</span>
+          <p class="card__text">No redundancy means one failure takes the whole office offline. Your team sits idle.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">GROWTH BLOCKED</span>
+          <p class="card__text">Can't add workstations, upgrade bandwidth, or expand — because the foundation wasn't built for it.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 3: What We Build
@@ -44,102 +63,137 @@ import CTASection from '../../components/CTASection.astro';
   <section class="section" id="services">
     <div class="container">
       <div class="infra-services__header animate-on-scroll">
-        <span class="section-label">Services</span>
-        <h2>Physical IT work done right.</h2>
+        <SectionBadge text="SERVICES" variant="amber" />
+        <h2>Physical IT work done <span class="accent-amber glow-medium-amber">right.</span></h2>
       </div>
 
       <div class="infra-services__grid stagger-children">
-        <div class="card infra-service-card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2H4Z"/><path d="M14 9a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2"/><path d="M4 15a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2"/><path d="M4 21a2 2 0 0 1-2-2v-2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2"/><path d="M14 21a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2"/></svg>
+        <!-- Card 1: Cabling -->
+        <div class="card card--service-infra">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1"/><path d="M19 15V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V9"/><path d="M21 21v-2h-4"/><path d="M3 5h4V3"/><path d="M7 5a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/></svg>
           </div>
+          <span class="card__category accent-amber glow-medium-amber">CABLING</span>
           <h3 class="card__title">Structured Cabling & Cable Management</h3>
-          <p class="card__text">Cat6/Cat6a runs, proper labeling, clean management throughout your space. Built to last and easy to maintain when change is needed.</p>
+          <p class="card__text">Cat6/Cat6a runs, proper labeling, clean management. Built to last and easy to maintain.</p>
         </div>
 
-        <div class="card infra-service-card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 2: Server Rooms -->
+        <div class="card card--service-infra">
+          <div class="card__icon icon-glow-amber">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
           </div>
+          <span class="card__category accent-amber glow-medium-amber">SERVER ROOMS</span>
           <h3 class="card__title">Network Closet & Server Room Setup</h3>
-          <p class="card__text">Rack installation, cable management, switch and firewall mounting, and power configuration. Built clean from the start so future maintenance is straightforward.</p>
+          <p class="card__text">Rack installation, cable management, switch and firewall mounting, power configuration. Clean from the start.</p>
         </div>
 
-        <div class="card infra-service-card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 3: Buildouts -->
+        <div class="card card--service-infra">
+          <div class="card__icon icon-glow-amber">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
           </div>
+          <span class="card__category accent-amber glow-medium-amber">BUILDOUTS</span>
           <h3 class="card__title">New Office Buildouts</h3>
-          <p class="card__text">From cabling and network hardware to workstations, phones, and access control. Your new office is IT-ready on opening day.</p>
+          <p class="card__text">From cabling to workstations, phones, and access control. Your new office is IT-ready on opening day.</p>
         </div>
 
-        <div class="card infra-service-card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="10" x="4" y="2" rx="2"/><path d="M2 12h20"/><rect width="16" height="10" x="4" y="12" rx="2"/></svg>
+        <!-- Card 4: Hardware -->
+        <div class="card card--service-infra">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg>
           </div>
+          <span class="card__category accent-amber glow-medium-amber">HARDWARE</span>
           <h3 class="card__title">Hardware Procurement & Deployment</h3>
-          <p class="card__text">We spec and deploy workstations, servers, switches, and access points. Setup, configuration, and user onboarding included. Your team gets equipment that works on day one.</p>
+          <p class="card__text">We spec and deploy workstations, servers, switches, and access points. Setup, configuration, and onboarding included.</p>
         </div>
 
-        <div class="card infra-service-card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 5: Network -->
+        <div class="card card--service-infra">
+          <div class="card__icon icon-glow-amber">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><line x1="12" x2="12.01" y1="20" y2="20"/></svg>
           </div>
+          <span class="card__category accent-amber glow-medium-amber">NETWORK</span>
           <h3 class="card__title">Network Design & Implementation</h3>
-          <p class="card__text">Managed switches with redundancy. Wireless access points placed for coverage. Firewalls configured for security. Your network is fast, reliable, and secure.</p>
+          <p class="card__text">Managed switches with redundancy. Access points placed for coverage. Firewalls configured for security.</p>
         </div>
 
-        <div class="card infra-service-card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        <!-- Card 6: Low-Voltage -->
+        <div class="card card--service-infra">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
           </div>
+          <span class="card__category accent-amber glow-medium-amber">LOW-VOLTAGE</span>
           <h3 class="card__title">Low-Voltage Wiring & Infrastructure</h3>
-          <p class="card__text">Power management, grounding, HVAC integration, cable routing, and backup power. Infrastructure built to last.</p>
+          <p class="card__text">Power management, grounding, HVAC integration, cable routing, and backup power. Built to last.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 4: How We Work
        ════════════════════════════════════════ -->
-  <section class="section section--alt infra-process">
+  <section class="section infra-process">
     <div class="container">
       <div class="infra-process__header animate-on-scroll">
-        <span class="section-label">The Process</span>
-        <h2>Plan it. Spec it. Build it. Document it.</h2>
+        <SectionBadge text="THE PROCESS" variant="solution" />
+        <h2>Plan it. Spec it. Build it. <span class="accent-emerald glow-medium-emerald">Document it.</span></h2>
       </div>
 
-      <div class="timeline animate-on-scroll" style="margin-top: var(--space-xl);">
-        <div class="timeline__step">
-          <div class="timeline__marker"></div>
-          <span class="timeline__step-label">Step 01</span>
-          <h3 class="timeline__step-title">Assessment & Planning</h3>
-          <p class="timeline__step-text">We assess your space, needs, and growth plans. We create a detailed plan: network design, cabling routes, equipment list, timeline, cost. You approve before we buy anything.</p>
+      <div class="infra-timeline stagger-children">
+        <div class="infra-timeline__step">
+          <div class="infra-timeline__node">
+            <span class="infra-timeline__number accent-emerald glow-medium-emerald">01</span>
+          </div>
+          <div class="card card--solution infra-timeline__card">
+            <h3 class="card__title">Assessment & Planning</h3>
+            <p class="card__text">We assess your space, needs, and growth plans. Detailed plan with network design, cabling routes, equipment list, timeline, and cost.</p>
+            <span class="infra-timeline__badge">1–2 weeks</span>
+          </div>
         </div>
-        <div class="timeline__step">
-          <div class="timeline__marker"></div>
-          <span class="timeline__step-label">Step 02</span>
-          <h3 class="timeline__step-title">Procurement & Staging</h3>
-          <p class="timeline__step-text">We source and test equipment. We pre-configure what we can. This reduces on-site time and minimizes your downtime.</p>
+
+        <div class="infra-timeline__step">
+          <div class="infra-timeline__node">
+            <span class="infra-timeline__number accent-emerald glow-medium-emerald">02</span>
+          </div>
+          <div class="card card--solution infra-timeline__card">
+            <h3 class="card__title">Procurement & Staging</h3>
+            <p class="card__text">We source and test equipment. Pre-configure what we can. This reduces on-site time and minimizes your downtime.</p>
+            <span class="infra-timeline__badge">1–2 weeks</span>
+          </div>
         </div>
-        <div class="timeline__step">
-          <div class="timeline__marker"></div>
-          <span class="timeline__step-label">Step 03</span>
-          <h3 class="timeline__step-title">Installation & Build</h3>
-          <p class="timeline__step-text">We show up with a crew and build it. Cabling run, hardware mounted, configurations deployed, testing done. Hands-on work done fast and right.</p>
+
+        <div class="infra-timeline__step">
+          <div class="infra-timeline__node">
+            <span class="infra-timeline__number accent-emerald glow-medium-emerald">03</span>
+          </div>
+          <div class="card card--solution infra-timeline__card">
+            <h3 class="card__title">Installation & Build</h3>
+            <p class="card__text">We show up with a crew and build it. Cabling run, hardware mounted, configurations deployed, testing done.</p>
+            <span class="infra-timeline__badge">1–4 weeks</span>
+          </div>
         </div>
-        <div class="timeline__step">
-          <div class="timeline__marker"></div>
-          <span class="timeline__step-label">Step 04</span>
-          <h3 class="timeline__step-title">Documentation & Handoff</h3>
-          <p class="timeline__step-text">Complete documentation: network diagrams, hardware lists, configurations, warranty info, maintenance schedules. Your team knows exactly what you have and how it works.</p>
+
+        <div class="infra-timeline__step">
+          <div class="infra-timeline__node">
+            <span class="infra-timeline__number accent-emerald glow-medium-emerald">04</span>
+          </div>
+          <div class="card card--solution infra-timeline__card">
+            <h3 class="card__title">Documentation & Handoff</h3>
+            <p class="card__text">Network diagrams, hardware lists, configurations, warranty info, maintenance schedules. Your team knows exactly what you have.</p>
+            <span class="infra-timeline__badge">Final week</span>
+          </div>
         </div>
       </div>
 
-      <p class="infra-process__note animate-on-scroll"><strong>Timeline:</strong> Typically 2-8 weeks depending on scope.</p>
+      <p class="infra-process__note accent-amber glow-medium-amber animate-on-scroll">Typically 2–8 weeks depending on scope.</p>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 5: Why Do It Right
@@ -147,147 +201,170 @@ import CTASection from '../../components/CTASection.astro';
   <section class="section infra-why">
     <div class="container">
       <div class="infra-why__header animate-on-scroll">
-        <span class="section-label">Why It Matters</span>
-        <h2>Bad infrastructure is expensive. Good infrastructure is an investment.</h2>
+        <SectionBadge text="WHY IT MATTERS" variant="amber" />
+        <h2>Good infrastructure is an <span class="accent-amber glow-medium-amber">investment.</span></h2>
       </div>
 
-      <div class="grid grid--2 stagger-children" style="margin-top: var(--space-xl);">
-        <div class="card infra-why__card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+      <div class="grid grid--2 stagger-children">
+        <div class="card card--feature infra-why__card">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
           </div>
-          <h3 class="card__title">Future-Proof</h3>
+          <span class="card__category accent-amber glow-medium-amber">FUTURE-PROOF</span>
+          <h3 class="card__title">Scales With Growth</h3>
           <p class="card__text">Properly designed infrastructure scales with growth. Upgrades are easy. No ripping and replacing every 18 months.</p>
         </div>
 
-        <div class="card infra-why__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <div class="card card--feature infra-why__card">
+          <div class="card__icon icon-glow-amber">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
-          <h3 class="card__title">Fewer Outages</h3>
+          <span class="card__category accent-amber glow-medium-amber">FEWER OUTAGES</span>
+          <h3 class="card__title">Built-In Reliability</h3>
           <p class="card__text">Redundancy and reliability built in. Outages are rare. Your team stays productive.</p>
         </div>
 
-        <div class="card infra-why__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <div class="card card--feature infra-why__card">
+          <div class="card__icon icon-glow-amber">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
-          <h3 class="card__title">Easier Maintenance</h3>
-          <p class="card__text">Labeled, organized, documented cabling means fast maintenance. A mess means everything takes 3x longer and costs 3x more.</p>
+          <span class="card__category accent-amber glow-medium-amber">EASIER MAINTENANCE</span>
+          <h3 class="card__title">Clean & Documented</h3>
+          <p class="card__text">Labeled, organized, documented cabling means fast maintenance. A mess means everything takes 3x longer.</p>
         </div>
 
-        <div class="card infra-why__card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+        <div class="card card--feature infra-why__card">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
           </div>
-          <h3 class="card__title">Lower Total Cost of Ownership</h3>
-          <p class="card__text">Upfront cost is higher when done right. Over 5 years, it's cheaper because you avoid emergency fixes and downtime.</p>
+          <span class="card__category accent-amber glow-medium-amber">LOWER TCO</span>
+          <h3 class="card__title">Saves Money Long-Term</h3>
+          <p class="card__text">Higher upfront cost. Over 5 years, cheaper — because you avoid emergency fixes, downtime, and rip-and-replace.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 6: Project Examples
        ════════════════════════════════════════ -->
-  <section class="section section--alt bg-dots infra-examples">
+  <section class="section infra-examples">
     <div class="container">
       <div class="infra-examples__header animate-on-scroll">
-        <span class="section-label">Recent Work</span>
-        <h2>Examples of infrastructure we've built.</h2>
+        <SectionBadge text="RECENT WORK" variant="info" />
+        <h2>Infrastructure we've <span class="accent-violet glow-medium-violet">built.</span></h2>
       </div>
 
-      <div class="infra-examples__list stagger-children">
-        <div class="infra-example">
-          <div class="infra-example__header">
-            <span class="infra-example__number">01</span>
-            <h3 class="infra-example__title">New Office Buildout</h3>
+      <div class="infra-examples__grid stagger-children">
+        <!-- Project 1: New Office Buildout -->
+        <div class="card infra-project-card">
+          <span class="card__category accent-amber glow-medium-amber">NEW OFFICE BUILDOUT</span>
+          <p class="infra-project__client text-secondary">Texas-based marketing firm, 25 employees</p>
+          <p class="card__text">Network topology design. Cat6a cabling throughout. Network closet with managed switches and PoE. 25 workstations, phones, printers. WiFi access points.</p>
+          <div class="infra-project__metric">
+            <span class="stat-number stat-number--emerald infra-project__stat">0 network issues</span>
+            <span class="infra-project__metric-label">first 6 months</span>
           </div>
-          <div class="infra-example__body">
-            <p class="infra-example__situation"><strong>Situation:</strong> Texas-based marketing firm opening a second office with 25 employees.</p>
-            <p class="infra-example__work"><strong>What We Did:</strong> Designed network topology. Installed Cat6a cabling throughout. Built network closet with managed switches and PoE for phones and access points. Set up 25 workstations, phones, printers. Deployed WiFi access points for coverage.</p>
-            <p class="infra-example__result">Office was IT-ready on opening day. Zero network issues in first 6 months.</p>
-          </div>
+          <p class="infra-project__result">Office was IT-ready on opening day.</p>
         </div>
 
-        <div class="infra-example">
-          <div class="infra-example__header">
-            <span class="infra-example__number">02</span>
-            <h3 class="infra-example__title">Server Room Upgrade</h3>
+        <!-- Project 2: Server Room Upgrade -->
+        <div class="card infra-project-card">
+          <span class="card__category accent-amber glow-medium-amber">SERVER ROOM UPGRADE</span>
+          <p class="infra-project__client text-secondary">Professional services firm</p>
+          <p class="card__text">New layout design. Proper racking, power distribution, cooling. New cabling for redundancy. Zero-downtime migration.</p>
+          <div class="infra-project__metric">
+            <span class="stat-number stat-number--emerald infra-project__stat">0 downtime</span>
+            <span class="infra-project__metric-label">during migration</span>
           </div>
-          <div class="infra-example__body">
-            <p class="infra-example__situation"><strong>Situation:</strong> Professional services firm had aging server room with poor cable management and cooling issues.</p>
-            <p class="infra-example__work"><strong>What We Did:</strong> Designed new layout. Installed proper racking, power distribution, cooling. Ran new cabling for redundancy. Migrated services with zero downtime.</p>
-            <p class="infra-example__result">Servers run cooler, future upgrades are easier, documentation is clear.</p>
-          </div>
+          <p class="infra-project__result">Servers run cooler. Future upgrades are straightforward.</p>
         </div>
 
-        <div class="infra-example">
-          <div class="infra-example__header">
-            <span class="infra-example__number">03</span>
-            <h3 class="infra-example__title">Network Redesign</h3>
+        <!-- Project 3: Network Redesign -->
+        <div class="card infra-project-card">
+          <span class="card__category accent-amber glow-medium-amber">NETWORK REDESIGN</span>
+          <p class="infra-project__client text-secondary">Real estate company</p>
+          <p class="card__text">Network segmentation. Managed switches. Access points for full coverage. Firewall and endpoint protection.</p>
+          <div class="infra-project__metric">
+            <span class="stat-number stat-number--emerald infra-project__stat">Enterprise-grade</span>
+            <span class="infra-project__metric-label">security and speed</span>
           </div>
-          <div class="infra-example__body">
-            <p class="infra-example__situation"><strong>Situation:</strong> Real estate company had slow WiFi, connectivity issues, and security gaps.</p>
-            <p class="infra-example__work"><strong>What We Did:</strong> Designed new network with proper segmentation. Replaced aging switches with managed equipment. Added access points for coverage. Deployed firewall and endpoint protection.</p>
-            <p class="infra-example__result">Network is fast and reliable. Security is enterprise-grade. Staff productivity improved.</p>
-          </div>
+          <p class="infra-project__result">Fast, reliable network. Staff productivity improved immediately.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 7: Team & Service Area
+       Section 7: Our Team & Service Area
        ════════════════════════════════════════ -->
   <section class="section infra-team">
     <div class="container">
-      <div class="split infra-team__layout">
-        <div class="infra-team__content animate-on-scroll">
-          <span class="section-label">Our Team</span>
-          <h2>Certified technicians. Hands-on work. Across Texas.</h2>
-          <p class="text-large">Our infrastructure team is made up of Cisco-certified technicians with hands-on experience across every type of environment — small offices, medical facilities, warehouses, retail spaces, and multi-story commercial buildings. They've run cable through drop ceilings and concrete walls alike.</p>
-          <p class="text-large text-secondary">When you hire us, you're getting experienced professionals on your premises doing the physical work. Not subcontractors we found last week.</p>
+      <div class="infra-team__header animate-on-scroll">
+        <SectionBadge text="OUR TEAM" variant="amber" />
+        <h2>Cisco-certified technicians. Across <span class="accent-amber glow-medium-amber">Texas.</span></h2>
+      </div>
+
+      <div class="infra-team__split stagger-children">
+        <div class="card card--feature infra-team__card">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="card__title">Experienced Professionals</h3>
+          <p class="card__text">Our infrastructure team is Cisco-certified with hands-on experience in every environment — offices, medical facilities, warehouses, retail, multi-story commercial. When you hire us, you get experienced professionals on your premises. Not subcontractors we found last week.</p>
+          <span class="infra-team__cert accent-amber glow-subtle-amber">Cisco Certified</span>
         </div>
-        <div class="infra-team__area animate-on-scroll">
-          <div class="infra-team__area-card">
-            <span class="infra-team__area-badge">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Service Area
-            </span>
-            <h3>Austin HQ, Texas-wide service.</h3>
-            <p>Dallas, Houston, San Antonio, and everywhere in between — we travel to you. Infrastructure is on-site work. We don't do it remotely. We show up, we build it, and we make sure it works before we leave.</p>
+
+        <div class="card card--feature infra-team__card">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <div class="infra-team__cert-badge">
-            <span class="text-mono">Cisco Certified</span>
-          </div>
+          <h3 class="card__title">Austin HQ, Texas-Wide Service</h3>
+          <p class="card__text">Headquartered in Austin. We serve businesses across Texas — Dallas, Houston, San Antonio, and everywhere in between. Infrastructure is on-site work. We show up, build it, and make sure it works before we leave.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 8: Equipment & Standards
        ════════════════════════════════════════ -->
-  <section class="section section--alt infra-specs">
+  <section class="section infra-specs">
     <div class="container">
-      <div class="infra-specs__inner animate-on-scroll">
-        <span class="section-label">What We Spec</span>
-        <h2>Enterprise-grade equipment. Real standards.</h2>
-        <p class="text-large text-secondary">We don't use consumer-grade hardware for business infrastructure. We spec:</p>
+      <div class="infra-specs__header animate-on-scroll">
+        <SectionBadge text="WHAT WE SPEC" variant="amber" />
+        <h2>Enterprise-grade equipment. Real <span class="accent-amber glow-medium-amber">standards.</span></h2>
+        <p class="text-large text-secondary">We don't use consumer-grade hardware for business infrastructure.</p>
+      </div>
 
-        <ul class="infra-specs__list">
-          <li><strong>Cabling:</strong> Cat6a or higher, properly rated and tested</li>
-          <li><strong>Network Equipment:</strong> Managed switches, enterprise firewalls, professional-grade access points</li>
-          <li><strong>Servers:</strong> Industry-standard builds with redundancy and backup power</li>
-          <li><strong>Workstations:</strong> Quality hardware with proper warranties and support</li>
-        </ul>
-
-        <p class="text-large text-secondary">We follow industry standards: TIA/EIA 568, NFPA 70 (NEC), and Cisco best practices for network design, security, and reliability. Our technicians hold current Cisco certifications and bring that expertise to every project.</p>
-        <p class="text-large text-secondary">We don't spec the cheapest option. We spec the right option. The cost is fair, the equipment lasts, and maintenance is straightforward.</p>
+      <div class="grid grid--2 infra-specs__grid stagger-children">
+        <div class="card infra-spec-card">
+          <span class="card__category accent-amber glow-medium-amber">CABLING</span>
+          <p class="card__text">Cat6a or higher, properly rated and tested.</p>
+        </div>
+        <div class="card infra-spec-card">
+          <span class="card__category accent-amber glow-medium-amber">NETWORK</span>
+          <p class="card__text">Managed switches, enterprise firewalls, professional-grade access points.</p>
+        </div>
+        <div class="card infra-spec-card">
+          <span class="card__category accent-amber glow-medium-amber">SERVERS</span>
+          <p class="card__text">Industry-standard builds with redundancy and backup power.</p>
+        </div>
+        <div class="card infra-spec-card">
+          <span class="card__category accent-amber glow-medium-amber">STANDARDS</span>
+          <p class="card__text">TIA/EIA 568, NFPA 70 (NEC), Cisco best practices for design, security, and reliability.</p>
+        </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 9: FAQ
@@ -295,7 +372,8 @@ import CTASection from '../../components/CTASection.astro';
   <section class="section infra-faq">
     <div class="container">
       <div class="infra-faq__header animate-on-scroll">
-        <h2>Questions about infrastructure projects?</h2>
+        <SectionBadge text="FAQ" variant="amber" />
+        <h2>Questions about <span class="accent-amber glow-medium-amber">infrastructure?</span></h2>
       </div>
 
       <div class="faq-list animate-on-scroll">
@@ -305,17 +383,17 @@ import CTASection from '../../components/CTASection.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">It depends on scope. Small offices (25 people): 2-4 weeks. Network upgrades: 4-8 weeks. Full buildouts: 8+ weeks. We give you a timeline during planning.</div>
+            <div class="faq-answer__inner">Small offices (25 people): 2–4 weeks. Network upgrades: 4–8 weeks. Full buildouts: 8+ weeks. We give a timeline during planning.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            What if we want to keep using our existing hardware?
+            Can we keep our existing hardware?
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">We can work with it if it's compatible and meets standards. We'll assess what can stay and what needs upgrading.</div>
+            <div class="faq-answer__inner">If it's compatible and meets standards, yes. We assess what stays and what needs upgrading.</div>
           </div>
         </div>
 
@@ -325,7 +403,7 @@ import CTASection from '../../components/CTASection.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">We build it. Someone maintains it. That's usually a managed IT provider — can be us or another team.</div>
+            <div class="faq-answer__inner">We build it. Maintenance is usually a managed IT provider — can be us or another team.</div>
           </div>
         </div>
 
@@ -335,68 +413,95 @@ import CTASection from '../../components/CTASection.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">Good design accounts for growth. Adding workstations, cabling, bandwidth — all easy if it's done right the first time. If it's a mess, everything's hard.</div>
+            <div class="faq-answer__inner">Good design accounts for growth. Adding workstations and bandwidth is easy if the foundation is right.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            Do you do emergency repairs on existing infrastructure?
+            Do you do emergency repairs?
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">Our focus is building new infrastructure. For emergency repairs, contact our managed IT team.</div>
+            <div class="faq-answer__inner">Our focus is new builds. For emergency repairs, contact our managed IT team.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            What's your warranty on work you do?
+            What's the warranty?
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">1 year on all installation work against defects. Equipment carries manufacturer warranties (3-5 years typically). We document everything.</div>
+            <div class="faq-answer__inner">1 year on installation work. Equipment carries manufacturer warranties (3–5 years typically).</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 10: CTA
+       Section 10: CTA + Contact Form
        ════════════════════════════════════════ -->
-  <CTASection
-    headline="Ready to plan your infrastructure project?"
-    source="infrastructure"
-  />
+  <section class="section infra-cta" id="contact-form">
+    <div class="infra-cta__glow"></div>
+    <div class="container">
+      <div class="infra-cta__inner animate-on-scroll">
+        <h2 class="infra-cta__headline">Ready to plan your <span class="accent-amber glow-medium-amber">infrastructure</span> project?</h2>
+        <p class="infra-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="infrastructure" />
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>
 
 <style>
   /* ──────────────────────────────────────
-     IT Infrastructure — scoped styles
+     IT Infrastructure — Scoped Styles (Phase 8b)
      ────────────────────────────────────── */
 
-  /* Problem section */
-  .infra-problem {
-    max-width: 800px;
+  /* Hero ambient glows */
+  .hero__glow--amber {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--violet {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section 2: The Problem ── */
+  .infra-problem__header {
+    text-align: center;
+    max-width: 700px;
     margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
-  .infra-problem h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-lg);
-  }
-
-  .infra-problem p {
-    color: var(--text-secondary);
-  }
-
-  .infra-problem p + p {
+  .infra-problem__header h2 {
     margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
   }
 
-  /* Services */
+  /* ── Section 3: What We Build ── */
   .infra-services__header {
     text-align: center;
     max-width: 640px;
@@ -405,7 +510,7 @@ import CTASection from '../../components/CTASection.astro';
   }
 
   .infra-services__header h2 {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
   }
 
   .infra-services__grid {
@@ -414,46 +519,121 @@ import CTASection from '../../components/CTASection.astro';
     gap: var(--space-lg);
   }
 
-  .infra-service-card {
-    display: flex;
-    flex-direction: column;
+  .infra-services__grid .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-md);
   }
 
-  /* Process */
+  .infra-services__grid .card__title {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Section 4: How We Work (Timeline) ── */
   .infra-process__header {
     text-align: center;
     max-width: 640px;
     margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
   .infra-process__header h2 {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
+  }
+
+  .infra-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 700px;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  /* Vertical connecting line */
+  .infra-timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-emerald), rgba(74, 222, 128, 0.15));
+    border-radius: 1px;
+  }
+
+  .infra-timeline__step {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .infra-timeline__node {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-deep);
+    border: 2px solid var(--accent-emerald);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 12px var(--accent-emerald-glow);
+  }
+
+  .infra-timeline__number {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .infra-timeline__card {
+    flex-grow: 1;
+  }
+
+  .infra-timeline__badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-emerald);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin-top: var(--space-md);
+    text-shadow: 0 0 6px var(--accent-emerald-glow);
   }
 
   .infra-process__note {
     font-family: var(--font-mono);
-    font-size: 0.9375rem;
-    color: var(--accent-primary-hover);
+    font-size: 1.125rem;
+    font-weight: 500;
     margin-top: var(--space-xl);
-    padding-left: var(--space-xl);
+    text-align: center;
   }
 
-  /* Why section */
+  /* ── Section 5: Why Do It Right ── */
   .infra-why__header {
     text-align: center;
     max-width: 700px;
     margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
   .infra-why__header h2 {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
   }
 
   .infra-why__card .card__icon {
+    width: 32px;
+    height: 32px;
     margin-bottom: var(--space-md);
   }
 
-  /* Project examples */
+  /* ── Section 6: Project Examples ── */
   .infra-examples__header {
     text-align: center;
     max-width: 640px;
@@ -462,199 +642,184 @@ import CTASection from '../../components/CTASection.astro';
   }
 
   .infra-examples__header h2 {
-    margin-top: var(--space-sm);
-  }
-
-  .infra-examples__list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-lg);
-  }
-
-  .infra-example {
-    background-color: var(--bg-subtle);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-  }
-
-  .infra-example__header {
-    display: flex;
-    align-items: center;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    border-bottom: 1px solid var(--border-subtle);
-  }
-
-  .infra-example__number {
-    font-family: var(--font-mono);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-primary);
-    opacity: 0.4;
-    line-height: 1;
-  }
-
-  .infra-example__title {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 500;
-  }
-
-  .infra-example__body {
-    padding: var(--space-lg);
-  }
-
-  .infra-example__situation,
-  .infra-example__work {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: var(--space-md);
-  }
-
-  .infra-example__situation strong,
-  .infra-example__work strong {
-    color: var(--text-primary);
-  }
-
-  .infra-example__result {
-    font-size: 0.9375rem;
-    color: var(--accent-primary-hover);
-    font-weight: 500;
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  /* Team & service area */
-  .infra-team__layout {
-    align-items: start;
-  }
-
-  .infra-team__content h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-lg);
-  }
-
-  .infra-team__content p + p {
     margin-top: var(--space-md);
   }
 
-  .infra-team__area {
-    display: flex;
-    flex-direction: column;
+  .infra-examples__grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 
-  .infra-team__area-card {
-    background-color: var(--bg-elevated);
-    border: 1px solid var(--border-accent);
-    border-radius: var(--radius-lg);
-    padding: var(--space-lg);
+  .infra-project-card {
+    border-left: 2px solid var(--accent-amber);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.02) 50%, var(--bg-elevated) 100%);
   }
 
-  .infra-team__area-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent-primary-hover);
+  .infra-project__client {
+    font-size: 0.875rem;
     margin-bottom: var(--space-md);
   }
 
-  .infra-team__area-badge svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .infra-team__area-card h3 {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: var(--space-sm);
-  }
-
-  .infra-team__area-card p {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
-  }
-
-  .infra-team__cert-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-sm);
-    padding: var(--space-md) var(--space-lg);
-    background-color: var(--bg-elevated);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    color: var(--text-secondary);
-  }
-
-  /* Equipment & standards */
-  .infra-specs__inner {
-    max-width: 800px;
-    margin-inline: auto;
-  }
-
-  .infra-specs__inner h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-lg);
-  }
-
-  .infra-specs__inner > p {
-    margin-bottom: var(--space-md);
-  }
-
-  .infra-specs__list {
-    list-style: none;
+  .infra-project__metric {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
-    padding: var(--space-lg);
-    background-color: var(--bg-subtle);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-    margin-block: var(--space-lg);
+    gap: var(--space-xs);
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--border-subtle);
   }
 
-  .infra-specs__list li {
-    font-size: 0.9375rem;
+  .infra-project__stat {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .infra-project__metric-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
     color: var(--text-secondary);
-    line-height: 1.7;
-    padding-left: var(--space-lg);
-    position: relative;
   }
 
-  .infra-specs__list li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background-color: var(--accent-primary);
-    opacity: 0.6;
-  }
-
-  .infra-specs__list li strong {
+  .infra-project__result {
+    font-size: 0.9375rem;
+    font-weight: 500;
     color: var(--text-primary);
+    margin-top: var(--space-md);
   }
 
-  /* FAQ */
-  .infra-faq__header {
-    max-width: 800px;
+  /* ── Section 7: Team & Service Area ── */
+  .infra-team__header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
     margin-bottom: var(--space-xl);
   }
 
-  /* Responsive */
+  .infra-team__header h2 {
+    margin-top: var(--space-md);
+  }
+
+  .infra-team__split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .infra-team__card .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-md);
+  }
+
+  .infra-team__cert {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 20px;
+    padding: 4px 14px;
+    margin-top: var(--space-lg);
+  }
+
+  /* ── Section 8: Equipment & Standards ── */
+  .infra-specs__header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .infra-specs__header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .infra-spec-card {
+    border-left: 2px solid var(--accent-amber);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.02) 50%, var(--bg-elevated) 100%);
+    padding: var(--space-lg);
+  }
+
+  .infra-spec-card .card__text {
+    margin-top: 0;
+  }
+
+  /* ── Section 9: FAQ ── */
+  .infra-faq__header {
+    max-width: 800px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .infra-faq__header h2 {
+    margin-top: var(--space-md);
+  }
+
+  /* ── Section 10: CTA ── */
+  .infra-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .infra-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(245, 158, 11, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .infra-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .infra-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .infra-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
   @media (min-width: 768px) {
     .infra-services__grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .infra-examples__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .infra-team__split {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .infra-cta__headline {
+      font-size: 2rem;
     }
   }
 
@@ -663,8 +828,12 @@ import CTASection from '../../components/CTASection.astro';
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .infra-team__layout {
-      gap: var(--space-3xl);
+    .infra-examples__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .infra-cta__headline {
+      font-size: 2.5rem;
     }
   }
 </style>
