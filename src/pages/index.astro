@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionBadge from '../components/SectionBadge.astro';
+import SectionDivider from '../components/SectionDivider.astro';
 import CTASection from '../components/CTASection.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <BaseLayout title="AI-First IT Services for SMBs" description="Constance IT provides AI-first IT services for small and medium businesses in healthcare, real estate, e-commerce, and professional services. Based in Austin, TX.">
@@ -9,93 +12,171 @@ import CTASection from '../components/CTASection.astro';
        Section 1: Hero
        ════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero__glow hero__glow--1"></div>
-    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
     <div class="container">
       <div class="hero__content hero-animate">
-        <span class="section-label">AI-First IT Services</span>
-        <h1 class="hero__title">Your AI team. One point of contact.</h1>
-        <p class="hero__subtitle">Constance IT helps small and medium businesses automate the repetitive work that's costing them time, money, and growth. We identify what to fix, implement the automation, and stay with you after.</p>
+        <h1 class="hero__title">Your <span class="accent-violet glow-heavy-violet">AI team.</span> One point of contact.</h1>
+        <p class="hero__subtitle">Constance IT helps small and medium businesses automate the repetitive work that's costing them time, money, and growth. We identify what to fix, build the automation, and stay with you after.</p>
         <div class="hero__actions">
           <a href="/contact/" class="btn btn--primary">Get a Free Assessment</a>
-          <a href="/services/" class="btn btn--ghost">See How We Work →</a>
+          <a href="/services/" class="btn btn--ghost">See How We Work &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 2: Problem Statement
+       Section 2: The Problem
        ════════════════════════════════════════ -->
-  <section class="section section--alt homepage-problem">
+  <section class="section hp-problem">
     <div class="container">
-      <div class="homepage-problem__inner animate-on-scroll">
-        <span class="section-label">The Problem</span>
-        <h2>Your team is drowning in tasks that software should handle.</h2>
-        <p class="text-large">Every day, your staff spends hours on follow-ups that don't get sent, data that gets entered twice, leads that slip through the cracks, and invoices that sit in a queue.</p>
-        <p class="text-large">You need someone who understands your business, identifies what's actually costing you time, builds the automation, and stays to make sure it works.</p>
+      <div class="hp-problem__header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>Your team is buried in <span class="accent-coral glow-medium-coral">manual work.</span></h2>
+        <p class="text-large text-secondary">Every day, your staff loses hours to tasks that software should handle.</p>
+      </div>
+
+      <div class="grid grid--2 stagger-children hp-problem__grid">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">FOLLOW-UPS</span>
+          <p class="card__text">Leads slip because reminders don't go out on time. Opportunities die in the inbox.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">DATA ENTRY</span>
+          <p class="card__text">The same information typed into three different systems. Every time.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">REPORTING</span>
+          <p class="card__text">Hours spent building reports that should take seconds.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">IT SUPPORT</span>
+          <p class="card__text">Different technician every call. No one knows your setup. You start from scratch each time.</p>
+        </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 3: Services Overview — How We Work
+       Section 3: What Changes (Comparison Block)
        ════════════════════════════════════════ -->
-  <section class="section homepage-services">
+  <section class="section hp-comparison">
     <div class="container">
-      <div class="homepage-services__header animate-on-scroll">
-        <span class="section-label">How We Work</span>
-        <h2>Identify. Automate. Support.</h2>
+      <div class="hp-comparison__header animate-on-scroll">
+        <SectionBadge text="WHAT CHANGES" variant="info" />
+        <h2>The <span class="accent-violet glow-medium-violet">difference</span> is night and day.</h2>
       </div>
 
-      <div class="grid grid--3 stagger-children" style="margin-top: var(--space-xl);">
-        <!-- AI & Workflow Automation -->
-        <div class="card homepage-service-card">
-          <span class="homepage-service-card__step">01</span>
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+      <div class="hp-comparison__columns">
+        <div class="hp-comparison__col">
+          <span class="hp-comparison__col-header accent-coral glow-medium-coral">WITHOUT US</span>
+        </div>
+        <div class="hp-comparison__col">
+          <span class="hp-comparison__col-header accent-emerald glow-medium-emerald">WITH CONSTANCE IT</span>
+        </div>
+      </div>
+
+      <div class="hp-comparison__rows stagger-children">
+        <!-- Row 1: Support -->
+        <div class="hp-comparison__row">
+          <div class="card card--problem hp-comparison__card">
+            <span class="card__category accent-coral glow-medium-coral">SUPPORT</span>
+            <p class="card__text">Different person every call. No context. No accountability.</p>
           </div>
-          <h3 class="card__title">AI & Workflow Automation</h3>
-          <p class="card__text">We build custom AI-powered automations that handle the repetitive work eating your time: document processing, lead follow-up, data entry, scheduling. Tailored to your industry and your existing tools.</p>
-          <a href="/services/ai-workflow-automation/" class="card__link">
-            Explore AI & Automation
+          <div class="card card--solution hp-comparison__card">
+            <span class="card__category accent-emerald glow-medium-emerald">SUPPORT</span>
+            <p class="card__text">One point of contact. Same person. Always.</p>
+          </div>
+        </div>
+
+        <!-- Row 2: Pricing -->
+        <div class="hp-comparison__row">
+          <div class="card card--problem hp-comparison__card">
+            <span class="card__category accent-coral glow-medium-coral">PRICING</span>
+            <p class="card__text">Long contracts, hidden fees, surprise invoices.</p>
+          </div>
+          <div class="card card--solution hp-comparison__card">
+            <span class="card__category accent-emerald glow-medium-emerald">PRICING</span>
+            <p class="card__text">Month-to-month. Fixed price. No surprises.</p>
+          </div>
+        </div>
+
+        <!-- Row 3: Timeline -->
+        <div class="hp-comparison__row">
+          <div class="card card--problem hp-comparison__card">
+            <span class="card__category accent-coral glow-medium-coral">TIMELINE</span>
+            <p class="card__text">Big promises, slow delivery, months of "onboarding."</p>
+          </div>
+          <div class="card card--solution hp-comparison__card">
+            <span class="card__category accent-emerald glow-medium-emerald">TIMELINE</span>
+            <p class="card__text"><span class="accent-emerald glow-subtle-emerald">90 days</span> to measurable results.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: How We Work (Services Overview)
+       ════════════════════════════════════════ -->
+  <section class="section hp-services">
+    <div class="container">
+      <div class="hp-services__header animate-on-scroll">
+        <SectionBadge text="HOW WE WORK" variant="solution" />
+        <h2><span class="accent-emerald glow-medium-emerald">Identify.</span> Automate. Support.</h2>
+        <p class="text-large text-secondary">All three services work together to keep your business running and growing.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children hp-services__grid">
+        <!-- AI & Workflow Automation -->
+        <div class="card card--service-ai hp-service-card">
+          <div class="card__icon icon-glow-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5a2.5 2.5 0 0 0-4.96-.46 2.5 2.5 0 0 0-1.98 3 2.5 2.5 0 0 0-1.32 4.24 3 3 0 0 0 .34 5.58 2.5 2.5 0 0 0 2.96 3.08A2.5 2.5 0 0 0 9.5 22c1.21 0 2.5-.74 2.5-2.5m0-15a2.5 2.5 0 0 1 4.96-.46 2.5 2.5 0 0 1 1.98 3 2.5 2.5 0 0 1 1.32 4.24 3 3 0 0 1-.34 5.58 2.5 2.5 0 0 1-2.96 3.08A2.5 2.5 0 0 1 14.5 22c-1.21 0-2.5-.74-2.5-2.5m0-15V2"/><path d="M8.5 8.5h7v7h-7z"/><path d="m8.5 12H12v3.5"/><path d="M12 8.5V12h3.5"/></svg>
+          </div>
+          <span class="card__category accent-blue glow-medium-blue">AI & WORKFLOW AUTOMATION</span>
+          <p class="card__text">We build custom automations that handle the repetitive work eating your time. Document processing, lead follow-up, data entry, scheduling.</p>
+          <a href="/services/ai-workflow-automation/" class="card__link accent-blue glow-subtle-blue">
+            Explore AI Automation
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
 
         <!-- Managed IT -->
-        <div class="card homepage-service-card">
-          <span class="homepage-service-card__step">02</span>
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+        <div class="card card--service-it hp-service-card">
+          <div class="card__icon icon-glow-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
-          <h3 class="card__title">Managed IT</h3>
-          <p class="card__text">Proactive monitoring, security, backups, and support for your entire IT environment. We handle the day-to-day so your team can focus on what matters.</p>
-          <a href="/services/managed-it/" class="card__link">
+          <span class="card__category accent-emerald glow-medium-emerald">MANAGED IT</span>
+          <p class="card__text">Proactive monitoring, security, backups, and support for your entire IT environment. We handle the day-to-day so your team focuses on what matters.</p>
+          <a href="/services/managed-it/" class="card__link accent-emerald glow-subtle-emerald">
             Explore Managed IT
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
 
         <!-- IT Infrastructure -->
-        <div class="card homepage-service-card">
-          <span class="homepage-service-card__step">03</span>
-          <div class="card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+        <div class="card card--service-infra hp-service-card">
+          <div class="card__icon icon-glow-amber">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>
           </div>
-          <h3 class="card__title">IT Infrastructure</h3>
+          <span class="card__category accent-amber glow-medium-amber">IT INFRASTRUCTURE</span>
           <p class="card__text">Cabling, network closet builds, office buildouts, and hardware deployment. Cisco-certified technicians, on-site across Texas.</p>
-          <a href="/services/it-infrastructure/" class="card__link">
+          <a href="/services/it-infrastructure/" class="card__link accent-amber glow-subtle-amber">
             Explore Infrastructure
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </a>
         </div>
       </div>
 
-      <p class="homepage-services__philosophy animate-on-scroll">All three services work together. Automate the repetitive work with AI. Keep everything running with managed IT. Build the physical infrastructure to support it all.</p>
-
-      <div class="homepage-services__link animate-on-scroll">
-        <a href="/services/" class="link link--arrow">
+      <div class="hp-services__link animate-on-scroll">
+        <a href="/services/" class="link link--arrow accent-blue glow-subtle-blue">
           See all our services
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
@@ -103,65 +184,67 @@ import CTASection from '../components/CTASection.astro';
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 4: Industry Verticals
+       Section 5: Industries We Serve
        ════════════════════════════════════════ -->
-  <section class="section section--alt homepage-industries bg-dots">
+  <section class="section hp-industries">
     <div class="container">
-      <div class="homepage-industries__header animate-on-scroll">
-        <span class="section-label">Industries We Serve</span>
-        <h2>AI automation built for your industry.</h2>
-        <p class="text-large text-secondary">We don't do generic. Every automation we build starts with the specific challenges your industry faces — then we solve them.</p>
+      <div class="hp-industries__header animate-on-scroll">
+        <SectionBadge text="INDUSTRIES WE SERVE" variant="feature" />
+        <h2>AI automation built for <span class="accent-blue glow-medium-blue">your industry.</span></h2>
+        <p class="text-large text-secondary">We don't do generic. Every automation starts with the specific challenges your industry faces.</p>
       </div>
 
-      <div class="grid grid--2 stagger-children" style="margin-top: var(--space-xl);">
+      <div class="grid grid--2 stagger-children hp-industries__grid">
         <!-- Healthcare -->
-        <a href="/industries/healthcare/" class="card homepage-industry-card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><path d="M22 10 A2 2 0 0 1 20 12 A2 2 0 0 1 18 10 A2 2 0 0 1 22 10"/></svg>
+        <a href="/industries/healthcare/" class="card card--feature hp-industry-card">
+          <div class="card__icon icon-glow-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.8 2.3A.3.3 0 1 0 5 2H4a2 2 0 0 0-2 2v5a6 6 0 0 0 6 6 6 6 0 0 0 6-6V4a2 2 0 0 0-2-2h-1a.2.2 0 1 0 .3.3"/><path d="M8 15v1a6 6 0 0 0 6 6 6 6 0 0 0 6-6v-4"/><circle cx="20" cy="10" r="2"/></svg>
           </div>
           <h3 class="card__title">Healthcare</h3>
-          <p class="card__text">Managed IT and AI automation for outpatient providers — MSOs, ASCs, OBLs, and clinics.</p>
-          <span class="card__link" aria-hidden="true">
+          <p class="card__text">Managed IT and AI automation for outpatient providers &mdash; MSOs, ASCs, OBLs, and clinics.</p>
+          <span class="card__link accent-blue" aria-hidden="true">
             Explore Healthcare
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </span>
         </a>
 
         <!-- Real Estate -->
-        <a href="/industries/real-estate/" class="card homepage-industry-card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <a href="/industries/real-estate/" class="card card--feature hp-industry-card">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
           </div>
           <h3 class="card__title">Real Estate</h3>
-          <p class="card__text">Automate property management, client outreach, documentation, and CRM workflows for real estate teams.</p>
-          <span class="card__link" aria-hidden="true">
+          <p class="card__text">Automate property management, client outreach, documentation, and CRM workflows.</p>
+          <span class="card__link accent-blue" aria-hidden="true">
             Explore Real Estate
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </span>
         </a>
 
         <!-- E-Commerce -->
-        <a href="/industries/ecommerce/" class="card homepage-industry-card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <a href="/industries/ecommerce/" class="card card--feature hp-industry-card">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
           </div>
           <h3 class="card__title">E-Commerce</h3>
-          <p class="card__text">Streamline inventory, customer service, personalized marketing, and order management with AI.</p>
-          <span class="card__link" aria-hidden="true">
+          <p class="card__text">Streamline inventory, customer service, personalized marketing, and order management.</p>
+          <span class="card__link accent-blue" aria-hidden="true">
             Explore E-Commerce
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </span>
         </a>
 
         <!-- Professional Services -->
-        <a href="/industries/professional-services/" class="card homepage-industry-card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <a href="/industries/professional-services/" class="card card--feature hp-industry-card">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
           </div>
           <h3 class="card__title">Professional Services</h3>
           <p class="card__text">Scheduling, dispatching, invoicing, lead gen, and review management for trades and service businesses.</p>
-          <span class="card__link" aria-hidden="true">
+          <span class="card__link accent-blue" aria-hidden="true">
             Explore Professional Services
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
           </span>
@@ -170,72 +253,72 @@ import CTASection from '../components/CTASection.astro';
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 5: Why Constance IT
+       Section 6: Why Constance IT
        ════════════════════════════════════════ -->
-  <section class="section homepage-why">
+  <section class="section hp-why">
     <div class="container">
-      <div class="split homepage-why__layout">
-        <!-- Left: heading -->
-        <div class="homepage-why__heading animate-on-scroll">
-          <span class="section-label">Why Constance IT</span>
-          <h2>Built different. On purpose.</h2>
+      <div class="hp-why__header animate-on-scroll">
+        <SectionBadge text="WHY US" variant="info" />
+        <h2>Built <span class="accent-violet glow-medium-violet">different.</span> On purpose.</h2>
+      </div>
+
+      <div class="hp-why__grid stagger-children">
+        <div class="hp-why__feature">
+          <div class="hp-why__icon icon-glow-violet">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+          </div>
+          <div>
+            <h3 class="hp-why__title">One Point of Contact</h3>
+            <p class="hp-why__text">You work with one person who knows your systems, your industry, and your history. No call centers. No ticket queues.</p>
+          </div>
         </div>
 
-        <!-- Right: feature blocks -->
-        <div class="homepage-why__features stagger-children">
-          <div class="homepage-feature">
-            <div class="homepage-feature__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
-            </div>
-            <div>
-              <h3 class="homepage-feature__title">One Point of Contact</h3>
-              <p class="homepage-feature__text">You'll work with one person who knows your systems, your industry, and your history. No call centers. No ticket queues. No starting from scratch every time.</p>
-            </div>
+        <div class="hp-why__feature">
+          <div class="hp-why__icon icon-glow-violet">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
           </div>
-
-          <div class="homepage-feature">
-            <div class="homepage-feature__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/></svg>
-            </div>
-            <div>
-              <h3 class="homepage-feature__title">AI-First, Not AI-Only</h3>
-              <p class="homepage-feature__text">AI is our primary tool, not our entire identity. If a simpler solution fits better, we'll tell you. We're not here to sell you AI — we're here to save you time.</p>
-            </div>
+          <div>
+            <h3 class="hp-why__title">AI-First, Not AI-Only</h3>
+            <p class="hp-why__text">AI is our primary tool, not our entire identity. If a simpler solution fits better, we'll tell you.</p>
           </div>
+        </div>
 
-          <div class="homepage-feature">
-            <div class="homepage-feature__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><line x1="12" x2="12" y1="22" y2="8"/><path d="M5 12H2a10 10 0 0 0 20 0h-3"/></svg>
-            </div>
-            <div>
-              <h3 class="homepage-feature__title">We Stay</h3>
-              <p class="homepage-feature__text">Implementation is half the job. We provide ongoing support, monitoring, and adjustments so your automations keep working as your business grows.</p>
-            </div>
+        <div class="hp-why__feature">
+          <div class="hp-why__icon icon-glow-violet">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
           </div>
+          <div>
+            <h3 class="hp-why__title">We Stay</h3>
+            <p class="hp-why__text">Implementation is half the job. We provide ongoing support and adjustments so your automations keep working as your business grows.</p>
+          </div>
+        </div>
 
-          <div class="homepage-feature">
-            <div class="homepage-feature__icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
-            </div>
-            <div>
-              <h3 class="homepage-feature__title">SMB-Focused</h3>
-              <p class="homepage-feature__text">We work with businesses of 5 to 200 people. Our pricing, our process, and our communication style are designed for teams like yours — not enterprise committees.</p>
-            </div>
+        <div class="hp-why__feature">
+          <div class="hp-why__icon icon-glow-violet">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>
+          </div>
+          <div>
+            <h3 class="hp-why__title">SMB-Focused</h3>
+            <p class="hp-why__text">We work with businesses of 5 to 200 people. Our pricing, process, and communication style are designed for teams like yours.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 6: Technologies & Tools
+       Section 7: Technologies We Work With
        ════════════════════════════════════════ -->
-  <section class="section section--alt homepage-tech">
+  <section class="section hp-tech">
     <div class="container">
-      <div class="homepage-tech__inner animate-on-scroll">
-        <span class="section-label" style="text-align: center;">Technologies We Work With</span>
-        <div class="homepage-tech__badges">
+      <div class="hp-tech__inner animate-on-scroll">
+        <SectionBadge text="TECHNOLOGIES" variant="feature" />
+        <div class="hp-tech__badges">
           <span class="tech-badge">Claude</span>
           <span class="tech-badge">GPT</span>
           <span class="tech-badge">Google AI</span>
@@ -250,158 +333,257 @@ import CTASection from '../components/CTASection.astro';
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 7: Final CTA
+       Section 8: Final CTA + Contact Form
        ════════════════════════════════════════ -->
-  <CTASection source="homepage" />
+  <section class="section hp-cta">
+    <div class="hp-cta__glow"></div>
+    <div class="container">
+      <div class="hp-cta__inner animate-on-scroll">
+        <h2 class="hp-cta__headline">Ready to stop doing the work your <span class="accent-blue glow-medium-blue">tools</span> should handle?</h2>
+        <p class="hp-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="homepage" />
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>
 
 <style>
   /* ──────────────────────────────────────
-     Homepage-specific scoped styles
+     Homepage — Scoped Styles
      ────────────────────────────────────── */
 
-  /* Problem Statement */
-  .homepage-problem__inner {
-    max-width: 800px;
-    margin-inline: auto;
+  /* Hero ambient glow — multi-color */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* Accent text utility classes (scoped for specificity) */
+  .accent-violet {
+    color: var(--accent-violet);
+  }
+  .accent-coral {
+    color: var(--accent-coral);
+  }
+  .accent-emerald {
+    color: var(--accent-emerald);
+  }
+  .accent-blue {
+    color: var(--accent-blue);
+  }
+  .accent-amber {
+    color: var(--accent-amber);
+  }
+
+  /* ── Section 2: Problem ── */
+  .hp-problem__header {
     text-align: center;
-  }
-
-  .homepage-problem__inner h2 {
-    margin-bottom: var(--space-lg);
-  }
-
-  .homepage-problem__inner p {
+    max-width: 640px;
     margin-inline: auto;
-    color: var(--text-secondary);
+    margin-bottom: var(--space-xl);
   }
 
-  .homepage-problem__inner p + p {
+  .hp-problem__header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .hp-problem__grid {
+    margin-top: var(--space-lg);
+  }
+
+  /* ── Section 3: Comparison ── */
+  .hp-comparison__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .hp-comparison__header h2 {
     margin-top: var(--space-md);
   }
 
-  /* Services section */
-  .homepage-services__header {
+  .hp-comparison__columns {
+    display: none;
+  }
+
+  .hp-comparison__rows {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .hp-comparison__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .hp-comparison__card {
+    padding: var(--space-lg);
+  }
+
+  .hp-comparison__col-header {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Section 4: Services ── */
+  .hp-services__header {
     text-align: center;
-    max-width: 600px;
+    max-width: 640px;
     margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
-  .homepage-services__header h2 {
-    margin-top: var(--space-sm);
+  .hp-services__header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
   }
 
-  .homepage-service-card {
-    position: relative;
+  .hp-service-card {
     display: flex;
     flex-direction: column;
   }
 
-  .homepage-service-card__step {
-    font-family: var(--font-mono);
-    font-size: 0.875rem;
-    font-weight: 400;
-    color: var(--accent-primary);
-    letter-spacing: 0.04em;
+  .hp-service-card .card__icon {
+    width: 32px;
+    height: 32px;
     margin-bottom: var(--space-md);
-    opacity: 0.6;
   }
 
-  .homepage-service-card .card__text {
+  .hp-service-card .card__text {
     flex-grow: 1;
   }
 
-  .homepage-services__philosophy {
+  .hp-services__link {
     text-align: center;
-    max-width: 700px;
-    margin-inline: auto;
     margin-top: var(--space-xl);
-    color: var(--text-secondary);
-    font-style: italic;
   }
 
-  .homepage-services__link {
-    text-align: center;
-    margin-top: var(--space-lg);
-  }
-
-  /* Industries section */
-  .homepage-industries__header {
+  /* ── Section 5: Industries ── */
+  .hp-industries__header {
     text-align: center;
     max-width: 640px;
     margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
-  .homepage-industries__header h2 {
-    margin-top: var(--space-sm);
+  .hp-industries__header h2 {
+    margin-top: var(--space-md);
     margin-bottom: var(--space-md);
   }
 
-  .homepage-industries__header p {
-    margin-inline: auto;
-  }
-
-  .homepage-industry-card {
+  .hp-industry-card {
     display: flex;
     flex-direction: column;
     text-decoration: none;
     cursor: pointer;
   }
 
-  .homepage-industry-card .card__text {
+  .hp-industry-card .card__icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .hp-industry-card .card__text {
     flex-grow: 1;
   }
 
-  /* Why Constance IT — split layout */
-  .homepage-why__heading h2 {
-    margin-top: var(--space-sm);
+  /* ── Section 6: Why Us — 2x2 bento layout ── */
+  .hp-why__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
-  .homepage-why__features {
-    display: flex;
-    flex-direction: column;
+  .hp-why__header h2 {
+    margin-top: var(--space-md);
+  }
+
+  .hp-why__grid {
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 
-  .homepage-feature {
+  .hp-why__feature {
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(181, 178, 255, 0.02) 50%, var(--bg-elevated) 100%);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.25s ease, transform 0.25s ease;
   }
 
-  .homepage-feature__icon {
+  .hp-why__feature:hover {
+    border-color: rgba(181, 178, 255, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .hp-why__icon {
     flex-shrink: 0;
     width: 40px;
     height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: var(--radius-md);
-    background-color: rgba(26, 118, 188, 0.1);
-    color: var(--accent-primary-hover);
   }
 
-  .homepage-feature__title {
+  .hp-why__icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hp-why__title {
     font-family: var(--font-heading);
     font-size: 1.125rem;
     font-weight: 500;
     margin-bottom: var(--space-xs);
   }
 
-  .homepage-feature__text {
+  .hp-why__text {
     font-size: 0.9375rem;
     color: var(--text-secondary);
     line-height: 1.7;
   }
 
-  /* Technologies badges */
-  .homepage-tech__inner {
+  /* ── Section 7: Technologies ── */
+  .hp-tech__inner {
     text-align: center;
   }
 
-  .homepage-tech__badges {
+  .hp-tech__badges {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -426,31 +608,93 @@ import CTASection from '../components/CTASection.astro';
     border-color: var(--border-accent);
   }
 
-  /* Responsive adjustments */
+  /* ── Section 8: Final CTA ── */
+  .hp-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hp-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(181, 178, 255, 0.05) 0%,
+      rgba(55, 147, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .hp-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .hp-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .hp-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
   @media (min-width: 768px) {
-    .homepage-feature__icon {
+    .hp-comparison__columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+      padding-inline: var(--space-xs);
+    }
+
+    .hp-comparison__col {
+      text-align: center;
+    }
+
+    .hp-comparison__row {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hp-why__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .hp-why__icon {
       width: 48px;
       height: 48px;
     }
 
-    .homepage-feature {
+    .hp-why__feature {
       gap: var(--space-lg);
     }
 
-    .homepage-feature__title {
+    .hp-why__title {
       font-size: 1.25rem;
+    }
+
+    .hp-cta__headline {
+      font-size: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
-    .homepage-why__layout {
-      gap: var(--space-3xl);
-    }
-
-    .homepage-why__heading {
-      position: sticky;
-      top: calc(var(--header-height) + var(--space-xl));
-      align-self: start;
+    .hp-cta__headline {
+      font-size: 2.5rem;
     }
   }
 </style>
