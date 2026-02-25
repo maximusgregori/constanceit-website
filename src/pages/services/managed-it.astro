@@ -1,0 +1,559 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTASection from '../../components/CTASection.astro';
+---
+
+<BaseLayout title="Managed IT Services" description="Outsourced IT support you can trust. Helpdesk, monitoring, security, backup, cloud management. One point of contact. Proactive support.">
+
+  <!-- ════════════════════════════════════════
+       Section 1: Hero
+       ════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--1"></div>
+    <div class="hero__glow hero__glow--2"></div>
+    <div class="container">
+      <div class="hero__content hero-animate">
+        <span class="section-label">Managed IT Services</span>
+        <h1 class="hero__title">Your IT department. Without the overhead.</h1>
+        <p class="hero__subtitle">Monitoring, help desk, security, and maintenance from a team that knows your business. One point of contact, proactive support, no runaround.</p>
+        <div class="hero__actions">
+          <a href="/contact/" class="btn btn--primary">Get a Free Assessment</a>
+          <a href="#services" class="btn btn--ghost">What's Included</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 2: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="mit-problem animate-on-scroll">
+        <span class="section-label">The Problem</span>
+        <h2>You're juggling too many vendors and phone trees.</h2>
+        <p class="text-large">You've got your internet provider, your email provider, your cloud hosting, your antivirus vendor, your backup vendor. When something breaks, you call someone. They blame someone else. You're stuck in the middle waiting for answers.</p>
+        <p class="text-large">Or you have one IT person who's overwhelmed, putting out fires instead of planning ahead. When they leave, you lose everything. Meanwhile, threats aren't being caught. Patches aren't being applied. Backups aren't being tested. You're hoping nothing breaks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 3: What We Provide
+       ════════════════════════════════════════ -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="mit-services__header animate-on-scroll">
+        <span class="section-label">Services</span>
+        <h2>Full-stack IT support. All in one place.</h2>
+      </div>
+
+      <div class="mit-services__grid stagger-children">
+        <div class="card mit-service-card">
+          <div class="card__icon" style="width:32px;height:32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3 class="card__title">Helpdesk & User Support</h3>
+          <p class="card__text">One point of contact for every issue. Your staff reaches out to us directly and we own the problem until it's resolved. No transfers, no ticket black holes.</p>
+        </div>
+
+        <div class="card mit-service-card">
+          <div class="card__icon" style="width:32px;height:32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="card__title">Continuous Monitoring & Alerts</h3>
+          <p class="card__text">Around-the-clock monitoring for threats and system health. Antivirus, email filtering, endpoint protection, and patch management, all handled proactively so problems don't reach your staff.</p>
+        </div>
+
+        <div class="card mit-service-card">
+          <div class="card__icon" style="width:32px;height:32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+          </div>
+          <h3 class="card__title">Patch Management</h3>
+          <p class="card__text">Security patches and updates are applied automatically on your schedule. Your systems stay current without your team doing the legwork.</p>
+        </div>
+
+        <div class="card mit-service-card">
+          <div class="card__icon" style="width:32px;height:32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          </div>
+          <h3 class="card__title">Cloud & Infrastructure Support</h3>
+          <p class="card__text">Microsoft 365, Google Workspace, AWS, Azure — we handle provisioning, configuration, and troubleshooting. Your infrastructure stays optimized and secure.</p>
+        </div>
+
+        <div class="card mit-service-card">
+          <div class="card__icon" style="width:32px;height:32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <h3 class="card__title">Cybersecurity & Compliance</h3>
+          <p class="card__text">Endpoint protection, firewalls, threat detection, and security training. Compliance handled for healthcare, finance, and regulated industries.</p>
+        </div>
+
+        <div class="card mit-service-card">
+          <div class="card__icon" style="width:32px;height:32px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="8" x="2" y="2" rx="2" ry="2"/><rect width="20" height="8" x="2" y="14" rx="2" ry="2"/><line x1="6" x2="6.01" y1="6" y2="6"/><line x1="6" x2="6.01" y1="18" y2="18"/></svg>
+          </div>
+          <h3 class="card__title">Backup & Disaster Recovery</h3>
+          <p class="card__text">Continuous backups with tested recovery plans. Ransomware, hardware failure, human error — we've got you covered.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 4: Proactive vs. Reactive
+       ════════════════════════════════════════ -->
+  <section class="section section--alt mit-compare">
+    <div class="container">
+      <div class="mit-compare__header animate-on-scroll">
+        <span class="section-label">Our Approach</span>
+        <h2>Proactive, not reactive. There's a difference.</h2>
+      </div>
+
+      <div class="mit-compare__grid animate-on-scroll">
+        <div class="mit-compare__side mit-compare__side--old">
+          <h3 class="mit-compare__side-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" x2="9" y1="9" y2="15"/><line x1="9" x2="15" y1="9" y2="15"/></svg>
+            Reactive IT (What Most Teams Do)
+          </h3>
+          <p class="mit-compare__how">Something breaks. Your team notices. They call IT. IT troubleshoots (45 minutes to 2 hours). Downtime costs money. Trust erodes.</p>
+          <p class="mit-compare__result">You're always playing catch-up. Your IT person is constantly firefighting. Nothing improves because you never get ahead of problems.</p>
+        </div>
+
+        <div class="mit-compare__side mit-compare__side--new">
+          <h3 class="mit-compare__side-title">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+            Proactive IT (What We Do)
+          </h3>
+          <p class="mit-compare__how">We monitor systems continuously. We catch issues before they impact you. We apply patches before vulnerabilities are exploited. We adjust before you exceed capacity. Your team barely knows we're there until something tries to go wrong.</p>
+          <p class="mit-compare__result">Problems are rare. When they happen, we fix them fast. Your IT person (or team) can focus on strategy and growth instead of firefighting.</p>
+        </div>
+      </div>
+
+      <div class="mit-compare__stat animate-on-scroll">
+        <span class="mit-compare__stat-number" data-count-to="70" data-count-suffix="%">0%</span>
+        <span class="mit-compare__stat-label">Proactive IT reduces downtime by 60-80% compared to reactive IT.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 5: How We Work With You
+       ════════════════════════════════════════ -->
+  <section class="section mit-process">
+    <div class="container">
+      <div class="mit-process__header animate-on-scroll">
+        <span class="section-label">The Process</span>
+        <h2>Simple. Straightforward. You know what to expect.</h2>
+      </div>
+
+      <div class="timeline animate-on-scroll" style="margin-top: var(--space-xl);">
+        <div class="timeline__step">
+          <div class="timeline__marker"></div>
+          <span class="timeline__step-label">Step 01</span>
+          <h3 class="timeline__step-title">Assessment</h3>
+          <p class="timeline__step-text">We understand your systems, what's critical, and what's broken. We ask about your goals — growth, compliance, security, cost control.</p>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__marker"></div>
+          <span class="timeline__step-label">Step 02</span>
+          <h3 class="timeline__step-title">Plan & Quote</h3>
+          <p class="timeline__step-text">We propose a fixed-price plan. Monitoring, support, updates, security. You know what you pay. You know what you get.</p>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__marker"></div>
+          <span class="timeline__step-label">Step 03</span>
+          <h3 class="timeline__step-title">Onboarding</h3>
+          <p class="timeline__step-text">We set up monitoring, deploy security, configure your infrastructure. Your team gets trained. We're live in 1-2 weeks.</p>
+        </div>
+        <div class="timeline__step">
+          <div class="timeline__marker"></div>
+          <span class="timeline__step-label">Step 04</span>
+          <h3 class="timeline__step-title">Ongoing Support</h3>
+          <p class="timeline__step-text">One point of contact. You call or email. We own it. Monthly reviews, quarterly strategy calls. You're not a ticket.</p>
+        </div>
+      </div>
+
+      <p class="mit-process__note animate-on-scroll">One person. One number. Same answer every time.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 6: Who It's For
+       ════════════════════════════════════════ -->
+  <section class="section section--alt bg-dots mit-who">
+    <div class="container">
+      <div class="mit-who__header animate-on-scroll">
+        <span class="section-label">Right For</span>
+        <h2>If you need IT you can count on.</h2>
+      </div>
+
+      <div class="grid grid--2 stagger-children" style="margin-top: var(--space-xl);">
+        <div class="card mit-who__card">
+          <h3 class="card__title">Growing Companies (20-200 people)</h3>
+          <p class="card__text">You're too big for DIY IT. Too small for a full IT department. You need scalable support that grows with you.</p>
+          <p class="mit-who__benefit">Managed IT costs less than hiring an IT manager or director. You get enterprise-grade support at SMB price.</p>
+        </div>
+
+        <div class="card mit-who__card">
+          <h3 class="card__title">Companies Without an IT Person</h3>
+          <p class="card__text">You don't have IT staff. Maybe you had one who left. You've been limping along with contractors or no plan.</p>
+          <p class="mit-who__benefit">Managed IT replaces the IT person. Lower cost, more consistent, less institutional knowledge risk.</p>
+        </div>
+
+        <div class="card mit-who__card">
+          <h3 class="card__title">Companies with One IT Person</h3>
+          <p class="card__text">You have one IT person who's overwhelmed. They're putting out fires but not planning for the future. They're burnt out or threatening to leave.</p>
+          <p class="mit-who__benefit">Managed IT augments your person. They focus on strategy. We handle the routine work. Your person is happier and less likely to leave.</p>
+        </div>
+
+        <div class="card mit-who__card">
+          <h3 class="card__title">Compliance-Heavy Businesses</h3>
+          <p class="card__text">You have regulatory requirements (HIPAA, SOX, GDPR, etc.). You need consistent audit trails, security monitoring, and backup verification.</p>
+          <p class="mit-who__benefit">We handle compliance. We document everything. Audits are clean. You sleep better.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 7: Pricing
+       ════════════════════════════════════════ -->
+  <section class="section mit-pricing">
+    <div class="container">
+      <div class="mit-pricing__inner animate-on-scroll">
+        <span class="section-label">Pricing</span>
+        <h2>Transparent pricing. No surprises.</h2>
+        <p class="text-large text-secondary">Managed IT plans typically run $500-2,000/month depending on size, complexity, and service level. Helpdesk, monitoring, patching, cloud management, and basic security included. Advanced security and infrastructure projects are quoted separately.</p>
+        <p class="text-large text-secondary">All-in quote after the assessment. No surprises.</p>
+        <a href="/contact/" class="btn btn--primary" style="margin-top: var(--space-lg);">Get in Touch for a Quote</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 8: FAQ
+       ════════════════════════════════════════ -->
+  <section class="section section--alt mit-faq">
+    <div class="container">
+      <div class="mit-faq__header animate-on-scroll">
+        <h2>Questions about managed IT?</h2>
+      </div>
+
+      <div class="faq-list animate-on-scroll">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Will this replace our IT person?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">It depends. If you have someone, we augment them — they focus on strategy, we handle routine work. If you don't have anyone, we replace that role. Either way, your IT is more reliable and cheaper.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do I have to sign a long-term contract?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">No. Month-to-month agreements. If we're not delivering, you're not stuck.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            What's included vs. extra?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">Helpdesk, monitoring, patching, cloud management, basic security, and backup are standard. Infrastructure projects are quoted separately.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How quickly do you respond?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">Critical issues get immediate attention. Routine requests are acknowledged within the hour. You'll always know the status.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Do we own our data?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">Yes. It's yours. We help you transfer it if you leave. You're not locked in.</div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How do you handle security?
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer__inner">Endpoint protection, firewalls, threat monitoring, and user training. Advanced security is an add-on.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Section 9: CTA
+       ════════════════════════════════════════ -->
+  <CTASection
+    headline="Let's talk about your IT."
+    source="managed-it"
+  />
+
+</BaseLayout>
+
+<style>
+  /* ──────────────────────────────────────
+     Managed IT — scoped styles
+     ────────────────────────────────────── */
+
+  /* Problem section */
+  .mit-problem {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  .mit-problem h2 {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .mit-problem p {
+    color: var(--text-secondary);
+  }
+
+  .mit-problem p + p {
+    margin-top: var(--space-md);
+  }
+
+  /* Services header */
+  .mit-services__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .mit-services__header h2 {
+    margin-top: var(--space-sm);
+  }
+
+  .mit-services__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .mit-service-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Proactive vs Reactive comparison */
+  .mit-compare__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .mit-compare__header h2 {
+    margin-top: var(--space-sm);
+  }
+
+  .mit-compare__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .mit-compare__side {
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .mit-compare__side--old {
+    background-color: rgba(255, 255, 255, 0.02);
+  }
+
+  .mit-compare__side--new {
+    background-color: rgba(26, 118, 188, 0.06);
+    border-color: var(--border-accent);
+  }
+
+  .mit-compare__side-title {
+    font-family: var(--font-heading);
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin-bottom: var(--space-md);
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .mit-compare__side--old .mit-compare__side-title {
+    color: var(--text-secondary);
+  }
+
+  .mit-compare__side--old .mit-compare__side-title svg {
+    color: var(--accent-warm);
+  }
+
+  .mit-compare__side--new .mit-compare__side-title {
+    color: var(--accent-primary-hover);
+  }
+
+  .mit-compare__side--new .mit-compare__side-title svg {
+    color: var(--accent-primary-hover);
+  }
+
+  .mit-compare__how {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .mit-compare__result {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  .mit-compare__side--old .mit-compare__result {
+    color: var(--text-secondary);
+  }
+
+  .mit-compare__side--new .mit-compare__result {
+    color: var(--text-primary);
+  }
+
+  .mit-compare__stat {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+    padding: var(--space-lg);
+    background-color: var(--bg-subtle);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .mit-compare__stat-number {
+    font-family: var(--font-mono);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-primary-hover);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .mit-compare__stat-label {
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Process section */
+  .mit-process__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .mit-process__header h2 {
+    margin-top: var(--space-sm);
+  }
+
+  .mit-process__note {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    color: var(--accent-primary-hover);
+    margin-top: var(--space-xl);
+    padding-left: var(--space-xl);
+    font-weight: 500;
+  }
+
+  /* Who it's for */
+  .mit-who__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .mit-who__header h2 {
+    margin-top: var(--space-sm);
+  }
+
+  .mit-who__card .card__text {
+    margin-bottom: var(--space-md);
+  }
+
+  .mit-who__benefit {
+    font-size: 0.9375rem;
+    color: var(--accent-primary-hover);
+    font-weight: 500;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-subtle);
+  }
+
+  /* Pricing section */
+  .mit-pricing__inner {
+    max-width: 700px;
+    margin-inline: auto;
+  }
+
+  .mit-pricing__inner h2 {
+    margin-top: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+
+  .mit-pricing__inner p + p {
+    margin-top: var(--space-md);
+  }
+
+  /* FAQ section */
+  .mit-faq__header {
+    max-width: 800px;
+    margin-bottom: var(--space-xl);
+  }
+
+  /* Responsive */
+  @media (min-width: 768px) {
+    .mit-services__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mit-compare__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mit-compare__side-title {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .mit-services__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .mit-compare__stat-number {
+      font-size: 3rem;
+    }
+  }
+</style>
