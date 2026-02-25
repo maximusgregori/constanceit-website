@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout title="Tenant Communication Automation" description="Automate tenant communication for property management. Centralized maintenance requests, automated rent reminders, and lease renewal tracking. 95% on-time collection.">
+
+  <!-- ════════════════════════════════════════
+       Section 1: Hero
+       ════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
+    <div class="container">
+      <div class="hero__content hero-animate">
+        <SectionBadge text="REAL ESTATE USE CASE" variant="feature" />
+        <h1 class="hero__title">Tenant Communication <span class="accent-violet glow-heavy-violet">Automation</span></h1>
+        <p class="hero__subtitle">Maintenance requests, rent reminders, lease renewals — centralized and automated.</p>
+        <div class="hero__actions">
+          <a href="#contact-form" class="btn btn--primary">Get a Free Assessment</a>
+          <a href="#uc-solution" class="btn btn--ghost">See How It Works &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 2: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section uc-problem">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>Tenant communication is <span class="accent-coral glow-medium-coral">scattered</span> across email, phone, and text.</h2>
+        <p class="text-large text-secondary">No central system for maintenance requests. Rent reminders are manual. Lease renewals get missed until it's too late.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">MAINTENANCE</span>
+          <p class="card__text">Requests come in via email, phone, and text. No single place to track them. Tenants follow up because they don't know if anyone heard them.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">RENT COLLECTION</span>
+          <p class="card__text">Reminders sent manually or not at all. Late payments pile up. Chasing rent eats hours every month. No automated escalation.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">LEASE RENEWALS</span>
+          <p class="card__text">Renewal dates tracked in spreadsheets or not tracked at all. Missed renewals mean vacancy, turnover costs, and lost income.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 3: The Solution
+       ════════════════════════════════════════ -->
+  <section class="section uc-solution" id="uc-solution">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE SOLUTION" variant="solution" />
+        <h2>One system for every tenant <span class="accent-emerald glow-medium-emerald">interaction.</span></h2>
+        <p class="text-large text-secondary">Centralized tenant portal with automated maintenance routing, rent reminders, lease renewal notifications, and full communication logs.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3 class="card__title">Automated Maintenance Routing</h3>
+          <p class="card__text">Tenants submit requests through one portal. AI categorizes, prioritizes, and routes to the right vendor. Status updates sent automatically.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3 class="card__title">Automated Rent Reminders</h3>
+          <p class="card__text">Reminders go out on schedule — 5 days before, day of, day after. Late payment escalation automated. Online payment links included.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10.4 12.6a2 2 0 0 1 3 3L8 21l-4 1 1-4Z"/></svg>
+          </div>
+          <h3 class="card__title">Lease Renewal Alerts</h3>
+          <p class="card__text">Renewal notifications sent 90, 60, and 30 days before expiration. Terms prepared automatically. Zero missed renewals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: Results
+       ════════════════════════════════════════ -->
+  <section class="section uc-results">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="RESULTS" variant="info" />
+      </div>
+
+      <div class="uc-stats animate-on-scroll">
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--emerald">60%</span>
+          <span class="uc-stats__label">Faster maintenance response</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--violet">95%</span>
+          <span class="uc-stats__label">On-time rent collection</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--blue">0</span>
+          <span class="uc-stats__label">Missed renewals</span>
+        </div>
+      </div>
+
+      <p class="uc-results__note animate-on-scroll">Typical results based on industry benchmarks. Individual outcomes vary.</p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 5: CTA + Contact Form
+       ════════════════════════════════════════ -->
+  <section class="section uc-cta" id="contact-form">
+    <div class="uc-cta__glow"></div>
+    <div class="container">
+      <div class="uc-cta__inner animate-on-scroll">
+        <h2 class="uc-cta__headline">Ready to centralize your tenant <span class="accent-blue glow-medium-blue">communication?</span></h2>
+        <p class="uc-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="real-estate-tenant-communication" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ──────────────────────────────────────
+     Use Case Page — Scoped Styles
+     ────────────────────────────────────── */
+
+  /* Hero ambient glows */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section Headers ── */
+  .uc-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .uc-section-header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-section-header p {
+    margin-bottom: 0;
+  }
+
+  /* ── Solution Cards ── */
+  .uc-solution .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-solution .card__title {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Stats Strip ── */
+  .uc-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: var(--space-lg) 0;
+  }
+
+  .uc-stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .uc-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .uc-results__note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-lg);
+    opacity: 0.7;
+  }
+
+  /* ── CTA Section ── */
+  .uc-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uc-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(55, 147, 255, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .uc-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .uc-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
+  @media (min-width: 768px) {
+    .uc-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .uc-cta__headline {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .uc-cta__headline {
+      font-size: 2.5rem;
+    }
+  }
+</style>
