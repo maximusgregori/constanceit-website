@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import CTASection from '../components/CTASection.astro';
+import SectionBadge from '../components/SectionBadge.astro';
+import SectionDivider from '../components/SectionDivider.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <BaseLayout title="About" description="Meet Constance IT — a dependable AI-first IT partner for small businesses. One point of contact, consistent results, no runaround.">
@@ -9,123 +11,147 @@ import CTASection from '../components/CTASection.astro';
        Section 1: Hero
        ════════════════════════════════════════ -->
   <section class="hero about-hero">
-    <div class="hero__glow hero__glow--1"></div>
-    <div class="hero__glow hero__glow--2"></div>
+    <div class="about-hero__glow about-hero__glow--violet"></div>
+    <div class="about-hero__glow about-hero__glow--blue"></div>
     <div class="container">
-      <div class="hero__content hero-animate" style="max-width: 650px;">
-        <h1 class="hero__title">The story behind Constance IT</h1>
-        <p class="hero__subtitle">Most IT firms are built to maximize billable hours. Most AI consultants are built to justify their own existence. Constance IT exists to solve a different problem: SMBs shouldn't have to navigate the gap between their tools, their technology, and their growth.</p>
+      <div class="hero__content hero-animate" style="max-width: 700px;">
+        <h1 class="hero__title">The story behind <span class="accent-violet glow-heavy-violet">Constance IT</span></h1>
+        <p class="hero__subtitle">Most IT firms maximize billable hours. Most AI consultants justify their own existence. Constance IT exists to solve a different problem.</p>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
        Section 2: Why "Constance"?
        ════════════════════════════════════════ -->
-  <section class="section section--alt about-name">
+  <section class="section about-name">
     <div class="container">
       <div class="about-name__inner animate-on-scroll">
-        <span class="section-label">The Name</span>
-        <h2>Constance means constant. Reliable. Steady.</h2>
-        <div class="about-name__body">
-          <p class="text-large">An SMB doesn't need a vendor. Doesn't need a consultant who shows up once and disappears. Doesn't need a helpdesk that shuffles you around.</p>
-          <p class="text-large">What you need is constant. Someone who's there. Someone who knows your business, your team, your history. Someone you can call and get a straight answer.</p>
-          <p class="text-large">That's what the name means. One point of contact. Consistent support. Reliable results.</p>
+        <SectionBadge text="THE NAME" variant="info" />
+        <h2>Constance means <span class="accent-violet glow-medium-violet">constant.</span> Reliable. Steady.</h2>
+
+        <div class="about-name__blocks">
+          <p class="about-name__block">An SMB doesn't need a vendor. Doesn't need a consultant who shows up once and disappears.</p>
+          <p class="about-name__block">What you need is constant. Someone who's there. Someone who knows your business, your team, your history.</p>
+          <p class="about-name__block">That's what the name means. One point of contact. Consistent support. Reliable results.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 3: Our Philosophy
        ════════════════════════════════════════ -->
   <section class="section about-philosophy">
     <div class="container">
-      <div class="about-philosophy__header animate-on-scroll">
-        <span class="section-label">How We Think</span>
-        <h2>Three principles. One approach.</h2>
+      <div class="about-section-header animate-on-scroll">
+        <SectionBadge text="HOW WE THINK" variant="info" />
+        <h2>Three <span class="accent-violet glow-medium-violet">principles.</span> One approach.</h2>
       </div>
 
-      <div class="grid grid--3 stagger-children" style="margin-top: var(--space-xl);">
-        <!-- Card 1: One Point of Contact -->
-        <div class="card">
-          <div class="card__icon" style="width:32px;height:32px;">
+      <div class="about-philosophy__grid stagger-children">
+        <!-- Card 1: Accountability -->
+        <div class="card card--feature about-philosophy__card about-philosophy__card--violet">
+          <div class="card__icon icon-glow-violet">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
           </div>
+          <span class="card__category accent-violet glow-medium-violet">ACCOUNTABILITY</span>
           <h3 class="card__title">One Person, Full Responsibility</h3>
           <p class="card__text">One person who knows your business, your team, your history. No queues. No transfers. One person who owns the outcome.</p>
         </div>
 
-        <!-- Card 2: Problem-First -->
-        <div class="card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 2: Honesty -->
+        <div class="card card--feature about-philosophy__card about-philosophy__card--violet">
+          <div class="card__icon icon-glow-violet">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
           </div>
+          <span class="card__category accent-violet glow-medium-violet">HONESTY</span>
           <h3 class="card__title">Problem-First Approach</h3>
-          <p class="card__text">We ask what's broken before selling a solution. Sometimes it's AI automation. Sometimes simpler works better. We tell you the truth.</p>
+          <p class="card__text">We ask what's broken before selling a solution. If a simpler approach works better, we'll tell you.</p>
         </div>
 
-        <!-- Card 3: Three Services -->
-        <div class="card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 3: Completeness -->
+        <div class="card card--feature about-philosophy__card about-philosophy__card--violet">
+          <div class="card__icon icon-glow-violet">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>
           </div>
+          <span class="card__category accent-violet glow-medium-violet">COMPLETENESS</span>
           <h3 class="card__title">AI, IT, and Infrastructure</h3>
-          <p class="card__text">Three services working together: AI & Automation (eliminate repetitive work), Managed IT (secure infrastructure), IT Infrastructure (systems that scale). Your complete foundation.</p>
+          <p class="card__text">Three services working together. Eliminate repetitive work. Secure your infrastructure. Build systems that scale.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 4: Built for SMBs
        ════════════════════════════════════════ -->
-  <section class="section section--alt about-smb bg-dots">
+  <section class="section about-smb">
     <div class="container">
-      <div class="split about-smb__layout">
-        <div class="about-smb__text animate-on-scroll">
-          <span class="section-label">Our Focus</span>
-          <h2>We work with teams our size. On purpose.</h2>
-          <p class="text-large">Enterprise IT firms charge for their overhead. AI consultants sell strategy decks to companies with infinite budgets. We work with businesses of 5 to 200 people. Our pricing, process, and communication are built for that.</p>
+      <div class="about-section-header animate-on-scroll">
+        <SectionBadge text="OUR FOCUS" variant="feature" />
+        <h2>We work with teams <span class="accent-blue glow-medium-blue">our size.</span> On purpose.</h2>
+        <p class="text-large text-secondary">Enterprise firms charge for their overhead. We work with businesses of 5 to 200 people.</p>
+      </div>
+
+      <div class="about-smb__grid stagger-children">
+        <!-- Card 1: Flexibility -->
+        <div class="card card--feature about-smb__card">
+          <span class="card__category accent-blue glow-medium-blue">FLEXIBILITY</span>
+          <p class="card__text">No long contracts. You pay for value, not commitments.</p>
         </div>
 
-        <div class="about-smb__points stagger-children">
-          <div class="about-point">
-            <h3 class="about-point__title">No long contracts</h3>
-            <p class="about-point__text">You pay for value, not commitments.</p>
-          </div>
-          <div class="about-point">
-            <h3 class="about-point__title">No jargon</h3>
-            <p class="about-point__text">Straight answers, no consultant-speak.</p>
-          </div>
-          <div class="about-point">
-            <h3 class="about-point__title">Tools you already have</h3>
-            <p class="about-point__text">We integrate with your stack, not replace it.</p>
-          </div>
-          <div class="about-point">
-            <h3 class="about-point__title">Speed over perfection</h3>
-            <p class="about-point__text">We ship fast, you see results, we iterate.</p>
-          </div>
+        <!-- Card 2: Clarity -->
+        <div class="card card--feature about-smb__card">
+          <span class="card__category accent-blue glow-medium-blue">CLARITY</span>
+          <p class="card__text">Straight answers, no consultant-speak. No jargon.</p>
+        </div>
+
+        <!-- Card 3: Compatibility -->
+        <div class="card card--feature about-smb__card">
+          <span class="card__category accent-blue glow-medium-blue">COMPATIBILITY</span>
+          <p class="card__text">We integrate with your existing tools. We don't replace your stack.</p>
+        </div>
+
+        <!-- Card 4: Speed -->
+        <div class="card card--feature about-smb__card">
+          <span class="card__category accent-blue glow-medium-blue">SPEED</span>
+          <p class="card__text">We ship fast, you see results, we iterate. Speed over perfection.</p>
         </div>
       </div>
     </div>
   </section>
+
+  <SectionDivider />
 
   <!-- ════════════════════════════════════════
        Section 5: Meet Max Gregori
        ════════════════════════════════════════ -->
   <section class="section about-founder">
     <div class="container">
-      <div class="split about-founder__layout">
-        <div class="about-founder__text animate-on-scroll">
-          <span class="section-label">Founder & Principal</span>
-          <h2>Built by someone who's been in the room when things break.</h2>
-          <p class="text-large">I was born in Germany, lived in South Africa for six years, and eventually made my way to the US where I studied Management and Entrepreneurship at UT Austin.</p>
-          <p class="text-large">I've been in the startup and IT space for over eight years now, mostly on the business development side. I co-founded a digital agency at 18, managed 250+ technology projects across 500+ healthcare facilities, and built AI systems that cut operational overhead by 70%. I'm PMP-certified and bilingual in German and English.</p>
-          <p class="text-large">I started Constance IT because I kept seeing the same thing: small businesses had access to great tools but nobody sticking around to make sure they actually worked. That's what we do. I'm based in Austin and you'll work with me directly.</p>
+      <div class="about-section-header animate-on-scroll" style="text-align: left; margin-inline: 0;">
+        <SectionBadge text="FOUNDER & PRINCIPAL" variant="info" />
+        <h2>Built by someone who's been in the room when things <span class="accent-violet glow-medium-violet">break.</span></h2>
+      </div>
+
+      <div class="about-founder__layout stagger-children">
+        <div class="about-founder__bio">
+          <p class="about-founder__block">Born in Germany, lived in South Africa for six years, eventually made my way to the US. Studied Management and Entrepreneurship at UT Austin.</p>
+
+          <p class="about-founder__block">Eight years in the startup and IT space, mostly business development. Co-founded a digital agency at 18, managed 250+ technology projects across 500+ healthcare facilities, built AI systems that cut operational overhead by 70%.</p>
+
+          <p class="about-founder__block">PMP-certified. Bilingual in German and English.</p>
+
+          <p class="about-founder__block">I started Constance IT because I kept seeing the same thing: small businesses had access to great tools but nobody sticking around to make sure they worked. I'm based in Austin and you'll work with me directly.</p>
         </div>
 
-        <div class="about-founder__photo animate-on-scroll">
+        <div class="about-founder__photo">
           <div class="about-founder__placeholder" aria-hidden="true">
             <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
             <span>Max Gregori</span>
@@ -135,30 +161,82 @@ import CTASection from '../components/CTASection.astro';
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 6: Final CTA
+       Section 6: CTA + Contact Form
        ════════════════════════════════════════ -->
-  <CTASection
-    headline="Want to see if we're the right fit?"
-    subtext="Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time."
-    source="about"
-  />
+  <section class="section about-cta">
+    <div class="about-cta__glow"></div>
+    <div class="container">
+      <div class="about-cta__inner animate-on-scroll">
+        <h2 class="about-cta__headline">Want to see if we're the <span class="accent-violet glow-medium-violet">right fit?</span></h2>
+        <p class="about-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="about" />
+        <p class="about-cta__link">
+          <a href="/services/">See how we work &rarr;</a>
+        </p>
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>
 
 <style>
   /* ──────────────────────────────────────
-     About page scoped styles
+     About Page — Scoped Styles (Phase 8b)
      ────────────────────────────────────── */
 
-  /* Hero — full viewport height */
+  /* ── Hero ── */
   .about-hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    position: relative;
+    overflow: hidden;
   }
 
-  /* Why "Constance"? */
+  .about-hero__glow {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    filter: blur(60px);
+  }
+
+  .about-hero__glow--violet {
+    width: 500px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    top: 15%;
+    left: 10%;
+  }
+
+  .about-hero__glow--blue {
+    width: 400px;
+    height: 350px;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.05) 0%, transparent 70%);
+    bottom: 10%;
+    right: 5%;
+  }
+
+  /* ── Shared section header ── */
+  .about-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .about-section-header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .about-section-header p {
+    margin-inline: auto;
+  }
+
+  /* ── Section 2: Why "Constance"? ── */
   .about-name__inner {
     max-width: 800px;
     margin-inline: auto;
@@ -166,92 +244,95 @@ import CTASection from '../components/CTASection.astro';
   }
 
   .about-name__inner h2 {
-    margin-bottom: var(--space-lg);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-xl);
   }
 
-  .about-name__body {
+  .about-name__blocks {
     text-align: left;
-    border-left: 3px solid var(--accent-primary);
-    padding-left: var(--space-lg);
     max-width: 650px;
     margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
   }
 
-  .about-name__body p {
+  .about-name__block {
     color: var(--text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.7;
+    padding-left: var(--space-lg);
+    border-left: 2px solid var(--accent-violet);
+    box-shadow: inset 2px 0 8px rgba(181, 178, 255, 0.08);
   }
 
-  .about-name__body p + p {
-    margin-top: var(--space-md);
+  /* ── Section 3: Philosophy ── */
+  .about-philosophy__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
   }
 
-  /* Philosophy header */
-  .about-philosophy__header {
-    text-align: center;
-    max-width: 600px;
-    margin-inline: auto;
+  .about-philosophy__card--violet {
+    border-left: 2px solid var(--accent-violet);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(181, 178, 255, 0.03) 50%, var(--bg-elevated) 100%);
+    box-shadow: inset 0 0 20px rgba(181, 178, 255, 0.02);
   }
 
-  .about-philosophy__header h2 {
-    margin-top: var(--space-sm);
-  }
-
-  /* SMB section */
-  .about-smb__text {
-    max-width: 550px;
-  }
-
-  .about-smb__text h2 {
+  .about-philosophy__card .card__icon {
+    width: 32px;
+    height: 32px;
     margin-bottom: var(--space-lg);
   }
 
-  .about-smb__text p {
-    color: var(--text-secondary);
+  .about-philosophy__card .card__category {
+    margin-bottom: var(--space-sm);
   }
 
-  .about-smb__points {
+  .about-philosophy__card .card__title {
+    margin-bottom: var(--space-sm);
+  }
+
+  /* ── Section 4: Built for SMBs ── */
+  .about-smb__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-md);
   }
 
-  .about-point {
+  .about-smb__card {
     padding: var(--space-lg);
-    background-color: var(--bg-subtle);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-md);
-    transition: border-color 0.2s ease;
   }
 
-  .about-point:hover {
-    border-color: var(--border-accent);
+  .about-smb__card .card__category {
+    margin-bottom: var(--space-sm);
   }
 
-  .about-point__title {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--accent-primary-hover);
-    margin-bottom: var(--space-xs);
+  /* ── Section 5: Meet Max Gregori ── */
+  .about-founder__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    align-items: start;
   }
 
-  .about-point__text {
-    font-size: 0.9375rem;
+  .about-founder__bio {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+  }
+
+  .about-founder__block {
     color: var(--text-secondary);
-    line-height: 1.6;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    padding-left: var(--space-lg);
+    border-left: 2px solid var(--border-subtle);
+    transition: border-color 0.3s ease;
   }
 
-  /* Founder section */
-  .about-founder__text h2 {
-    margin-bottom: var(--space-lg);
-  }
-
-  .about-founder__text p {
-    color: var(--text-secondary);
-  }
-
-  .about-founder__text p + p {
-    margin-top: var(--space-md);
+  .about-founder__block:hover {
+    border-color: var(--accent-violet);
   }
 
   .about-founder__placeholder {
@@ -263,15 +344,17 @@ import CTASection from '../components/CTASection.astro';
     width: 100%;
     max-width: 360px;
     aspect-ratio: 3 / 4;
-    background-color: var(--bg-elevated);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(181, 178, 255, 0.03) 50%, var(--bg-elevated) 100%);
     border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+    border-radius: 12px;
     color: var(--text-secondary);
     margin-inline: auto;
   }
 
   .about-founder__placeholder svg {
     opacity: 0.4;
+    color: var(--accent-violet);
+    filter: drop-shadow(0 0 4px var(--accent-violet-glow));
   }
 
   .about-founder__placeholder span {
@@ -282,10 +365,85 @@ import CTASection from '../components/CTASection.astro';
     opacity: 0.6;
   }
 
-  /* Responsive */
+  /* ── Section 6: CTA ── */
+  .about-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(181, 178, 255, 0.05) 0%,
+      rgba(55, 147, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .about-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .about-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  .about-cta__link {
+    margin-top: var(--space-lg);
+    text-align: center;
+  }
+
+  .about-cta__link a {
+    color: var(--accent-blue);
+    text-shadow: 0 0 6px var(--accent-blue-glow);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  .about-cta__link a:hover {
+    color: var(--accent-blue-hover);
+    text-decoration: underline;
+  }
+
+  /* ── Responsive ── */
   @media (min-width: 768px) {
-    .about-smb__points {
+    .about-philosophy__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .about-smb__grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-founder__layout {
+      grid-template-columns: 1.5fr 1fr;
+      gap: var(--space-2xl);
+    }
+
+    .about-cta__headline {
+      font-size: 2rem;
     }
   }
 
@@ -298,6 +456,10 @@ import CTASection from '../components/CTASection.astro';
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+
+    .about-cta__headline {
+      font-size: 2.5rem;
     }
   }
 </style>
