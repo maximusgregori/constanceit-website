@@ -14,6 +14,14 @@ const industryLinks = [
   { label: 'Professional Services', href: '/industries/professional-services/' },
 ];
 
+const useCaseLinks = [
+  { label: 'Revenue Cycle Automation', href: '/use-cases/healthcare-revenue-cycle/' },
+  { label: 'Deal Sourcing & Lead Nurture', href: '/use-cases/real-estate-deal-sourcing/' },
+  { label: 'Inventory Sync', href: '/use-cases/ecommerce-inventory-sync/' },
+  { label: 'Lead Response & Booking', href: '/use-cases/professional-services-lead-response/' },
+  { label: 'Dispatch & Job Management', href: '/use-cases/professional-services-dispatch-management/' },
+];
+
 const companyLinks = [
   { label: 'About', href: '/about/' },
   { label: 'Blog', href: '/blog/' },
@@ -47,6 +55,16 @@ const companyLinks = [
         <h4>Industries</h4>
         <ul>
           {industryLinks.map(link => (
+            <li><a href={link.href}>{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Use Cases Column -->
+      <div class="footer-nav-group">
+        <h4>Use Cases</h4>
+        <ul>
+          {useCaseLinks.map(link => (
             <li><a href={link.href}>{link.label}</a></li>
           ))}
         </ul>

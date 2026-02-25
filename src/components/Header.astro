@@ -22,6 +22,43 @@ const industryLinks = [
   { label: 'E-Commerce', href: '/industries/ecommerce/' },
   { label: 'Professional Services', href: '/industries/professional-services/' },
 ];
+
+const useCaseGroups = [
+  {
+    category: 'Healthcare',
+    color: 'blue',
+    links: [
+      { label: 'Revenue Cycle Automation', href: '/use-cases/healthcare-revenue-cycle/' },
+      { label: 'Prior Authorization', href: '/use-cases/healthcare-prior-authorization/' },
+      { label: 'Clinical Documentation', href: '/use-cases/healthcare-clinical-documentation/' },
+    ],
+  },
+  {
+    category: 'Real Estate',
+    color: 'emerald',
+    links: [
+      { label: 'Deal Sourcing & Lead Nurture', href: '/use-cases/real-estate-deal-sourcing/' },
+      { label: 'Tenant Communication', href: '/use-cases/real-estate-tenant-communication/' },
+    ],
+  },
+  {
+    category: 'E-Commerce',
+    color: 'amber',
+    links: [
+      { label: 'Inventory Sync', href: '/use-cases/ecommerce-inventory-sync/' },
+      { label: 'Customer Service Automation', href: '/use-cases/ecommerce-customer-service/' },
+    ],
+  },
+  {
+    category: 'Professional Services',
+    color: 'violet',
+    links: [
+      { label: 'Lead Response & Booking', href: '/use-cases/professional-services-lead-response/' },
+      { label: 'Dispatch & Job Management', href: '/use-cases/professional-services-dispatch-management/' },
+      { label: 'Invoicing & Payment Collection', href: '/use-cases/professional-services-invoicing/' },
+    ],
+  },
+];
 ---
 
 <header class="site-header" role="banner">
@@ -61,6 +98,24 @@ const industryLinks = [
         </div>
       </div>
 
+      <!-- Use Cases Mega Dropdown -->
+      <div class="nav-dropdown nav-dropdown--mega">
+        <button type="button" class:list={['nav-link', 'nav-dropdown-trigger', { active: isActive('/use-cases/') }]}>
+          Use Cases
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+        <div class="nav-dropdown-menu nav-mega-menu">
+          {useCaseGroups.map(group => (
+            <div class="nav-mega-column">
+              <span class={`nav-mega-category accent-${group.color} glow-subtle-${group.color}`}>{group.category}</span>
+              {group.links.map(link => (
+                <a href={link.href}>{link.label}</a>
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+
       <a href="/blog/" class:list={['nav-link', { active: isActive('/blog/') }]}>Blog</a>
       <a href="/about/" class:list={['nav-link', { active: isActive('/about/') }]}>About</a>
       <a href="/contact/" class:list={['nav-link', { active: isActive('/contact/') }]}>Contact</a>
@@ -91,6 +146,16 @@ const industryLinks = [
     <span class="nav-mobile-group-label">Industries</span>
     {industryLinks.map(link => (
       <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
+    ))}
+
+    <span class="nav-mobile-group-label">Use Cases</span>
+    {useCaseGroups.map(group => (
+      <>
+        <span class={`nav-mobile-category accent-${group.color} glow-subtle-${group.color}`}>{group.category}</span>
+        {group.links.map(link => (
+          <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
+        ))}
+      </>
     ))}
 
     <a href="/blog/" class="nav-mobile-link">Blog</a>
