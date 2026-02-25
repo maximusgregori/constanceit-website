@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTASection from '../../components/CTASection.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
 
 <BaseLayout title="E-Commerce IT & AI Services" description="AI automation for SMB e-commerce and DTC brands. Automate inventory, customer service, marketing, orders, returns, and reviews so you can focus on growth.">
@@ -9,208 +11,327 @@ import CTASection from '../../components/CTASection.astro';
        Section 1: Hero
        ════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero__glow hero__glow--1"></div>
-    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
     <div class="container">
       <div class="hero__content hero-animate">
-        <span class="section-label">E-Commerce</span>
-        <h1 class="hero__title">Your inventory is out of sync. Customer service is killing your margins. Marketing feels generic.</h1>
-        <p class="hero__subtitle">You're competing against billion-dollar platforms. You don't have their budgets, but you can have their efficiency. Constance IT automates the workflows that eat your time and margin: inventory sync, customer service, personalized marketing, order management, returns processing, and review collection.</p>
+        <h1 class="hero__title">Your inventory is out of sync. Customer service is killing your <span class="accent-violet glow-heavy-violet">margins.</span></h1>
+        <p class="hero__subtitle">Inventory sync, customer service, personalized marketing, order management, returns, and reviews — automated. Compete on what matters: your product and your customers.</p>
         <div class="hero__actions">
-          <a href="/contact/" class="btn btn--primary">Get a Free Assessment</a>
-          <a href="#what-we-automate" class="btn btn--ghost">How We Help E-Commerce</a>
+          <a href="#contact-form" class="btn btn--primary">Get a Free Assessment</a>
+          <a href="#what-we-automate" class="btn btn--ghost">How We Help E-Commerce &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 2: The Problem
+       Section 2: Stats Strip
        ════════════════════════════════════════ -->
-  <section class="section section--alt">
+  <section class="section ec-stats">
     <div class="container">
-      <div class="ec-problem animate-on-scroll">
-        <span class="section-label">The Problem</span>
-        <h2>You're stuck doing the busywork that big platforms automated years ago.</h2>
-        <p class="text-large">Inventory across your channels gets out of sync — someone buys on your site while you're also listing on Amazon, and you oversell. Customer service is all email — each inquiry is a separate conversation. Marketing is batch-and-blast email because personalizing at scale would take forever. Order tracking goes out once, then customers ask where their package is anyway. Returns processing is a manual mess. And nobody's collecting reviews, so your social proof stays weak.</p>
-        <p class="text-large">Meanwhile, you're doing the work of a 50-person operation by yourself or with a tiny team. You're not lazy — you're just manually doing what should be automatic.</p>
-        <p class="text-large">The margins are thin. Your time is expensive. You can't hire people to send reminder emails and track down reviews. You need the work to be done without hiring, and without burning yourself out.</p>
-        <p class="text-large">That's what automation is for.</p>
+      <div class="ec-stats__grid animate-on-scroll">
+        <div class="ec-stats__item">
+          <span class="stat-number stat-number--emerald">0</span>
+          <span class="ec-stats__label">Oversells with synced inventory</span>
+        </div>
+        <div class="ec-stats__item">
+          <span class="stat-number stat-number--violet">24/7</span>
+          <span class="ec-stats__label">Automated customer responses</span>
+        </div>
+        <div class="ec-stats__item">
+          <span class="stat-number stat-number--blue">3x</span>
+          <span class="ec-stats__label">More reviews collected</span>
+        </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 3: What We Automate
+       Section 3: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section ec-problem">
+    <div class="container">
+      <div class="ec-problem__header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>You're doing the <span class="accent-coral glow-medium-coral">busywork</span> that big platforms automated years ago.</h2>
+        <p class="text-large text-secondary">The margins are thin. Your time is expensive. You can't hire people to send reminder emails and track down reviews.</p>
+      </div>
+
+      <div class="grid grid--2 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">INVENTORY</span>
+          <p class="card__text">Channels out of sync. Oversells happen. Someone buys on your site while you're listing on Amazon.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">CUSTOMER SERVICE</span>
+          <p class="card__text">Every inquiry is a separate email conversation. Each one eats 10 minutes of your time.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">MARKETING</span>
+          <p class="card__text">Batch-and-blast email because personalizing at scale would take forever. Generic messages, low engagement.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">SOCIAL PROOF</span>
+          <p class="card__text">Nobody's collecting reviews. Your social proof stays weak. Competitors with more reviews get the clicks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: What We Automate
        ════════════════════════════════════════ -->
   <section class="section" id="what-we-automate">
     <div class="container">
       <div class="ec-automate__header animate-on-scroll">
-        <span class="section-label">What We Automate</span>
-        <h2>The work you're doing in your sleep.</h2>
+        <SectionBadge text="WHAT WE AUTOMATE" variant="feature" />
+        <h2>The work you're doing in your <span class="accent-blue glow-medium-blue">sleep.</span></h2>
       </div>
 
       <div class="ec-automate__grid stagger-children">
-        <div class="card ec-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 1: Inventory -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16.5 9.4 7.55 4.24"/><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.29 7 12 12 20.71 7"/><line x1="12" x2="12" y1="22" y2="12"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">INVENTORY</span>
           <h3 class="card__title">AI Inventory Agents</h3>
-          <p class="card__text">Agentic AI agents forecast demand, optimize stock levels across channels, and automatically reorder when stock dips. Inventory syncs real-time across website, Amazon, Shopify, marketplaces. Overselling is eliminated. AI learns your seasonal patterns and adjusts proactively.</p>
+          <p class="card__text">Real-time inventory sync across website, Amazon, Shopify, marketplaces. AI forecasts demand and auto-reorders. Overselling eliminated.</p>
         </div>
 
-        <div class="card ec-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <!-- Card 2: Support -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">SUPPORT</span>
           <h3 class="card__title">Autonomous Customer Service Agents</h3>
-          <p class="card__text">Agentic AI handles customer inquiries end-to-end: answers questions, processes returns, tracks orders, and escalates only complex issues. Reduces support ticket volume by 40% and cuts average handling time significantly. Customers get 24/7 answers.</p>
+          <p class="card__text">AI handles inquiries end-to-end: answers questions, processes returns, tracks orders. Complex issues escalated. 24/7 responses.</p>
         </div>
 
-        <div class="card ec-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        <!-- Card 3: Orders -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">ORDERS</span>
           <h3 class="card__title">Autonomous Order Processing</h3>
-          <p class="card__text">AI agents automatically fulfill orders, send tracking updates, handle exceptions, and flag anomalies. Orders move from checkout to fulfillment with zero human touch. Customers get proactive shipping notifications. Fewer "where's my order" emails.</p>
+          <p class="card__text">Orders move from checkout to fulfillment with zero human touch. Proactive shipping notifications. Fewer "where's my order" emails.</p>
         </div>
 
-        <div class="card ec-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        <!-- Card 4: Marketing -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">MARKETING</span>
           <h3 class="card__title">AI Marketing Personalization</h3>
-          <p class="card__text">AI agents send personalized email and SMS based on customer behavior, purchase history, and browsing patterns. Abandoned cart recovery, re-engagement campaigns, product recommendations — all automated and contextualized.</p>
+          <p class="card__text">Personalized email and SMS based on behavior, purchase history, browsing patterns. Abandoned cart recovery, re-engagement campaigns — all automated.</p>
         </div>
 
-        <div class="card ec-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 5: Reviews -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">REVIEWS</span>
           <h3 class="card__title">Automated Review Collection</h3>
-          <p class="card__text">AI automatically requests reviews after delivery, at the right time, to the right people. Reviews post to Google, your site, and major platforms automatically. AI can even draft responses to negative reviews. Social proof builds without manual work.</p>
+          <p class="card__text">Requests reviews after delivery at the right time. Posts to Google and major platforms automatically. Social proof builds without manual work.</p>
         </div>
 
-        <div class="card ec-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 6: Sales -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">SALES</span>
           <h3 class="card__title">Sales & Lead Agents</h3>
-          <p class="card__text">For B2B e-commerce: AI agents qualify inbound leads, answer sales questions, and route hot prospects to your team. No lead falls through. No sales inquiry goes unanswered. Your team focuses on closing, not lead management.</p>
+          <p class="card__text">For B2B e-commerce: AI qualifies inbound leads, answers sales questions, routes hot prospects. No lead falls through.</p>
+        </div>
+      </div>
+
+      <!-- Use case links -->
+      <div class="ec-automate__links animate-on-scroll">
+        <p class="text-secondary">Explore specific workflows:</p>
+        <div class="ec-automate__link-grid">
+          <a href="/use-cases/ecommerce-inventory-sync/" class="ec-automate__link accent-blue glow-subtle-blue">Inventory Sync Automation &rarr;</a>
+          <a href="/use-cases/ecommerce-customer-service/" class="ec-automate__link accent-blue glow-subtle-blue">Customer Service Automation &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 4: How It Works
+       Section 5: How It Works
        ════════════════════════════════════════ -->
-  <section class="section section--alt">
+  <section class="section ec-process">
     <div class="container">
-      <div class="ec-process animate-on-scroll">
-        <span class="section-label">How It Works</span>
-        <h2>Fast. Built for your stack.</h2>
-        <p class="text-large">We audit your current operation: how inventory is managed, how customer service works, how marketing campaigns go out, what's in your order pipeline. We find the biggest time sinks and the quickest wins.</p>
-        <p class="text-large">Then we build automations that integrate with your existing tools — your e-commerce platform, payment processor, email provider, shipping carrier. No rip-and-replace. Just smart automation layered on top of what you're already using.</p>
-        <p class="text-large">After go-live, we monitor performance and adjust. If something isn't working, we fix it. If a new opportunity shows up — like seasonal campaigns or new sales channels — we automate that too. One contact who stays with you.</p>
+      <div class="ec-process__header animate-on-scroll">
+        <SectionBadge text="HOW IT WORKS" variant="solution" />
+        <h2>Fast. Built for your <span class="accent-emerald glow-medium-emerald">stack.</span></h2>
+      </div>
+
+      <div class="ec-timeline stagger-children">
+        <div class="ec-timeline__step">
+          <div class="ec-timeline__node">
+            <span class="ec-timeline__number accent-emerald glow-medium-emerald">01</span>
+          </div>
+          <div class="card card--solution ec-timeline__card">
+            <h3 class="card__title">Audit</h3>
+            <p class="card__text">We find the biggest time sinks in your inventory, customer service, marketing, and order pipeline. Quickest wins first.</p>
+          </div>
+        </div>
+
+        <div class="ec-timeline__step">
+          <div class="ec-timeline__node">
+            <span class="ec-timeline__number accent-emerald glow-medium-emerald">02</span>
+          </div>
+          <div class="card card--solution ec-timeline__card">
+            <h3 class="card__title">Build</h3>
+            <p class="card__text">Automations integrate with your existing tools — e-commerce platform, payment processor, email, shipping carrier. No rip-and-replace.</p>
+          </div>
+        </div>
+
+        <div class="ec-timeline__step">
+          <div class="ec-timeline__node">
+            <span class="ec-timeline__number accent-emerald glow-medium-emerald">03</span>
+          </div>
+          <div class="card card--solution ec-timeline__card">
+            <h3 class="card__title">Support</h3>
+            <p class="card__text">We monitor and adjust. New opportunities — seasonal campaigns, new channels — we automate those too. One contact who stays.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 5: Results
+       Section 6: Results
        ════════════════════════════════════════ -->
-  <section class="section">
+  <section class="section ec-results">
     <div class="container">
       <div class="ec-results__header animate-on-scroll">
-        <span class="section-label">Results</span>
-        <h2>Breathing room. And better numbers.</h2>
+        <SectionBadge text="RESULTS" variant="info" />
+        <h2>Breathing room. And better <span class="accent-violet glow-medium-violet">numbers.</span></h2>
       </div>
 
-      <div class="ec-results__grid stagger-children">
-        <div class="card ec-results__card">
-          <h3 class="card__title">You Get Your Time Back</h3>
-          <p class="card__text">Manual inventory checks, customer service email triage, marketing campaign setup, returns processing — these happen automatically now. Typical outcome: 8-12 hours per week that you can spend on product, strategy, or actually sleeping.</p>
+      <div class="grid grid--2 stagger-children">
+        <div class="card card--solution">
+          <span class="card__category accent-emerald glow-medium-emerald">TIME SAVED</span>
+          <p class="card__text">Manual inventory checks, email triage, marketing setup, returns processing — all automatic. 8–12 hours per week back.</p>
         </div>
-
-        <div class="card ec-results__card">
-          <h3 class="card__title">Customers Are Happier</h3>
-          <p class="card__text">Timely tracking updates. Fast responses to questions. Personalized recommendations. Fewer lost orders and confused customers. Happy customers buy more and refer friends.</p>
+        <div class="card card--solution">
+          <span class="card__category accent-emerald glow-medium-emerald">HAPPIER CUSTOMERS</span>
+          <p class="card__text">Timely tracking. Fast responses. Personalized recommendations. Happy customers buy more and refer friends.</p>
         </div>
-
-        <div class="card ec-results__card">
-          <h3 class="card__title">LTV Goes Up</h3>
-          <p class="card__text">Personalized marketing captures repeat purchases. Abandoned carts get recovered. Reviews build social proof and conversion. Fewer customers fall through the cracks. Each customer is worth more.</p>
+        <div class="card card--solution">
+          <span class="card__category accent-emerald glow-medium-emerald">HIGHER LTV</span>
+          <p class="card__text">Personalized marketing captures repeat purchases. Abandoned carts recovered. Reviews build social proof. Each customer worth more.</p>
         </div>
-
-        <div class="card ec-results__card">
-          <h3 class="card__title">Fulfillment Works Smoothly</h3>
-          <p class="card__text">Inventory never goes out of sync. Returns are processed without drama. Your logistics are optimized. You spend less time firefighting and more time growing.</p>
+        <div class="card card--solution">
+          <span class="card__category accent-emerald glow-medium-emerald">SMOOTH OPS</span>
+          <p class="card__text">Inventory never out of sync. Returns processed without drama. Less firefighting, more growing.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 6: The Moment
+       Section 7: CTA + Contact Form
        ════════════════════════════════════════ -->
-  <section class="section section--alt">
+  <section class="section ec-cta" id="contact-form">
+    <div class="ec-cta__glow"></div>
     <div class="container">
-      <div class="ec-moment animate-on-scroll">
-        <span class="section-label">The Moment</span>
-        <h2>Agentic AI is standard now.</h2>
-
-        <div class="ec-moment__split">
-          <div class="ec-moment__stat-block">
-            <p class="text-large">By 2028, one in three enterprise software platforms will include agentic AI. 80% of enterprise apps are expected to embed agents by 2026. Agentic commerce — where AI makes decisions and takes action autonomously, not just follows rules — is the new wave.</p>
-          </div>
-          <div class="ec-moment__stat-block ec-moment__stat-block--highlight">
-            <span class="ec-moment__highlight-label">Accessible to SMBs</span>
-            <p class="text-large">A typical SMB AI stack costs <span class="text-mono" style="color: var(--accent-primary-hover);">$200-500/month</span> and can replace the workload of 2-3 hires. Single agents start at $20/month. Even businesses with as few as 5 employees can implement autonomous workflows.</p>
-          </div>
-        </div>
-
-        <p class="text-large ec-moment__followup">Constance IT helps SMB e-commerce brands compete by building agentic workflows tailored to your stack. You keep your advantages — knowing your customers better, moving faster, being nimble. We build the autonomous systems that handle routine decisions and actions.</p>
+      <div class="ec-cta__inner animate-on-scroll">
+        <h2 class="ec-cta__headline">Ready to work on your business instead of <span class="accent-blue glow-medium-blue">in it?</span></h2>
+        <p class="ec-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="ecommerce" />
       </div>
     </div>
   </section>
-
-  <!-- ════════════════════════════════════════
-       Section 7: CTA
-       ════════════════════════════════════════ -->
-  <CTASection
-    headline="Ready to work on your business instead of in it?"
-    subtext="Whether you want a quick audit of where automation could help most, or you're ready to start building, we can help. Let's talk about what's taking your time right now and what we can automate."
-    source="ecommerce"
-  />
 
 </BaseLayout>
 
 <style>
   /* ──────────────────────────────────────
-     E-Commerce — scoped styles
+     E-Commerce Vertical — Scoped Styles
      ────────────────────────────────────── */
 
-  /* Problem section */
-  .ec-problem {
-    max-width: 800px;
+  /* Hero ambient glows */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section 2: Stats Strip ── */
+  .ec-stats__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+    max-width: 900px;
     margin-inline: auto;
+    padding: var(--space-xl) 0;
   }
 
-  .ec-problem h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-lg);
+  .ec-stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
   }
 
-  .ec-problem p {
+  .ec-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
     color: var(--text-secondary);
   }
 
-  .ec-problem p + p {
-    margin-top: var(--space-md);
+  /* ── Section 3: The Problem ── */
+  .ec-problem__header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
-  /* Automate section */
+  .ec-problem__header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ── Section 4: What We Automate ── */
   .ec-automate__header {
     text-align: center;
     max-width: 640px;
@@ -219,7 +340,7 @@ import CTASection from '../../components/CTASection.astro';
   }
 
   .ec-automate__header h2 {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
   }
 
   .ec-automate__grid {
@@ -228,30 +349,112 @@ import CTASection from '../../components/CTASection.astro';
     gap: var(--space-lg);
   }
 
-  .ec-automate__card .card__icon {
+  .ec-automate__grid .card__icon {
+    width: 32px;
+    height: 32px;
     margin-bottom: var(--space-md);
   }
 
-  /* Process section */
-  .ec-process {
-    max-width: 800px;
-    margin-inline: auto;
-  }
-
-  .ec-process h2 {
+  .ec-automate__grid .card__title {
     margin-top: var(--space-sm);
-    margin-bottom: var(--space-lg);
   }
 
-  .ec-process p {
-    color: var(--text-secondary);
+  /* Use case links */
+  .ec-automate__links {
+    margin-top: var(--space-xl);
+    text-align: center;
   }
 
-  .ec-process p + p {
+  .ec-automate__links p {
+    margin-bottom: var(--space-md);
+    font-size: 0.9375rem;
+  }
+
+  .ec-automate__link-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+  }
+
+  .ec-automate__link {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+  }
+
+  .ec-automate__link:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+
+  /* ── Section 5: How It Works (Timeline) ── */
+  .ec-process__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .ec-process__header h2 {
     margin-top: var(--space-md);
   }
 
-  /* Results section */
+  .ec-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 700px;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  /* Vertical connecting line */
+  .ec-timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-emerald), rgba(74, 222, 128, 0.15));
+    border-radius: 1px;
+  }
+
+  .ec-timeline__step {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .ec-timeline__node {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-deep);
+    border: 2px solid var(--accent-emerald);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 12px var(--accent-emerald-glow);
+  }
+
+  .ec-timeline__number {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .ec-timeline__card {
+    flex-grow: 1;
+  }
+
+  /* ── Section 6: Results ── */
   .ec-results__header {
     text-align: center;
     max-width: 640px;
@@ -260,85 +463,81 @@ import CTASection from '../../components/CTASection.astro';
   }
 
   .ec-results__header h2 {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
   }
 
-  .ec-results__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
+  /* ── Section 7: CTA ── */
+  .ec-cta {
+    position: relative;
+    overflow: hidden;
   }
 
-  .ec-results__card .card__text {
-    margin-top: var(--space-sm);
+  .ec-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(55, 147, 255, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
   }
 
-  /* Moment section */
-  .ec-moment {
-    max-width: 900px;
+  .ec-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
     margin-inline: auto;
   }
 
-  .ec-moment h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-xl);
-  }
-
-  .ec-moment__split {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-xl);
-  }
-
-  .ec-moment__stat-block {
-    padding: var(--space-lg);
-    background-color: var(--bg-subtle);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
-  }
-
-  .ec-moment__stat-block p {
-    color: var(--text-secondary);
-    max-width: 100%;
-  }
-
-  .ec-moment__stat-block--highlight {
-    border-color: var(--border-accent);
-  }
-
-  .ec-moment__highlight-label {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--accent-primary-hover);
+  .ec-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
     margin-bottom: var(--space-md);
   }
 
-  .ec-moment__followup {
-    color: var(--text-secondary);
+  .ec-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
   }
 
-  /* Responsive */
+  /* ── Responsive ── */
   @media (min-width: 768px) {
+    .ec-stats__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
     .ec-automate__grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .ec-results__grid {
-      grid-template-columns: repeat(2, 1fr);
+    .ec-automate__link-grid {
+      flex-direction: row;
+      justify-content: center;
+      gap: var(--space-lg);
     }
 
-    .ec-moment__split {
-      grid-template-columns: repeat(2, 1fr);
+    .ec-cta__headline {
+      font-size: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
     .ec-automate__grid {
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ec-cta__headline {
+      font-size: 2.5rem;
     }
   }
 </style>
