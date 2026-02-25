@@ -13,9 +13,12 @@
   10. CTA Section
   11. Blog Styles
   12. Contact Form
-  13. Responsive
-  14. Animations & Transitions
-  15. Accessibility
+  13. Neon Glow System
+  14. Section Badges
+  15. Gradient Section Divider
+  16. Responsive
+  17. Animations & Transitions
+  18. Accessibility
    ======================================== */
 
 
@@ -24,18 +27,45 @@
    ======================================== */
 
 :root {
-  /* Colors */
+  /* Backgrounds */
   --bg-deep: #0A0A0F;
   --bg-elevated: #141420;
   --bg-subtle: #1C1C2E;
+
+  /* Text */
   --text-primary: #EAEAF0;
   --text-secondary: #9898A6;
-  --accent-primary: #1A76BC;
-  --accent-primary-hover: #3D9BE0;
-  --accent-secondary: #5BB0ED;
-  --accent-warm: #F59E0B;
+
+  /* Multi-color accent system */
+  --accent-blue: #3793FF;
+  --accent-blue-hover: #60A5FA;
+  --accent-blue-glow: rgba(55, 147, 255, 0.6);
+
+  --accent-violet: #B5B2FF;
+  --accent-violet-hover: #C084FC;
+  --accent-violet-glow: rgba(181, 178, 255, 0.5);
+
+  --accent-emerald: #4ADE80;
+  --accent-emerald-hover: #77EDB0;
+  --accent-emerald-glow: rgba(74, 222, 128, 0.5);
+
+  --accent-coral: #FF6B6B;
+  --accent-coral-hover: #FF8A8A;
+  --accent-coral-glow: rgba(255, 107, 107, 0.5);
+
+  --accent-amber: #F59E0B;
+  --accent-amber-hover: #FBBF24;
+  --accent-amber-glow: rgba(245, 158, 11, 0.5);
+
+  /* Borders */
   --border-subtle: rgba(255, 255, 255, 0.06);
-  --border-accent: rgba(26, 118, 188, 0.15);
+  --border-accent: rgba(55, 147, 255, 0.15);
+
+  /* Backward compatibility */
+  --accent-primary: var(--accent-blue);
+  --accent-primary-hover: var(--accent-blue-hover);
+  --accent-secondary: var(--accent-blue-hover);
+  --accent-warm: var(--accent-amber);
 
   /* Spacing (8px base) */
   --space-xs: 4px;
@@ -650,15 +680,37 @@ p {
 }
 
 .btn--primary {
-  background-color: var(--accent-primary);
+  background-color: var(--accent-blue);
   color: var(--bg-deep);
   padding: 14px 28px;
   font-weight: 500;
+  border: 1px solid rgba(55, 147, 255, 0.3);
+  box-shadow: 0 0 15px var(--accent-blue-glow), 0 0 40px rgba(55, 147, 255, 0.2);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn--primary:hover,
 .btn--primary:focus-visible {
-  background-color: var(--accent-primary-hover);
+  background-color: var(--accent-blue-hover);
+  box-shadow: 0 0 20px var(--accent-blue-glow), 0 0 60px rgba(55, 147, 255, 0.3);
+  transform: scale(1.02);
+}
+
+.btn--emerald {
+  background-color: transparent;
+  color: var(--accent-emerald);
+  padding: 14px 28px;
+  border: 1px solid var(--accent-emerald);
+  box-shadow: 0 0 15px var(--accent-emerald-glow), 0 0 40px rgba(74, 222, 128, 0.15);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn--emerald:hover,
+.btn--emerald:focus-visible {
+  background-color: rgba(74, 222, 128, 0.1);
+  color: var(--accent-emerald-hover);
+  border-color: var(--accent-emerald-hover);
+  box-shadow: 0 0 20px var(--accent-emerald-glow), 0 0 60px rgba(74, 222, 128, 0.25);
   transform: scale(1.02);
 }
 
@@ -671,8 +723,8 @@ p {
 
 .btn--ghost:hover,
 .btn--ghost:focus-visible {
-  border-color: var(--accent-primary);
-  color: var(--accent-primary);
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
 }
 
 .btn--small {
@@ -733,7 +785,7 @@ p {
    ======================================== */
 
 .card {
-  background-color: var(--bg-elevated);
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(20, 20, 32, 0.8) 50%, var(--bg-elevated) 100%);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: var(--space-lg);
@@ -744,6 +796,53 @@ p {
   transform: translateY(-4px);
   border-color: var(--border-accent);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* Semantic card variants */
+.card--problem {
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(255, 107, 107, 0.03) 50%, var(--bg-elevated) 100%);
+  border-left: 2px solid var(--accent-coral);
+  box-shadow: inset 0 0 20px rgba(255, 107, 107, 0.02);
+}
+
+.card--solution {
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(74, 222, 128, 0.03) 50%, var(--bg-elevated) 100%);
+  border-left: 2px solid var(--accent-emerald);
+  box-shadow: inset 0 0 20px rgba(74, 222, 128, 0.02);
+}
+
+.card--feature {
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(55, 147, 255, 0.03) 50%, var(--bg-elevated) 100%);
+  border-left: 2px solid var(--accent-blue);
+  box-shadow: inset 0 0 20px rgba(55, 147, 255, 0.02);
+}
+
+.card--service-ai {
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(55, 147, 255, 0.03) 50%, var(--bg-elevated) 100%);
+  border-left: 2px solid var(--accent-blue);
+  box-shadow: inset 0 0 20px rgba(55, 147, 255, 0.02);
+}
+
+.card--service-it {
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(74, 222, 128, 0.03) 50%, var(--bg-elevated) 100%);
+  border-left: 2px solid var(--accent-emerald);
+  box-shadow: inset 0 0 20px rgba(74, 222, 128, 0.02);
+}
+
+.card--service-infra {
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
+  border-left: 2px solid var(--accent-amber);
+  box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
+}
+
+/* Monospace card category label */
+.card__category {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-sm);
 }
 
 .card__icon {
@@ -1433,7 +1532,181 @@ p {
 
 
 /* ========================================
-  13. Responsive
+  13. Neon Glow System
+   ======================================== */
+
+/* --- Heavy glow (hero accent words, stat numbers, CTA buttons) --- */
+.glow-heavy-blue {
+  text-shadow: 0 0 10px var(--accent-blue-glow), 0 0 40px rgba(55, 147, 255, 0.3), 0 0 80px rgba(55, 147, 255, 0.1);
+}
+.glow-heavy-violet {
+  text-shadow: 0 0 10px var(--accent-violet-glow), 0 0 40px rgba(181, 178, 255, 0.3), 0 0 80px rgba(181, 178, 255, 0.1);
+}
+.glow-heavy-emerald {
+  text-shadow: 0 0 10px var(--accent-emerald-glow), 0 0 40px rgba(74, 222, 128, 0.3), 0 0 80px rgba(74, 222, 128, 0.1);
+}
+.glow-heavy-coral {
+  text-shadow: 0 0 10px var(--accent-coral-glow), 0 0 40px rgba(255, 107, 107, 0.3), 0 0 80px rgba(255, 107, 107, 0.1);
+}
+.glow-heavy-amber {
+  text-shadow: 0 0 10px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.3), 0 0 80px rgba(245, 158, 11, 0.1);
+}
+
+/* --- Medium glow (section headings, badge labels, card heading accents) --- */
+.glow-medium-blue {
+  text-shadow: 0 0 8px var(--accent-blue-glow), 0 0 25px rgba(55, 147, 255, 0.2);
+}
+.glow-medium-violet {
+  text-shadow: 0 0 8px var(--accent-violet-glow), 0 0 25px rgba(181, 178, 255, 0.2);
+}
+.glow-medium-emerald {
+  text-shadow: 0 0 8px var(--accent-emerald-glow), 0 0 25px rgba(74, 222, 128, 0.2);
+}
+.glow-medium-coral {
+  text-shadow: 0 0 8px var(--accent-coral-glow), 0 0 25px rgba(255, 107, 107, 0.2);
+}
+.glow-medium-amber {
+  text-shadow: 0 0 8px var(--accent-amber-glow), 0 0 25px rgba(245, 158, 11, 0.2);
+}
+
+/* --- Subtle glow (icons, inline accents, small colored text) --- */
+.glow-subtle-blue {
+  text-shadow: 0 0 6px var(--accent-blue-glow);
+}
+.glow-subtle-violet {
+  text-shadow: 0 0 6px var(--accent-violet-glow);
+}
+.glow-subtle-emerald {
+  text-shadow: 0 0 6px var(--accent-emerald-glow);
+}
+.glow-subtle-coral {
+  text-shadow: 0 0 6px var(--accent-coral-glow);
+}
+.glow-subtle-amber {
+  text-shadow: 0 0 6px var(--accent-amber-glow);
+}
+
+/* --- Accent color text classes --- */
+.accent-blue { color: var(--accent-blue); }
+.accent-violet { color: var(--accent-violet); }
+.accent-emerald { color: var(--accent-emerald); }
+.accent-coral { color: var(--accent-coral); }
+.accent-amber { color: var(--accent-amber); }
+
+/* --- Icon glow (for inline SVG icons via filter: drop-shadow) --- */
+.icon-glow-blue {
+  filter: drop-shadow(0 0 4px var(--accent-blue-glow));
+  color: var(--accent-blue);
+}
+.icon-glow-violet {
+  filter: drop-shadow(0 0 4px var(--accent-violet-glow));
+  color: var(--accent-violet);
+}
+.icon-glow-emerald {
+  filter: drop-shadow(0 0 4px var(--accent-emerald-glow));
+  color: var(--accent-emerald);
+}
+.icon-glow-coral {
+  filter: drop-shadow(0 0 4px var(--accent-coral-glow));
+  color: var(--accent-coral);
+}
+.icon-glow-amber {
+  filter: drop-shadow(0 0 4px var(--accent-amber-glow));
+  color: var(--accent-amber);
+}
+
+/* --- Stat number glow styles --- */
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.stat-number--blue {
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px var(--accent-blue-glow), 0 0 40px rgba(55, 147, 255, 0.3), 0 0 80px rgba(55, 147, 255, 0.1);
+}
+.stat-number--violet {
+  color: var(--accent-violet);
+  text-shadow: 0 0 10px var(--accent-violet-glow), 0 0 40px rgba(181, 178, 255, 0.3), 0 0 80px rgba(181, 178, 255, 0.1);
+}
+.stat-number--emerald {
+  color: var(--accent-emerald);
+  text-shadow: 0 0 10px var(--accent-emerald-glow), 0 0 40px rgba(74, 222, 128, 0.3), 0 0 80px rgba(74, 222, 128, 0.1);
+}
+.stat-number--coral {
+  color: var(--accent-coral);
+  text-shadow: 0 0 10px var(--accent-coral-glow), 0 0 40px rgba(255, 107, 107, 0.3), 0 0 80px rgba(255, 107, 107, 0.1);
+}
+.stat-number--amber {
+  color: var(--accent-amber);
+  text-shadow: 0 0 10px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.3), 0 0 80px rgba(245, 158, 11, 0.1);
+}
+
+
+/* ========================================
+  14. Section Badges
+   ======================================== */
+
+.section-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid;
+  margin-bottom: var(--space-md);
+}
+
+.section-badge--problem {
+  color: var(--accent-coral);
+  border-color: rgba(255, 107, 107, 0.4);
+  text-shadow: 0 0 8px var(--accent-coral-glow), 0 0 25px rgba(255, 107, 107, 0.2);
+}
+
+.section-badge--solution {
+  color: var(--accent-emerald);
+  border-color: rgba(74, 222, 128, 0.4);
+  text-shadow: 0 0 8px var(--accent-emerald-glow), 0 0 25px rgba(74, 222, 128, 0.2);
+}
+
+.section-badge--feature {
+  color: var(--accent-blue);
+  border-color: rgba(55, 147, 255, 0.4);
+  text-shadow: 0 0 8px var(--accent-blue-glow), 0 0 25px rgba(55, 147, 255, 0.2);
+}
+
+.section-badge--info {
+  color: var(--accent-violet);
+  border-color: rgba(181, 178, 255, 0.4);
+  text-shadow: 0 0 8px var(--accent-violet-glow), 0 0 25px rgba(181, 178, 255, 0.2);
+}
+
+.section-badge--amber {
+  color: var(--accent-amber);
+  border-color: rgba(245, 158, 11, 0.4);
+  text-shadow: 0 0 8px var(--accent-amber-glow), 0 0 25px rgba(245, 158, 11, 0.2);
+}
+
+
+/* ========================================
+  15. Gradient Section Divider
+   ======================================== */
+
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-blue), var(--accent-violet), transparent);
+  border: none;
+  margin: 0;
+}
+
+
+/* ========================================
+  16. Responsive
    ======================================== */
 
 /* Tablet (768px+) */
@@ -1501,6 +1774,10 @@ p {
 
   .stat__number {
     font-size: 2.5rem;
+  }
+
+  .stat-number {
+    font-size: 3.5rem;
   }
 
   .hero {
@@ -1621,7 +1898,7 @@ p {
 
 
 /* ========================================
-  14. Animations & Transitions
+  17. Animations & Transitions
    ======================================== */
 
 /* Fade in from below — used by IntersectionObserver */
@@ -1700,7 +1977,7 @@ p {
 
 
 /* ========================================
-  15. Accessibility
+  18. Accessibility
    ======================================== */
 
 .skip-link {

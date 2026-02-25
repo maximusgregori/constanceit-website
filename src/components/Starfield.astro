@@ -1,0 +1,241 @@
+---
+/**
+ * Starfield Constellation Canvas
+ * Fixed position, full viewport, z-index -1.
+ * Constellation groups: rigid units of 2–4 dots + lines that drift together.
+ * Solo dots for additional density.
+ * Respects prefers-reduced-motion (static render, no animation).
+ */
+---
+
+<canvas id="starfield-canvas" aria-hidden="true"></canvas>
+
+<style>
+  #starfield-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  (function () {
+    'use strict';
+
+    const canvas = document.getElementById('starfield-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = window.innerWidth < 768;
+
+    // --- Configuration ---
+    const GROUP_COUNT = isMobile ? 10 : 20;
+    const SOLO_DOT_COUNT = isMobile ? 15 : 25;
+    const MIN_DOTS_PER_GROUP = 2;
+    const MAX_DOTS_PER_GROUP = 4;
+    const MIN_SPEED = 0.05;
+    const MAX_SPEED = 0.2;
+    const DOT_MIN_RADIUS = 0.8;
+    const DOT_MAX_RADIUS = 1.8;
+    const DOT_MIN_OPACITY = 0.15;
+    const DOT_MAX_OPACITY = 0.4;
+    const LINE_OPACITY = 0.04;
+    const LINE_WIDTH = 0.5;
+    const GROUP_SPREAD = 80; // max px offset of dots within a group
+
+    let width, height;
+    let constellationGroups = [];
+    let soloDots = [];
+    let animationId = null;
+
+    // --- Helpers ---
+    function rand(min, max) {
+      return Math.random() * (max - min) + min;
+    }
+
+    function randInt(min, max) {
+      return Math.floor(rand(min, max + 1));
+    }
+
+    // --- Resize handler ---
+    function resize() {
+      const dpr = window.devicePixelRatio || 1;
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      canvas.style.width = width + 'px';
+      canvas.style.height = height + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    // --- Create constellation groups ---
+    function createGroups() {
+      constellationGroups = [];
+      for (let i = 0; i < GROUP_COUNT; i++) {
+        const dotCount = randInt(MIN_DOTS_PER_GROUP, MAX_DOTS_PER_GROUP);
+        const dots = [];
+        for (let d = 0; d < dotCount; d++) {
+          dots.push({
+            offsetX: rand(-GROUP_SPREAD, GROUP_SPREAD),
+            offsetY: rand(-GROUP_SPREAD, GROUP_SPREAD),
+            radius: rand(DOT_MIN_RADIUS, DOT_MAX_RADIUS),
+            opacity: rand(DOT_MIN_OPACITY, DOT_MAX_OPACITY),
+          });
+        }
+
+        // Build line connections between sequential dots + one extra random connection
+        const lines = [];
+        for (let l = 0; l < dotCount - 1; l++) {
+          lines.push([l, l + 1]);
+        }
+        // Close the loop if 3+ dots, for a more constellation-like shape
+        if (dotCount >= 3) {
+          lines.push([dotCount - 1, 0]);
+        }
+
+        constellationGroups.push({
+          x: rand(0, width),
+          y: rand(0, height),
+          dx: rand(-MAX_SPEED, MAX_SPEED) || MIN_SPEED,
+          dy: rand(-MAX_SPEED, MAX_SPEED) || MIN_SPEED,
+          dots: dots,
+          lines: lines,
+        });
+      }
+    }
+
+    // --- Create solo dots ---
+    function createSoloDots() {
+      soloDots = [];
+      for (let i = 0; i < SOLO_DOT_COUNT; i++) {
+        soloDots.push({
+          x: rand(0, width),
+          y: rand(0, height),
+          dx: rand(-MAX_SPEED, MAX_SPEED) || MIN_SPEED,
+          dy: rand(-MAX_SPEED, MAX_SPEED) || MIN_SPEED,
+          radius: rand(DOT_MIN_RADIUS, DOT_MAX_RADIUS),
+          opacity: rand(DOT_MIN_OPACITY, DOT_MAX_OPACITY),
+        });
+      }
+    }
+
+    // --- Wrap around screen edges with buffer ---
+    function wrap(val, max, buffer) {
+      if (val < -buffer) return max + buffer;
+      if (val > max + buffer) return -buffer;
+      return val;
+    }
+
+    // --- Update positions ---
+    function update() {
+      const buffer = GROUP_SPREAD + 10;
+
+      for (let i = 0; i < constellationGroups.length; i++) {
+        const g = constellationGroups[i];
+        g.x += g.dx;
+        g.y += g.dy;
+        g.x = wrap(g.x, width, buffer);
+        g.y = wrap(g.y, height, buffer);
+      }
+
+      for (let i = 0; i < soloDots.length; i++) {
+        const d = soloDots[i];
+        d.x += d.dx;
+        d.y += d.dy;
+        d.x = wrap(d.x, width, 5);
+        d.y = wrap(d.y, height, 5);
+      }
+    }
+
+    // --- Draw ---
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw constellation groups
+      for (let i = 0; i < constellationGroups.length; i++) {
+        const g = constellationGroups[i];
+
+        // Draw lines
+        ctx.strokeStyle = 'rgba(255, 255, 255, ' + LINE_OPACITY + ')';
+        ctx.lineWidth = LINE_WIDTH;
+        for (let l = 0; l < g.lines.length; l++) {
+          const a = g.dots[g.lines[l][0]];
+          const b = g.dots[g.lines[l][1]];
+          ctx.beginPath();
+          ctx.moveTo(g.x + a.offsetX, g.y + a.offsetY);
+          ctx.lineTo(g.x + b.offsetX, g.y + b.offsetY);
+          ctx.stroke();
+        }
+
+        // Draw dots
+        for (let d = 0; d < g.dots.length; d++) {
+          const dot = g.dots[d];
+          ctx.beginPath();
+          ctx.arc(g.x + dot.offsetX, g.y + dot.offsetY, dot.radius, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(255, 255, 255, ' + dot.opacity + ')';
+          ctx.fill();
+        }
+      }
+
+      // Draw solo dots
+      for (let i = 0; i < soloDots.length; i++) {
+        const d = soloDots[i];
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255, 255, 255, ' + d.opacity + ')';
+        ctx.fill();
+      }
+    }
+
+    // --- Animation loop ---
+    function animate() {
+      update();
+      draw();
+      animationId = requestAnimationFrame(animate);
+    }
+
+    // --- Initialize ---
+    function init() {
+      resize();
+      createGroups();
+      createSoloDots();
+
+      if (prefersReducedMotion) {
+        // Static render — draw once, no animation
+        draw();
+      } else {
+        animate();
+      }
+    }
+
+    // --- Handle resize (debounced) ---
+    let resizeTimeout;
+    window.addEventListener('resize', function () {
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(function () {
+        resize();
+        // Recreate if viewport changed significantly
+        createGroups();
+        createSoloDots();
+        if (prefersReducedMotion) {
+          draw();
+        }
+      }, 250);
+    });
+
+    // --- Start ---
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script>

@@ -1,0 +1,19 @@
+---
+/**
+ * SectionBadge — Pill-style badge label above section headings.
+ * Props:
+ *   text:    Badge label text (e.g., "THE PROBLEM", "HOW WE WORK")
+ *   variant: "problem" | "solution" | "feature" | "info" | "amber"
+ *
+ * Color mapping:
+ *   problem  → Coral  (pain points, "THE PROBLEM")
+ *   solution → Emerald (outcomes, "THE SOLUTION", "HOW WE WORK", "OUR PROCESS")
+ *   feature  → Blue   (capabilities, "FEATURES", "WHAT WE BUILD")
+ *   info     → Violet (context, "WHY US", "ABOUT", "RESULTS", "BY THE NUMBERS")
+ *   amber    → Amber  (infrastructure, "PRICING", "INVESTMENT")
+ */
+
+const { text, variant = "feature" } = Astro.props;
+---
+
+<span class={`section-badge section-badge--${variant}`}>{text}</span>
