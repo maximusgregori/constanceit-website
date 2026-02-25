@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout title="Dispatch & Job Management" description="Automate dispatch and job management for service businesses. Smart tech assignment, route optimization, and real-time visibility. 2x more jobs per tech per day.">
+
+  <!-- ════════════════════════════════════════
+       Section 1: Hero
+       ════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
+    <div class="container">
+      <div class="hero__content hero-animate">
+        <SectionBadge text="PROFESSIONAL SERVICES USE CASE" variant="feature" />
+        <h1 class="hero__title">Dispatch & Job <span class="accent-violet glow-heavy-violet">Management</span></h1>
+        <p class="hero__subtitle">Jobs dispatched via phone and text. Wrong tech shows up. Double bookings. Nobody knows who's where.</p>
+        <div class="hero__actions">
+          <a href="#contact-form" class="btn btn--primary">Get a Free Assessment</a>
+          <a href="#uc-solution" class="btn btn--ghost">See How It Works &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 2: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section uc-problem">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>Your dispatch process is held together with <span class="accent-coral glow-medium-coral">texts</span> and hope.</h2>
+        <p class="text-large text-secondary">Jobs assigned over the phone. Techs drive across town because nobody checked availability. Customers have no idea when you're arriving.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">WRONG ASSIGNMENTS</span>
+          <p class="card__text">Jobs dispatched without checking skills, certifications, or availability. The wrong person shows up. Customer's frustrated. You scramble.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">WASTED DRIVE TIME</span>
+          <p class="card__text">No route optimization. Techs crisscross the same area. Gas and labor wasted on avoidable miles. Fewer jobs per day per tech.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">NO VISIBILITY</span>
+          <p class="card__text">You don't know where your crew is. Customers don't know when to expect you. Double bookings happen because there's no shared calendar.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 3: The Solution
+       ════════════════════════════════════════ -->
+  <section class="section uc-solution" id="uc-solution">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE SOLUTION" variant="solution" />
+        <h2>Automated dispatch based on availability, skill, and <span class="accent-emerald glow-medium-emerald">location.</span></h2>
+        <p class="text-large text-secondary">AI assigns the right tech to the right job, optimizes routes, notifies customers, and gives you real-time visibility.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: map-pin -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="card__title">Smart Dispatch</h3>
+          <p class="card__text">Jobs assigned automatically based on tech availability, skills, certifications, and location. Details sent directly to their phone. No calls needed.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: route -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>
+          </div>
+          <h3 class="card__title">Route Optimization</h3>
+          <p class="card__text">AI plans the most efficient route for each tech's day. Less windshield time, more billable hours. Gas costs drop.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: eye -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+          </div>
+          <h3 class="card__title">Real-Time Visibility</h3>
+          <p class="card__text">See where every tech is. Customers get automatic arrival notifications. No double bookings. Everyone knows the plan.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: Results
+       ════════════════════════════════════════ -->
+  <section class="section uc-results">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="RESULTS" variant="info" />
+      </div>
+
+      <div class="uc-stats animate-on-scroll">
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--emerald">30%</span>
+          <span class="uc-stats__label">Less drive time</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--violet">0</span>
+          <span class="uc-stats__label">Double bookings</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--blue">2x</span>
+          <span class="uc-stats__label">More jobs per tech per day</span>
+        </div>
+      </div>
+
+      <p class="uc-results__note animate-on-scroll">Typical results based on industry benchmarks. Individual outcomes vary.</p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 5: CTA + Contact Form
+       ════════════════════════════════════════ -->
+  <section class="section uc-cta" id="contact-form">
+    <div class="uc-cta__glow"></div>
+    <div class="container">
+      <div class="uc-cta__inner animate-on-scroll">
+        <h2 class="uc-cta__headline">Ready to dispatch smarter and get more jobs <span class="accent-blue glow-medium-blue">done?</span></h2>
+        <p class="uc-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="professional-services-dispatch-management" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ──────────────────────────────────────
+     Use Case Page — Scoped Styles
+     ────────────────────────────────────── */
+
+  /* Hero ambient glows */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section Headers ── */
+  .uc-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .uc-section-header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-section-header p {
+    margin-bottom: 0;
+  }
+
+  /* ── Solution Cards ── */
+  .uc-solution .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-solution .card__title {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Stats Strip ── */
+  .uc-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: var(--space-lg) 0;
+  }
+
+  .uc-stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .uc-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .uc-results__note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-lg);
+    opacity: 0.7;
+  }
+
+  /* ── CTA Section ── */
+  .uc-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uc-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(55, 147, 255, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .uc-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .uc-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
+  @media (min-width: 768px) {
+    .uc-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .uc-cta__headline {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .uc-cta__headline {
+      font-size: 2.5rem;
+    }
+  }
+</style>

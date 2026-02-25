@@ -1,0 +1,298 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout title="Lead Response & Booking" description="Automate lead response and booking for service businesses. Instant SMS/email replies, online booking links, and automated follow-up. 3x more booked jobs.">
+
+  <!-- ════════════════════════════════════════
+       Section 1: Hero
+       ════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
+    <div class="container">
+      <div class="hero__content hero-animate">
+        <SectionBadge text="PROFESSIONAL SERVICES USE CASE" variant="feature" />
+        <h1 class="hero__title">Lead Response & <span class="accent-violet glow-heavy-violet">Booking</span></h1>
+        <p class="hero__subtitle">You're on a job site when the lead calls. By the time you call back, they've hired someone else.</p>
+        <div class="hero__actions">
+          <a href="#contact-form" class="btn btn--primary">Get a Free Assessment</a>
+          <a href="#uc-solution" class="btn btn--ghost">See How It Works &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 2: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section uc-problem">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>Every missed call is a <span class="accent-coral glow-medium-coral">lost</span> job.</h2>
+        <p class="text-large text-secondary">Leads come from Google, Yelp, referrals, and your website. You can't answer because you're working. They move on.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">MISSED CALLS</span>
+          <p class="card__text">You're on a job site, under a house, or up on a roof. The phone rings. You can't answer. That lead calls the next name on the list.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">SLOW FOLLOW-UP</span>
+          <p class="card__text">You call back hours later or the next day. By then they've booked someone else. Speed-to-lead is everything in service businesses.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">NO SYSTEM</span>
+          <p class="card__text">Leads come from five different sources. Some get written on paper. Some get a text. There's no centralized tracking. Leads evaporate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 3: The Solution
+       ════════════════════════════════════════ -->
+  <section class="section uc-solution" id="uc-solution">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE SOLUTION" variant="solution" />
+        <h2>Instant automated response. Online booking. Zero <span class="accent-emerald glow-medium-emerald">missed</span> leads.</h2>
+        <p class="text-large text-secondary">Every lead gets an instant reply — SMS + email — with a booking link. AI captures their info and follows up if they don't book.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: zap -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+          </div>
+          <h3 class="card__title">Instant Response</h3>
+          <p class="card__text">Lead comes in from any source. Automated SMS and email sent within minutes. Your name stays top of mind while you finish the job.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: calendar -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+          </div>
+          <h3 class="card__title">Online Booking</h3>
+          <p class="card__text">Booking link included in every response. Customers pick a time that works. No phone tag. No back-and-forth.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <!-- Lucide: repeat -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg>
+          </div>
+          <h3 class="card__title">Automated Follow-Up</h3>
+          <p class="card__text">Didn't book? Follow-up sequence kicks in — day 1, day 3, day 7. Every lead gets multiple touches without you lifting a finger.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: Results
+       ════════════════════════════════════════ -->
+  <section class="section uc-results">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="RESULTS" variant="info" />
+      </div>
+
+      <div class="uc-stats animate-on-scroll">
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--emerald">5 min</span>
+          <span class="uc-stats__label">Average response time</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--violet">3x</span>
+          <span class="uc-stats__label">More booked jobs</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--blue">0</span>
+          <span class="uc-stats__label">Missed leads</span>
+        </div>
+      </div>
+
+      <p class="uc-results__note animate-on-scroll">Typical results based on industry benchmarks. Individual outcomes vary.</p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 5: CTA + Contact Form
+       ════════════════════════════════════════ -->
+  <section class="section uc-cta" id="contact-form">
+    <div class="uc-cta__glow"></div>
+    <div class="container">
+      <div class="uc-cta__inner animate-on-scroll">
+        <h2 class="uc-cta__headline">Ready to stop losing jobs to slow <span class="accent-blue glow-medium-blue">response?</span></h2>
+        <p class="uc-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="professional-services-lead-response" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ──────────────────────────────────────
+     Use Case Page — Scoped Styles
+     ────────────────────────────────────── */
+
+  /* Hero ambient glows */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section Headers ── */
+  .uc-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .uc-section-header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-section-header p {
+    margin-bottom: 0;
+  }
+
+  /* ── Solution Cards ── */
+  .uc-solution .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-solution .card__title {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Stats Strip ── */
+  .uc-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: var(--space-lg) 0;
+  }
+
+  .uc-stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .uc-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .uc-results__note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-lg);
+    opacity: 0.7;
+  }
+
+  /* ── CTA Section ── */
+  .uc-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uc-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(55, 147, 255, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .uc-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .uc-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
+  @media (min-width: 768px) {
+    .uc-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .uc-cta__headline {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .uc-cta__headline {
+      font-size: 2.5rem;
+    }
+  }
+</style>
