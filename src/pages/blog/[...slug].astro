@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from 'astro:content';
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+// Calculate reading time from raw body content
+const wordCount = post.body ? post.body.split(/\s+/).length : 0;
+const readingTime = Math.max(1, Math.ceil(wordCount / 200));
+
+// Get related posts: same category, different post, newest first
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const relatedPosts = allPosts
+  .filter((p) => p.id !== post.id)
+  .sort((a, b) => {
+    // Prioritize same category, then sort by date
+    const aMatch = a.data.category === post.data.category ? 1 : 0;
+    const bMatch = b.data.category === post.data.category ? 1 : 0;
+    if (bMatch !== aMatch) return bMatch - aMatch;
+    return b.data.date.valueOf() - a.data.date.valueOf();
+  })
+  .slice(0, 3);
+---
+
+<BlogPostLayout frontmatter={post.data} readingTime={readingTime} relatedPosts={relatedPosts}>
+  <Content />
+</BlogPostLayout>

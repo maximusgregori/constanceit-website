@@ -1,0 +1,98 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import CTASection from '../components/CTASection.astro';
+
+const { frontmatter, readingTime = 5, relatedPosts = [] } = Astro.props;
+
+const formattedDate = frontmatter.date.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<BaseLayout title={frontmatter.title} description={frontmatter.excerpt}>
+
+  <!-- ════════════════════════════════════════
+       Post Header
+       ════════════════════════════════════════ -->
+  <section class="blog-post-header">
+    <div class="container">
+      <div class="blog-post-header__inner hero-animate">
+        <a href="/blog/" class="blog-post-back link--arrow">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+          Back to Blog
+        </a>
+        <div class="blog-post-header__meta">
+          <span class="blog-post-header__category">{frontmatter.category}</span>
+          <span class="blog-post-header__dot">&middot;</span>
+          <time datetime={frontmatter.date.toISOString().split('T')[0]}>{formattedDate}</time>
+          <span class="blog-post-header__dot">&middot;</span>
+          <span>{readingTime} min read</span>
+        </div>
+        <h1 class="blog-post-header__title">{frontmatter.title}</h1>
+        <p class="blog-post-header__author">By {frontmatter.author}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Post Body
+       ════════════════════════════════════════ -->
+  <article class="section blog-post-body-section">
+    <div class="container">
+      <div class="blog-body animate-on-scroll">
+        <slot />
+      </div>
+    </div>
+  </article>
+
+  <!-- ════════════════════════════════════════
+       Author Section
+       ════════════════════════════════════════ -->
+  <section class="blog-author-section">
+    <div class="container">
+      <div class="blog-author animate-on-scroll">
+        <div class="blog-author__avatar">MG</div>
+        <div class="blog-author__info">
+          <p class="blog-author__name">Written by <strong>{frontmatter.author}</strong></p>
+          <p class="blog-author__role">Founder at Constance IT</p>
+          <p class="blog-author__bio">Max is an AI automation expert and founder of Constance IT, where he helps SMBs work smarter with technology.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       Related Posts
+       ════════════════════════════════════════ -->
+  {relatedPosts.length > 0 && (
+    <section class="section blog-related">
+      <div class="container">
+        <h2 class="blog-related__heading animate-on-scroll">You might also like</h2>
+        <div class="blog-related__grid stagger-children">
+          {relatedPosts.map((related: any) => (
+            <a href={`/blog/${related.id}/`} class="blog-card">
+              <span class="blog-card__category">{related.data.category}</span>
+              <h3 class="blog-card__title">{related.data.title}</h3>
+              <p class="blog-card__excerpt">{related.data.excerpt}</p>
+              <span class="blog-card__read-more">
+                Read More
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- ════════════════════════════════════════
+       CTA Section
+       ════════════════════════════════════════ -->
+  <CTASection
+    headline="Have a question? Need help with automation?"
+    source="blog_post"
+  />
+
+</BaseLayout>
