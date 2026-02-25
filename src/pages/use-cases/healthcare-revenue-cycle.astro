@@ -1,0 +1,295 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
+---
+
+<BaseLayout title="Revenue Cycle Automation" description="Automate revenue cycle management for healthcare providers. AI-powered eligibility verification, denial management, and payment posting. Fewer denials, faster payments.">
+
+  <!-- ════════════════════════════════════════
+       Section 1: Hero
+       ════════════════════════════════════════ -->
+  <section class="hero">
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
+    <div class="container">
+      <div class="hero__content hero-animate">
+        <SectionBadge text="HEALTHCARE USE CASE" variant="feature" />
+        <h1 class="hero__title">Revenue Cycle <span class="accent-violet glow-heavy-violet">Automation</span></h1>
+        <p class="hero__subtitle">Stop losing money to denied claims, slow resubmissions, and manual payment posting.</p>
+        <div class="hero__actions">
+          <a href="#contact-form" class="btn btn--primary">Get a Free Assessment</a>
+          <a href="#uc-solution" class="btn btn--ghost">See How It Works &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 2: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section uc-problem">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>Claims get <span class="accent-coral glow-medium-coral">denied.</span> Your staff spends hours fixing them.</h2>
+        <p class="text-large text-secondary">Revenue leaks at every stage — eligibility checks missed, coding errors caught too late, denials resubmitted by hand, payments posted manually.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">DENIALS</span>
+          <p class="card__text">Claims denied for preventable reasons — wrong codes, missing info, expired authorizations. Each denial costs staff time and delays payment by weeks.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">RESUBMISSIONS</span>
+          <p class="card__text">Denied claims sit in a queue. Staff manually reviews, corrects, and resubmits. Some never get resubmitted at all. Money left on the table.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">PAYMENT POSTING</span>
+          <p class="card__text">Payments arrive and sit unposted. Manual reconciliation takes hours. Aging reports don't reflect reality. Cash flow suffers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 3: The Solution
+       ════════════════════════════════════════ -->
+  <section class="section uc-solution" id="uc-solution">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="THE SOLUTION" variant="solution" />
+        <h2>AI agents that <span class="accent-emerald glow-medium-emerald">protect</span> your revenue at every stage.</h2>
+        <p class="text-large text-secondary">Automated eligibility verification, coding error detection, denial tracking, auto-resubmission, and payment posting — end to end.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="card__title">Verify Before You Bill</h3>
+          <p class="card__text">AI auto-verifies patient eligibility and flags coverage gaps before the claim goes out. Coding errors caught at submission, not after denial.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+          </div>
+          <h3 class="card__title">Auto-Track & Resubmit Denials</h3>
+          <p class="card__text">Denied claims tracked automatically. AI corrects common denial reasons and resubmits without staff intervention. Nothing sits in a queue.</p>
+        </div>
+        <div class="card card--solution">
+          <div class="card__icon icon-glow-emerald">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></svg>
+          </div>
+          <h3 class="card__title">Automated Payment Posting</h3>
+          <p class="card__text">Payments matched to claims and posted automatically. Aging reports stay current. Your team focuses on exceptions, not data entry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: Results
+       ════════════════════════════════════════ -->
+  <section class="section uc-results">
+    <div class="container">
+      <div class="uc-section-header animate-on-scroll">
+        <SectionBadge text="RESULTS" variant="info" />
+      </div>
+
+      <div class="uc-stats animate-on-scroll">
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--emerald">30%</span>
+          <span class="uc-stats__label">Fewer denials</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--violet">15 days</span>
+          <span class="uc-stats__label">Faster payment</span>
+        </div>
+        <div class="uc-stats__item">
+          <span class="stat-number stat-number--blue">20+ hrs</span>
+          <span class="uc-stats__label">Saved per week</span>
+        </div>
+      </div>
+
+      <p class="uc-results__note animate-on-scroll">Typical results based on industry benchmarks. Individual outcomes vary.</p>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 5: CTA + Contact Form
+       ════════════════════════════════════════ -->
+  <section class="section uc-cta" id="contact-form">
+    <div class="uc-cta__glow"></div>
+    <div class="container">
+      <div class="uc-cta__inner animate-on-scroll">
+        <h2 class="uc-cta__headline">Ready to stop losing revenue to <span class="accent-blue glow-medium-blue">preventable</span> denials?</h2>
+        <p class="uc-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="healthcare-revenue-cycle" />
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ──────────────────────────────────────
+     Use Case Page — Scoped Styles
+     ────────────────────────────────────── */
+
+  /* Hero ambient glows */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section Headers ── */
+  .uc-section-header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .uc-section-header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-section-header p {
+    margin-bottom: 0;
+  }
+
+  /* ── Solution Cards ── */
+  .uc-solution .card__icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-solution .card__title {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Stats Strip ── */
+  .uc-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+    max-width: 900px;
+    margin-inline: auto;
+    padding: var(--space-lg) 0;
+  }
+
+  .uc-stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .uc-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .uc-results__note {
+    text-align: center;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    margin-top: var(--space-lg);
+    opacity: 0.7;
+  }
+
+  /* ── CTA Section ── */
+  .uc-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .uc-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(55, 147, 255, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .uc-cta__inner {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .uc-cta__headline {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
+  }
+
+  .uc-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
+  @media (min-width: 768px) {
+    .uc-stats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .uc-cta__headline {
+      font-size: 2rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .uc-cta__headline {
+      font-size: 2.5rem;
+    }
+  }
+</style>
