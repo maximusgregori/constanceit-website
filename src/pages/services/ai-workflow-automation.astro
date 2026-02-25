@@ -1,236 +1,318 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTASection from '../../components/CTASection.astro';
+import SectionBadge from '../../components/SectionBadge.astro';
+import SectionDivider from '../../components/SectionDivider.astro';
+import ContactForm from '../../components/ContactForm.astro';
 ---
 
-<BaseLayout title="AI & Workflow Automation" description="Stop doing repetitive work. We build AI agents that automate scheduling, follow-ups, document processing, and data entry. Measure results in 90 days.">
+<BaseLayout title="AI & Workflow Automation" description="Stop doing repetitive work. We build AI agents that automate scheduling, follow-ups, document processing, and data entry. Measurable results in 90 days.">
 
   <!-- ════════════════════════════════════════
        Section 1: Hero
        ════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero__glow hero__glow--1"></div>
-    <div class="hero__glow hero__glow--2"></div>
+    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--blue"></div>
     <div class="container">
       <div class="hero__content hero-animate">
-        <span class="section-label">AI & Workflow Automation</span>
-        <h1 class="hero__title">Stop doing work your tools should handle.</h1>
-        <p class="hero__subtitle">Your team spends hours every week on manual tasks that are boring, repetitive, and expensive. We build AI agents that automate those tasks — scheduling, follow-ups, document processing, data entry. In 90 days, you'll have what used to take 2-3 extra employees. And it keeps working after we're done.</p>
+        <h1 class="hero__title">Stop doing work your <span class="accent-violet glow-heavy-violet">tools</span> should handle.</h1>
+        <p class="hero__subtitle">Your team spends hours every week on manual tasks that are boring, repetitive, and expensive. We build AI agents that handle them — and it keeps working after we're done.</p>
         <div class="hero__actions">
-          <a href="/contact/" class="btn btn--primary">Get Your Free Audit</a>
-          <a href="#what-we-build" class="btn btn--ghost">What We Automate</a>
+          <a href="#contact-form" class="btn btn--primary">Get Your Free Audit</a>
+          <a href="#what-we-build" class="btn btn--ghost">What We Automate &rarr;</a>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 2: The Problem
+       Section 2: Stats Strip
        ════════════════════════════════════════ -->
-  <section class="section section--alt">
+  <section class="section ai-stats">
     <div class="container">
-      <div class="ai-problem animate-on-scroll">
-        <span class="section-label">The Problem</span>
-        <h2>Your team is stuck in a loop of repetitive work.</h2>
-        <p class="text-large">You hire smart people to do smart work. Then you ask them to spend 5-10 hours a week on busywork: scheduling, data entry, follow-ups. The real solution is AI agents — not one-off automations, but actual work done automatically.</p>
-        <p class="text-large">Most SMBs haven't built this yet. But teams with AI agents are doing the work of teams that are 25% larger. It takes expertise to set up and integrate. That's where we come in.</p>
+      <div class="ai-stats__grid animate-on-scroll">
+        <div class="ai-stats__item">
+          <span class="stat-number stat-number--violet">90 days</span>
+          <span class="ai-stats__label">To measurable results</span>
+        </div>
+        <div class="ai-stats__item">
+          <span class="stat-number stat-number--emerald">10–15 hrs</span>
+          <span class="ai-stats__label">Saved per week</span>
+        </div>
+        <div class="ai-stats__item">
+          <span class="stat-number stat-number--blue">$200–500/mo</span>
+          <span class="ai-stats__label">Typical investment</span>
+        </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 3: What We Automate
+       Section 3: The Problem
+       ════════════════════════════════════════ -->
+  <section class="section ai-problem">
+    <div class="container">
+      <div class="ai-problem__header animate-on-scroll">
+        <SectionBadge text="THE PROBLEM" variant="problem" />
+        <h2>Your team is stuck in a loop of <span class="accent-coral glow-medium-coral">repetitive work.</span></h2>
+        <p class="text-large text-secondary">You hire smart people to do smart work — then ask them to spend 5–10 hours a week on busywork.</p>
+      </div>
+
+      <div class="grid grid--3 stagger-children">
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">TIME DRAIN</span>
+          <p class="card__text">Scheduling, data entry, follow-ups. The same tasks, every day, by hand.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">FALLING BEHIND</span>
+          <p class="card__text">Teams with AI agents are doing the work of teams 25% larger. Most SMBs haven't built this yet.</p>
+        </div>
+        <div class="card card--problem">
+          <span class="card__category accent-coral glow-medium-coral">EXPERTISE GAP</span>
+          <p class="card__text">It takes real expertise to set up and integrate AI agents. That's where we come in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <SectionDivider />
+
+  <!-- ════════════════════════════════════════
+       Section 4: What We Build
        ════════════════════════════════════════ -->
   <section class="section" id="what-we-build">
     <div class="container">
-      <div class="ai-automate__header animate-on-scroll">
-        <span class="section-label">What We Build</span>
-        <h2>AI agents that handle the repetitive work.</h2>
+      <div class="ai-build__header animate-on-scroll">
+        <SectionBadge text="WHAT WE BUILD" variant="feature" />
+        <h2>AI agents that handle the <span class="accent-blue glow-medium-blue">repetitive work.</span></h2>
       </div>
 
-      <div class="ai-automate__grid stagger-children">
-        <div class="card ai-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+      <div class="ai-build__grid stagger-children">
+        <!-- Card 1: Lead Management -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" x2="19" y1="8" y2="14"/><line x1="22" x2="16" y1="11" y2="11"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">LEAD MANAGEMENT</span>
           <h3 class="card__title">Lead Capture & Follow-Up Agents</h3>
-          <p class="card__text">Leads are logged, categorized, and followed up automatically. Nothing falls through the cracks. Your sales team focuses on closing, not following up.</p>
+          <p class="card__text">Leads are logged, categorized, and followed up automatically. Your sales team focuses on closing, not chasing.</p>
         </div>
 
-        <div class="card ai-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 2: Scheduling -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">SCHEDULING</span>
           <h3 class="card__title">Appointment Scheduling Agents</h3>
-          <p class="card__text">Customers book themselves. The agent handles scheduling, confirmations, reminders, and rescheduling. Your calendar is always full and always accurate.</p>
+          <p class="card__text">Customers book themselves. The agent handles confirmations, reminders, and rescheduling. Your calendar stays full and accurate.</p>
         </div>
 
-        <div class="card ai-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 3: Documents -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">DOCUMENTS</span>
           <h3 class="card__title">Document & Invoice Processing</h3>
-          <p class="card__text">Documents are read by AI, categorized, extracted, and filed automatically. Manual data entry drops to near zero. Everything is organized and searchable.</p>
+          <p class="card__text">Documents are read, categorized, extracted, and filed automatically. Manual data entry drops to near zero.</p>
         </div>
 
-        <div class="card ai-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <!-- Card 4: Outreach -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">OUTREACH</span>
           <h3 class="card__title">Automated Customer Outreach</h3>
-          <p class="card__text">Personalized follow-ups, reminders, and campaigns are sent automatically at the right time to the right person. Your team writes the templates once. The agent handles the rest.</p>
+          <p class="card__text">Personalized follow-ups, reminders, and campaigns sent at the right time. Your team writes the templates once. The agent handles the rest.</p>
         </div>
 
-        <div class="card ai-automate__card">
-          <div class="card__icon" style="width:32px;height:32px;">
+        <!-- Card 5: Reporting -->
+        <div class="card card--feature">
+          <div class="card__icon icon-glow-blue">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg>
           </div>
+          <span class="card__category accent-blue glow-medium-blue">REPORTING</span>
           <h3 class="card__title">Data Entry & Reporting Automation</h3>
-          <p class="card__text">Data flows from one system to another automatically. Forms are filled, reports are compiled and sent on schedule. Your database stays clean without human effort.</p>
+          <p class="card__text">Data flows between systems automatically. Reports compile and send on schedule. Your database stays clean without human effort.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 4: How We Build It
+       Section 5: How We Work
        ════════════════════════════════════════ -->
-  <section class="section section--alt ai-process">
+  <section class="section ai-process">
     <div class="container">
       <div class="ai-process__header animate-on-scroll">
-        <span class="section-label">How We Work</span>
-        <h2>Phased approach. Proven results.</h2>
+        <SectionBadge text="HOW WE WORK" variant="solution" />
+        <h2>Phased approach. <span class="accent-emerald glow-medium-emerald">Proven</span> results.</h2>
         <p class="text-large text-secondary">We don't try to automate everything at once. We move fast, but smart.</p>
       </div>
 
-      <div class="timeline animate-on-scroll" style="margin-top: var(--space-xl);">
-        <div class="timeline__step">
-          <div class="timeline__marker"></div>
-          <span class="timeline__step-label">Phase 01 — 1-2 Weeks</span>
-          <h3 class="timeline__step-title">Audit & Design</h3>
-          <p class="timeline__step-text">We watch your team work and map where time disappears. We identify quick wins and design the workflows in detail.</p>
+      <div class="ai-timeline stagger-children">
+        <div class="ai-timeline__step">
+          <div class="ai-timeline__node">
+            <span class="ai-timeline__number accent-emerald glow-medium-emerald">01</span>
+          </div>
+          <div class="card card--solution ai-timeline__card">
+            <span class="ai-timeline__badge">1–2 weeks</span>
+            <h3 class="card__title">Audit & Design</h3>
+            <p class="card__text">We watch your team work and map where time disappears. We identify quick wins and design the workflows.</p>
+          </div>
         </div>
-        <div class="timeline__step">
-          <div class="timeline__marker"></div>
-          <span class="timeline__step-label">Phase 02 — 4-6 Weeks</span>
-          <h3 class="timeline__step-title">Build & Test</h3>
-          <p class="timeline__step-text">We build agents configured for your tools. We test thoroughly, train your team, and refine based on feedback.</p>
+
+        <div class="ai-timeline__step">
+          <div class="ai-timeline__node">
+            <span class="ai-timeline__number accent-emerald glow-medium-emerald">02</span>
+          </div>
+          <div class="card card--solution ai-timeline__card">
+            <span class="ai-timeline__badge">4–6 weeks</span>
+            <h3 class="card__title">Build & Test</h3>
+            <p class="card__text">We build agents configured for your tools. We test thoroughly, train your team, and refine based on feedback.</p>
+          </div>
         </div>
-        <div class="timeline__step">
-          <div class="timeline__marker"></div>
-          <span class="timeline__step-label">Phase 03 — Ongoing</span>
-          <h3 class="timeline__step-title">Launch & Support</h3>
-          <p class="timeline__step-text">We launch with monitoring in place. We catch issues before they break. We measure impact and optimize based on real-world performance.</p>
+
+        <div class="ai-timeline__step">
+          <div class="ai-timeline__node">
+            <span class="ai-timeline__number accent-emerald glow-medium-emerald">03</span>
+          </div>
+          <div class="card card--solution ai-timeline__card">
+            <span class="ai-timeline__badge">Ongoing</span>
+            <h3 class="card__title">Launch & Support</h3>
+            <p class="card__text">We launch with monitoring in place. We catch issues before they break. We measure impact and optimize.</p>
+          </div>
         </div>
       </div>
-
-      <p class="ai-process__timeline-note animate-on-scroll"><strong>Total timeline:</strong> 90 days to measurable results.</p>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 5: The Technology
+       Section 6: The Technology
        ════════════════════════════════════════ -->
   <section class="section ai-tech">
     <div class="container">
-      <div class="split ai-tech__layout">
-        <div class="ai-tech__visual animate-on-scroll">
-          <div class="ai-tech__stat-block">
-            <span class="ai-tech__stat-number" data-count-to="73" data-count-suffix="%">0%</span>
-            <span class="ai-tech__stat-label">of SMBs that deployed AI agents in 2025 saw measurable productivity gains within 90 days</span>
-          </div>
-          <div class="ai-tech__stat-block">
-            <span class="ai-tech__stat-number">$200-500</span>
-            <span class="ai-tech__stat-label">/month in AI automation = 2-3 FTE equivalent output</span>
-          </div>
+      <div class="ai-tech__header animate-on-scroll">
+        <SectionBadge text="TECHNOLOGY" variant="feature" />
+        <h2>Built on the latest in <span class="accent-blue glow-medium-blue">agentic AI.</span></h2>
+      </div>
+
+      <div class="ai-tech__split animate-on-scroll">
+        <div class="ai-tech__text">
+          <p class="text-large">Agentic AI doesn't answer questions — it takes actions. Books appointments. Sends emails. Processes documents. Runs continuously and handles edge cases.</p>
         </div>
-        <div class="ai-tech__content animate-on-scroll">
-          <span class="section-label">Technology</span>
-          <h2>Built on the latest in agentic AI.</h2>
-          <p class="text-large">Agentic AI is the shift happening now. It doesn't answer questions — it takes actions. Books appointments. Sends emails. Processes documents. Runs continuously, learns from patterns, handles edge cases.</p>
-          <p class="text-large text-secondary">We use proven platforms and AI models configured for your workflows. The important part isn't the technology name. It's the outcome: manual work disappears, your team gets back 10-15 hours a week, your business scales without hiring.</p>
+        <div class="ai-tech__aside">
+          <p class="text-large text-secondary">We use proven platforms and AI models configured for your workflows. The important part isn't the technology name — it's the outcome.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 6: Who It's For
+       Section 7: Who It's For
        ════════════════════════════════════════ -->
-  <section class="section section--alt bg-dots ai-who">
+  <section class="section ai-who">
     <div class="container">
       <div class="ai-who__header animate-on-scroll">
-        <span class="section-label">Who Benefits Most</span>
-        <h2>If you have repetitive work, you're a fit.</h2>
+        <SectionBadge text="WHO BENEFITS" variant="feature" />
+        <h2>If you have repetitive work, you're a <span class="accent-blue glow-medium-blue">fit.</span></h2>
       </div>
 
-      <div class="grid grid--2 stagger-children" style="margin-top: var(--space-xl);">
-        <div class="card ai-who__card">
-          <h3 class="card__title">Sales & Service Teams</h3>
-          <p class="card__text">High volume of leads, clients, or service requests. Lots of follow-up and coordination work. Spending 20+ hours per week on admin instead of selling.</p>
-          <p class="ai-who__benefit">Agent handles outreach, scheduling, follow-ups. Sales team sells. Revenue per employee goes up.</p>
+      <div class="grid grid--2 stagger-children">
+        <div class="card card--feature">
+          <span class="card__category accent-blue glow-medium-blue">SALES & SERVICE</span>
+          <p class="card__text">High volume of leads and follow-ups. 20+ hours/week on admin instead of selling. Agent handles outreach and scheduling — your team sells.</p>
         </div>
-
-        <div class="card ai-who__card">
-          <h3 class="card__title">Professional Services</h3>
-          <p class="card__text">Trades, contractors, freelancers, agencies. Juggling scheduling, dispatch, invoicing, client communication. Can't justify hiring an office manager.</p>
-          <p class="ai-who__benefit">Agent coordinates everything. Owner stops doing admin. Business scales without hiring.</p>
+        <div class="card card--feature">
+          <span class="card__category accent-blue glow-medium-blue">PROFESSIONAL SERVICES</span>
+          <p class="card__text">Trades, contractors, agencies. Juggling scheduling, dispatch, invoicing. Agent coordinates everything — owner stops doing admin.</p>
         </div>
-
-        <div class="card ai-who__card">
-          <h3 class="card__title">Healthcare & Admin-Heavy</h3>
-          <p class="card__text">Patient/client communication, appointment reminders, insurance verification. High volume of repetitive documentation and filing.</p>
-          <p class="ai-who__benefit">Agent reduces errors, improves patient experience, frees staff for higher-value work.</p>
+        <div class="card card--feature">
+          <span class="card__category accent-blue glow-medium-blue">HEALTHCARE</span>
+          <p class="card__text">Patient communication, appointment reminders, insurance verification. Agent reduces errors and frees staff for higher-value work.</p>
         </div>
-
-        <div class="card ai-who__card">
-          <h3 class="card__title">E-Commerce & Fulfillment</h3>
-          <p class="card__text">Customer inquiries, order confirmations, tracking updates. Inventory alerts and reorder automation. Personalized marketing.</p>
-          <p class="ai-who__benefit">Agent handles customer communication at scale. Customer satisfaction goes up. Return rate goes down.</p>
+        <div class="card card--feature">
+          <span class="card__category accent-blue glow-medium-blue">E-COMMERCE</span>
+          <p class="card__text">Customer inquiries, order confirmations, inventory alerts. Agent handles communication at scale — satisfaction goes up, returns go down.</p>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 7: Real Expectations
+       Section 8: Real Expectations (Comparison)
        ════════════════════════════════════════ -->
-  <section class="section ai-expectations">
+  <section class="section ai-expect">
     <div class="container">
-      <div class="ai-expectations__inner animate-on-scroll">
-        <span class="section-label">What to Expect</span>
-        <h2>No magic. Just math.</h2>
-        <p class="text-large text-secondary">Automation works. Here's what you can actually expect:</p>
+      <div class="ai-expect__header animate-on-scroll">
+        <SectionBadge text="WHAT TO EXPECT" variant="info" />
+        <h2>No magic. Just <span class="accent-violet glow-medium-violet">math.</span></h2>
+      </div>
 
-        <div class="ai-expectations__list">
-          <div class="ai-expectations__item">
-            <h3>Time Savings</h3>
-            <p>Your team gets back 10-15 hours per week. That's 500+ hours per year.</p>
+      <div class="ai-expect__columns">
+        <div class="ai-expect__col">
+          <span class="ai-expect__col-header accent-emerald glow-medium-emerald">WHAT WE DELIVER</span>
+        </div>
+        <div class="ai-expect__col">
+          <span class="ai-expect__col-header accent-amber glow-medium-amber">WHAT WE DON'T PROMISE</span>
+        </div>
+      </div>
+
+      <div class="ai-expect__rows stagger-children">
+        <div class="ai-expect__row">
+          <div class="card card--solution ai-expect__card">
+            <p class="card__text">Your team gets back 10–15 hours per week. That's 500+ hours per year.</p>
           </div>
-          <div class="ai-expectations__item">
-            <h3>Accuracy</h3>
-            <p>Machines don't have off days. Document accuracy goes to 95%+. Errors drop to near zero.</p>
+          <div class="card card--amber ai-expect__card">
+            <p class="card__text">Overnight transformation. Real results take 90 days.</p>
           </div>
-          <div class="ai-expectations__item">
-            <h3>Scale Without Hiring</h3>
-            <p>Automation handles volume growth instead of hiring.</p>
+        </div>
+
+        <div class="ai-expect__row">
+          <div class="card card--solution ai-expect__card">
+            <p class="card__text">Document accuracy at 95%+. Machines don't have off days.</p>
           </div>
-          <div class="ai-expectations__item">
-            <h3>Mistakes Happen</h3>
-            <p>Edge cases break workflows. We monitor and fix within 24 hours.</p>
+          <div class="card card--amber ai-expect__card">
+            <p class="card__text">Zero errors ever. Edge cases happen — we monitor and fix within 24 hours.</p>
+          </div>
+        </div>
+
+        <div class="ai-expect__row">
+          <div class="card card--solution ai-expect__card">
+            <p class="card__text">Handle volume growth without hiring. Automation scales with you.</p>
+          </div>
+          <div class="card card--amber ai-expect__card">
+            <p class="card__text">Replacing your team. AI handles tasks, not judgment calls.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 8: FAQ
+       Section 9: FAQ
        ════════════════════════════════════════ -->
-  <section class="section section--alt ai-faq">
+  <section class="section ai-faq">
     <div class="container">
       <div class="ai-faq__header animate-on-scroll">
-        <h2>Questions? We've heard them.</h2>
+        <SectionBadge text="FAQ" variant="feature" />
+        <h2>Questions? We've <span class="accent-blue glow-medium-blue">heard</span> them.</h2>
       </div>
 
       <div class="faq-list animate-on-scroll">
@@ -240,7 +322,7 @@ import CTASection from '../../components/CTASection.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">Audit (1-2 weeks) → Build (4-6 weeks) → Live (ongoing). Measurable results in 90 days.</div>
+            <div class="faq-answer__inner">Audit (1–2 weeks) → Build (4–6 weeks) → Live (ongoing). Measurable results in 90 days.</div>
           </div>
         </div>
 
@@ -250,7 +332,7 @@ import CTASection from '../../components/CTASection.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">It replaces repetitive tasks, not people. Your team does more interesting work — strategy, relationships, judgment calls instead of data entry.</div>
+            <div class="faq-answer__inner">No. It replaces repetitive tasks. Your team does strategy, relationships, and judgment calls instead of data entry.</div>
           </div>
         </div>
 
@@ -280,240 +362,410 @@ import CTASection from '../../components/CTASection.astro';
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">Simple automations run $200-500/month. Bigger projects cost more. We give fixed quotes after the audit. No surprises.</div>
+            <div class="faq-answer__inner">Simple automations: $200–500/month. Bigger projects cost more. Fixed quotes after the audit. No surprises.</div>
           </div>
         </div>
 
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
-            Do we change our tools?
+            Do we have to change our tools?
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
           </button>
           <div class="faq-answer">
-            <div class="faq-answer__inner">No. We integrate with what you already use. We're not asking you to learn new platforms.</div>
+            <div class="faq-answer__inner">No. We integrate with what you already use.</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <SectionDivider />
+
   <!-- ════════════════════════════════════════
-       Section 9: CTA
+       Section 10: CTA + Contact Form
        ════════════════════════════════════════ -->
-  <CTASection
-    headline="Let's find where automation saves you time."
-    source="ai-automation"
-  />
+  <section class="section ai-cta" id="contact-form">
+    <div class="ai-cta__glow"></div>
+    <div class="container">
+      <div class="ai-cta__inner animate-on-scroll">
+        <h2 class="ai-cta__headline">Let's find where <span class="accent-blue glow-medium-blue">automation</span> saves you time.</h2>
+        <p class="ai-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
+        <ContactForm source="ai-automation" />
+      </div>
+    </div>
+  </section>
 
 </BaseLayout>
 
 <style>
   /* ──────────────────────────────────────
-     AI & Workflow Automation — scoped styles
+     AI & Workflow Automation — Scoped Styles
      ────────────────────────────────────── */
 
-  /* Problem section */
-  .ai-problem {
-    max-width: 800px;
+  /* Accent text utilities */
+  .accent-violet { color: var(--accent-violet); }
+  .accent-coral { color: var(--accent-coral); }
+  .accent-emerald { color: var(--accent-emerald); }
+  .accent-blue { color: var(--accent-blue); }
+  .accent-amber { color: var(--accent-amber); }
+
+  /* Hero ambient glows */
+  .hero__glow--violet {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    top: 10%;
+    right: 5%;
+  }
+
+  .hero__glow--blue {
+    position: absolute;
+    width: 400px;
+    height: 350px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.04) 0%, transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+    bottom: 10%;
+    left: 15%;
+  }
+
+  /* ── Section 2: Stats Strip ── */
+  .ai-stats__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    text-align: center;
+    max-width: 900px;
     margin-inline: auto;
+    padding: var(--space-xl) 0;
   }
 
-  .ai-problem h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-lg);
+  .ai-stats__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
   }
 
-  .ai-problem p {
+  .ai-stats__label {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
     color: var(--text-secondary);
   }
 
-  .ai-problem p + p {
-    margin-top: var(--space-md);
+  /* ── Section 3: The Problem ── */
+  .ai-problem__header {
+    text-align: center;
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
-  /* Automate section */
-  .ai-automate__header {
+  .ai-problem__header h2 {
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
+  }
+
+  /* ── Section 4: What We Build ── */
+  .ai-build__header {
     text-align: center;
     max-width: 640px;
     margin-inline: auto;
     margin-bottom: var(--space-xl);
   }
 
-  .ai-automate__header h2 {
-    margin-top: var(--space-sm);
+  .ai-build__header h2 {
+    margin-top: var(--space-md);
   }
 
-  .ai-automate__grid {
+  .ai-build__grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-lg);
   }
 
-  .ai-automate__card .card__icon {
+  .ai-build__grid .card__icon {
+    width: 32px;
+    height: 32px;
     margin-bottom: var(--space-md);
   }
 
-  /* Process section */
+  .ai-build__grid .card__title {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Section 5: How We Work (Timeline) ── */
   .ai-process__header {
     text-align: center;
     max-width: 640px;
     margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
   .ai-process__header h2 {
-    margin-top: var(--space-sm);
+    margin-top: var(--space-md);
     margin-bottom: var(--space-md);
   }
 
-  .ai-process__header p {
+  .ai-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 700px;
+    margin-inline: auto;
+    position: relative;
+  }
+
+  /* Vertical connecting line */
+  .ai-timeline::before {
+    content: '';
+    position: absolute;
+    left: 23px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent-emerald), rgba(74, 222, 128, 0.15));
+    border-radius: 1px;
+  }
+
+  .ai-timeline__step {
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    position: relative;
+  }
+
+  .ai-timeline__node {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-deep);
+    border: 2px solid var(--accent-emerald);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 12px var(--accent-emerald-glow);
+  }
+
+  .ai-timeline__number {
+    font-family: var(--font-mono);
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .ai-timeline__card {
+    flex-grow: 1;
+  }
+
+  .ai-timeline__badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-secondary);
+    background: var(--bg-subtle);
+    border: 1px solid var(--border-subtle);
+    border-radius: 100px;
+    padding: 3px 12px;
+    margin-bottom: var(--space-sm);
+  }
+
+  /* ── Section 6: Technology (Split) ── */
+  .ai-tech__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .ai-tech__header h2 {
+    margin-top: var(--space-md);
+  }
+
+  .ai-tech__split {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    max-width: 900px;
     margin-inline: auto;
   }
 
-  .ai-process__timeline-note {
+  .ai-tech__text p {
+    color: var(--text-primary);
+  }
+
+  .ai-tech__aside {
+    padding: var(--space-lg);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(55, 147, 255, 0.03) 50%, var(--bg-elevated) 100%);
+    border: 1px solid var(--border-subtle);
+    border-left: 2px solid var(--accent-blue);
+    border-radius: var(--radius-lg);
+  }
+
+  /* ── Section 7: Who It's For ── */
+  .ai-who__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .ai-who__header h2 {
+    margin-top: var(--space-md);
+  }
+
+  /* ── Section 8: Real Expectations (Comparison) ── */
+  .ai-expect__header {
+    text-align: center;
+    max-width: 640px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
+  }
+
+  .ai-expect__header h2 {
+    margin-top: var(--space-md);
+  }
+
+  .ai-expect__columns {
+    display: none;
+  }
+
+  .ai-expect__col-header {
     font-family: var(--font-mono);
-    font-size: 0.9375rem;
-    color: var(--accent-primary-hover);
-    margin-top: var(--space-xl);
-    padding-left: var(--space-xl);
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
   }
 
-  /* Technology section */
-  .ai-tech__layout {
-    align-items: start;
-  }
-
-  .ai-tech__visual {
+  .ai-expect__rows {
     display: flex;
     flex-direction: column;
     gap: var(--space-lg);
   }
 
-  .ai-tech__stat-block {
-    background-color: var(--bg-elevated);
-    border: 1px solid var(--border-subtle);
-    border-radius: var(--radius-lg);
+  .ai-expect__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .ai-expect__card {
     padding: var(--space-lg);
   }
 
-  .ai-tech__stat-number {
-    display: block;
-    font-family: var(--font-mono);
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--accent-primary-hover);
-    line-height: 1.1;
-    margin-bottom: var(--space-sm);
+  /* Amber card variant (for "What We Don't Promise") */
+  .card--amber {
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
+    border-left: 2px solid var(--accent-amber);
+    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
   }
 
-  .ai-tech__stat-label {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
+  /* ── Section 9: FAQ ── */
+  .ai-faq__header {
+    max-width: 800px;
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
   }
 
-  .ai-tech__content h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-lg);
-  }
-
-  .ai-tech__content p + p {
+  .ai-faq__header h2 {
     margin-top: var(--space-md);
   }
 
-  /* Who it's for section */
-  .ai-who__header {
+  /* ── Section 10: CTA ── */
+  .ai-cta {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ai-cta__glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(55, 147, 255, 0.05) 0%,
+      rgba(181, 178, 255, 0.03) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .ai-cta__inner {
+    position: relative;
+    z-index: 1;
     text-align: center;
     max-width: 640px;
     margin-inline: auto;
   }
 
-  .ai-who__header h2 {
-    margin-top: var(--space-sm);
-  }
-
-  .ai-who__card .card__text {
-    margin-bottom: var(--space-md);
-  }
-
-  .ai-who__benefit {
-    font-size: 0.9375rem;
-    color: var(--accent-primary-hover);
-    font-weight: 500;
-    padding-top: var(--space-md);
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  /* Expectations section */
-  .ai-expectations__inner {
-    max-width: 800px;
-    margin-inline: auto;
-  }
-
-  .ai-expectations__inner h2 {
-    margin-top: var(--space-sm);
-    margin-bottom: var(--space-md);
-  }
-
-  .ai-expectations__inner > p {
-    margin-bottom: var(--space-xl);
-  }
-
-  .ai-expectations__list {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-
-  .ai-expectations__item {
-    padding-left: var(--space-lg);
-    border-left: 3px solid var(--accent-primary);
-  }
-
-  .ai-expectations__item h3 {
+  .ai-cta__headline {
     font-family: var(--font-heading);
-    font-size: 1.125rem;
-    font-weight: 500;
-    margin-bottom: var(--space-xs);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-md);
   }
 
-  .ai-expectations__item p {
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
+  .ai-cta__subtext {
+    margin-inline: auto;
+    margin-bottom: var(--space-xl);
     line-height: 1.7;
   }
 
-  /* FAQ section */
-  .ai-faq__header {
-    max-width: 800px;
-    margin-bottom: var(--space-xl);
-  }
-
-  /* Responsive */
+  /* ── Responsive ── */
   @media (min-width: 768px) {
-    .ai-automate__grid {
+    .ai-stats__grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .ai-build__grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .ai-expectations__list {
-      grid-template-columns: repeat(2, 1fr);
+    .ai-tech__split {
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
     }
 
-    .ai-tech__stat-number {
-      font-size: 3rem;
+    .ai-expect__columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+      margin-bottom: var(--space-lg);
+      padding-inline: var(--space-xs);
+    }
+
+    .ai-expect__col {
+      text-align: center;
+    }
+
+    .ai-expect__row {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ai-cta__headline {
+      font-size: 2rem;
     }
   }
 
   @media (min-width: 1024px) {
-    .ai-automate__grid {
+    .ai-build__grid {
       grid-template-columns: repeat(3, 1fr);
     }
 
-    .ai-automate__grid > :last-child {
-      grid-column: span 1;
-    }
-
-    .ai-tech__layout {
-      gap: var(--space-3xl);
+    .ai-cta__headline {
+      font-size: 2.5rem;
     }
   }
 </style>
