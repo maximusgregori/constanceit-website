@@ -1,0 +1,19 @@
+---
+import ContactForm from './ContactForm.astro';
+
+const {
+  headline = "Ready to stop doing the work your tools should handle?",
+  subtext = "Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.",
+  source = 'cta',
+} = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-section__inner animate-on-scroll">
+      <h2 class="cta-section__headline">{headline}</h2>
+      <p class="cta-section__subtext">{subtext}</p>
+      <ContactForm source={source} />
+    </div>
+  </div>
+</section>

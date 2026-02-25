@@ -1,0 +1,104 @@
+---
+const { currentPath = '/' } = Astro.props;
+
+const isActive = (path) => {
+  if (path === '/') return currentPath === '/';
+  return currentPath.startsWith(path);
+};
+
+const navLinks = [
+  { label: 'Home', href: '/' },
+];
+
+const serviceLinks = [
+  { label: 'AI & Automation', href: '/services/ai-workflow-automation/' },
+  { label: 'Managed IT', href: '/services/managed-it/' },
+  { label: 'Infrastructure', href: '/services/it-infrastructure/' },
+];
+
+const industryLinks = [
+  { label: 'Healthcare', href: '/industries/healthcare/' },
+  { label: 'Real Estate', href: '/industries/real-estate/' },
+  { label: 'E-Commerce', href: '/industries/ecommerce/' },
+  { label: 'Professional Services', href: '/industries/professional-services/' },
+];
+---
+
+<header class="site-header" role="banner">
+  <div class="header-inner">
+    <!-- Logo -->
+    <a href="/" class="site-logo" aria-label="Constance IT — Home">
+      <img src="/images/logo-white.png" alt="Constance IT" width="160" height="32">
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="nav-desktop" aria-label="Main navigation">
+      <a href="/" class:list={['nav-link', { active: isActive('/') && currentPath === '/' }]}>Home</a>
+
+      <!-- Services Dropdown -->
+      <div class="nav-dropdown">
+        <a href="/services/" class:list={['nav-link', 'nav-dropdown-trigger', { active: isActive('/services/') }]}>
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          {serviceLinks.map(link => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Industries Dropdown -->
+      <div class="nav-dropdown">
+        <a href="/industries/healthcare/" class:list={['nav-link', 'nav-dropdown-trigger', { active: isActive('/industries/') }]}>
+          Industries
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </a>
+        <div class="nav-dropdown-menu">
+          {industryLinks.map(link => (
+            <a href={link.href}>{link.label}</a>
+          ))}
+        </div>
+      </div>
+
+      <a href="/blog/" class:list={['nav-link', { active: isActive('/blog/') }]}>Blog</a>
+      <a href="/about/" class:list={['nav-link', { active: isActive('/about/') }]}>About</a>
+      <a href="/contact/" class:list={['nav-link', { active: isActive('/contact/') }]}>Contact</a>
+    </nav>
+
+    <!-- Header CTA -->
+    <a href="/contact/" class="btn btn--primary btn--small header-cta">Get in Touch</a>
+
+    <!-- Mobile Nav Toggle -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <svg class="icon-menu" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-mobile-overlay" aria-hidden="true"></div>
+
+  <!-- Mobile Navigation -->
+  <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="/" class="nav-mobile-link">Home</a>
+
+    <span class="nav-mobile-group-label">Services</span>
+    {serviceLinks.map(link => (
+      <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
+    ))}
+
+    <span class="nav-mobile-group-label">Industries</span>
+    {industryLinks.map(link => (
+      <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
+    ))}
+
+    <a href="/blog/" class="nav-mobile-link">Blog</a>
+    <a href="/about/" class="nav-mobile-link">About</a>
+    <a href="/contact/" class="nav-mobile-link">Contact</a>
+
+    <div class="nav-mobile-cta">
+      <a href="/contact/" class="btn btn--primary" style="width:100%;text-align:center;">Get in Touch</a>
+    </div>
+  </nav>
+</header>

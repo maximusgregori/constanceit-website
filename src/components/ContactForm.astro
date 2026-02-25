@@ -1,0 +1,13 @@
+---
+const { source = 'general' } = Astro.props;
+---
+
+<form action="https://formspree.io/f/YOUR_ID" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Your name" required aria-label="Your name">
+    <input type="email" name="email" placeholder="Your email" required aria-label="Your email">
+    <textarea name="message" placeholder="How can we help?" rows="3" aria-label="Your message"></textarea>
+    <input type="hidden" name="source" value={source}>
+    <input type="hidden" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+    <button type="submit" class="btn btn--primary">Send Message</button>
+</form>
+<p class="contact-form__note">Or reach us directly at <a href="mailto:max@constanceit.com">max@constanceit.com</a></p>
