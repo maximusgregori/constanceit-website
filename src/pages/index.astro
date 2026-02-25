@@ -312,23 +312,39 @@ import ContactForm from '../components/ContactForm.astro';
   <SectionDivider />
 
   <!-- ════════════════════════════════════════
-       Section 7: Technologies We Work With
+       Section 7: Powered By — Logo Carousel
        ════════════════════════════════════════ -->
   <section class="section hp-tech">
     <div class="container">
-      <div class="hp-tech__inner animate-on-scroll">
-        <SectionBadge text="TECHNOLOGIES" variant="feature" />
-        <div class="hp-tech__badges">
-          <span class="tech-badge">Claude</span>
-          <span class="tech-badge">GPT</span>
-          <span class="tech-badge">Google AI</span>
-          <span class="tech-badge">OpenClaw</span>
-          <span class="tech-badge">Make</span>
-          <span class="tech-badge">Zapier</span>
-          <span class="tech-badge">n8n</span>
-          <span class="tech-badge">Microsoft 365</span>
-          <span class="tech-badge">Google Workspace</span>
-        </div>
+      <div class="hp-tech__header animate-on-scroll">
+        <SectionBadge text="POWERED BY" variant="feature" />
+      </div>
+    </div>
+    <div class="logo-carousel">
+      <div class="logo-carousel__track">
+        <img src="/images/logos/OpenAI.png" alt="OpenAI" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/Anthropic.png" alt="Anthropic" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/Deepseek.png" alt="DeepSeek" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/Perplexity.png" alt="Perplexity" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/GoogleWorkspace.png" alt="Google Workspace" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/Office365.png" alt="Microsoft 365" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/Slack.png" alt="Slack" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/n8n.png" alt="n8n" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/zapier.png" alt="Zapier" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/Cisco.png" alt="Cisco" width="120" height="36" loading="lazy" />
+        <img src="/images/logos/Fortinet.png" alt="Fortinet" width="120" height="36" loading="lazy" />
+        <!-- Duplicate set for seamless infinite scroll -->
+        <img src="/images/logos/OpenAI.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/Anthropic.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/Deepseek.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/Perplexity.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/GoogleWorkspace.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/Office365.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/Slack.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/n8n.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/zapier.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/Cisco.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
+        <img src="/images/logos/Fortinet.png" alt="" width="120" height="36" loading="lazy" aria-hidden="true" />
       </div>
     </div>
   </section>
@@ -355,6 +371,15 @@ import ContactForm from '../components/ContactForm.astro';
   /* ──────────────────────────────────────
      Homepage — Scoped Styles
      ────────────────────────────────────── */
+
+  /* Homepage hero — full viewport height with centered content */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: var(--header-height) var(--space-2xl);
+  }
 
   /* Hero ambient glow — multi-color */
   .hero__glow--violet {
@@ -449,7 +474,7 @@ import ContactForm from '../components/ContactForm.astro';
 
   .hp-comparison__col-header {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.35rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.01em;
@@ -578,34 +603,63 @@ import ContactForm from '../components/ContactForm.astro';
     line-height: 1.7;
   }
 
-  /* ── Section 7: Technologies ── */
-  .hp-tech__inner {
+  /* ── Section 7: Logo Carousel ── */
+  .hp-tech__header {
     text-align: center;
+    margin-bottom: var(--space-lg);
   }
 
-  .hp-tech__badges {
+  .logo-carousel {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+
+  .logo-carousel__track {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: var(--space-sm);
-    margin-top: var(--space-lg);
+    align-items: center;
+    gap: var(--space-xl);
+    width: max-content;
+    animation: logoScroll 35s linear infinite;
   }
 
-  .tech-badge {
-    font-family: var(--font-mono);
-    font-size: 0.8125rem;
-    letter-spacing: 0.02em;
-    color: var(--text-secondary);
-    background-color: var(--bg-subtle);
-    border: 1px solid var(--border-subtle);
-    border-radius: 100px;
-    padding: 8px 20px;
-    transition: color 0.2s ease, border-color 0.2s ease;
+  .logo-carousel__track img {
+    height: 30px;
+    width: auto;
+    opacity: 0.55;
+    transition: opacity 0.3s ease;
+    flex-shrink: 0;
+    object-fit: contain;
   }
 
-  .tech-badge:hover {
-    color: var(--text-primary);
-    border-color: var(--border-accent);
+  .logo-carousel__track img:hover {
+    opacity: 1;
+  }
+
+  @keyframes logoScroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-carousel__track {
+      animation: none;
+      flex-wrap: wrap;
+      justify-content: center;
+      width: auto;
+    }
+    .logo-carousel__track img[aria-hidden="true"] {
+      display: none;
+    }
+    .logo-carousel {
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
   }
 
   /* ── Section 8: Final CTA ── */
@@ -667,7 +721,7 @@ import ContactForm from '../components/ContactForm.astro';
     }
 
     .hp-comparison__col-header {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
     }
 
     .hp-comparison__row {
@@ -693,6 +747,10 @@ import ContactForm from '../components/ContactForm.astro';
 
     .hp-cta__headline {
       font-size: 2rem;
+    }
+
+    .logo-carousel__track img {
+      height: 36px;
     }
   }
 
