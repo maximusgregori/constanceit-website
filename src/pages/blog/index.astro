@@ -9,17 +9,10 @@ const posts = (await getCollection('blog', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 /**
- * Map blog category to CSS class suffix for colored left-borders.
- * AI & Automation → blue, Managed IT → emerald, Infrastructure → amber, Industry News → violet
+ * All blog cards use blue (brand color) for consistent styling.
  */
-function getCategoryClass(category: string): string {
-  switch (category) {
-    case 'AI & Automation': return 'blog-card--ai';
-    case 'Managed IT': return 'blog-card--managed-it';
-    case 'Infrastructure': return 'blog-card--infrastructure';
-    case 'Industry News': return 'blog-card--industry-news';
-    default: return 'blog-card--ai';
-  }
+function getCategoryClass(_category: string): string {
+  return 'blog-card--ai';
 }
 ---
 
