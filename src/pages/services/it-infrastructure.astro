@@ -12,13 +12,13 @@ import ContactForm from '../../components/ContactForm.astro';
        ════════════════════════════════════════ -->
   <section class="hero">
     <div class="hero__glow hero__glow--amber"></div>
-    <div class="hero__glow hero__glow--violet"></div>
+    <div class="hero__glow hero__glow--amber-secondary"></div>
     <div class="container">
       <div class="hero__content hero-animate">
         <h1 class="hero__title">We show up and <span class="accent-amber glow-heavy-amber">build it right.</span></h1>
         <p class="hero__subtitle">Cabling, hardware deployment, server setup, network design, and office buildouts. Physical IT work done the right way, the first time.</p>
         <div class="hero__actions">
-          <a href="#contact-form" class="btn btn--amber">Request a Quote</a>
+          <a href="#contact-form" class="btn btn--primary">Request a Quote</a>
           <a href="#services" class="btn btn--ghost">What We Build &rarr;</a>
         </div>
       </div>
@@ -139,8 +139,8 @@ import ContactForm from '../../components/ContactForm.astro';
   <section class="section infra-process">
     <div class="container">
       <div class="infra-process__header animate-on-scroll">
-        <SectionBadge text="THE PROCESS" variant="solution" />
-        <h2>Plan it. Spec it. Build it. <span class="accent-emerald glow-medium-emerald">Document it.</span></h2>
+        <SectionBadge text="THE PROCESS" variant="amber" />
+        <h2>Plan it. Spec it. Build it. <span class="accent-amber glow-medium-amber">Document it.</span></h2>
       </div>
 
       <div class="infra-timeline stagger-children">
@@ -148,7 +148,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <div class="infra-timeline__node">
             <span class="infra-timeline__number accent-amber glow-medium-amber">01</span>
           </div>
-          <div class="card card--solution infra-timeline__card">
+          <div class="card infra-timeline__card">
             <h3 class="card__title">Assessment & Planning</h3>
             <p class="card__text">We assess your space, needs, and growth plans. Detailed plan with network design, cabling routes, equipment list, timeline, and cost.</p>
             <span class="infra-timeline__badge">1–2 weeks</span>
@@ -159,7 +159,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <div class="infra-timeline__node">
             <span class="infra-timeline__number accent-amber glow-medium-amber">02</span>
           </div>
-          <div class="card card--solution infra-timeline__card">
+          <div class="card infra-timeline__card">
             <h3 class="card__title">Procurement & Staging</h3>
             <p class="card__text">We source and test equipment. Pre-configure what we can. This reduces on-site time and minimizes your downtime.</p>
             <span class="infra-timeline__badge">1–2 weeks</span>
@@ -170,7 +170,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <div class="infra-timeline__node">
             <span class="infra-timeline__number accent-amber glow-medium-amber">03</span>
           </div>
-          <div class="card card--solution infra-timeline__card">
+          <div class="card infra-timeline__card">
             <h3 class="card__title">Installation & Build</h3>
             <p class="card__text">We show up with a crew and build it. Cabling run, hardware mounted, configurations deployed, testing done.</p>
             <span class="infra-timeline__badge">1–4 weeks</span>
@@ -181,7 +181,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <div class="infra-timeline__node">
             <span class="infra-timeline__number accent-amber glow-medium-amber">04</span>
           </div>
-          <div class="card card--solution infra-timeline__card">
+          <div class="card infra-timeline__card">
             <h3 class="card__title">Documentation & Handoff</h3>
             <p class="card__text">Network diagrams, hardware lists, configurations, warranty info, maintenance schedules. Your team knows exactly what you have.</p>
             <span class="infra-timeline__badge">Final week</span>
@@ -201,8 +201,8 @@ import ContactForm from '../../components/ContactForm.astro';
   <section class="section infra-why">
     <div class="container">
       <div class="infra-why__header animate-on-scroll">
-        <SectionBadge text="WHY IT MATTERS" variant="info" />
-        <h2>Good infrastructure is an <span class="accent-violet glow-medium-violet">investment.</span></h2>
+        <SectionBadge text="WHY IT MATTERS" variant="amber" />
+        <h2>Good infrastructure is an <span class="accent-amber glow-medium-amber">investment.</span></h2>
       </div>
 
       <div class="grid grid--2 stagger-children">
@@ -253,8 +253,8 @@ import ContactForm from '../../components/ContactForm.astro';
   <section class="section infra-examples">
     <div class="container">
       <div class="infra-examples__header animate-on-scroll">
-        <SectionBadge text="RECENT WORK" variant="info" />
-        <h2>Infrastructure we've <span class="accent-violet glow-medium-violet">built.</span></h2>
+        <SectionBadge text="RECENT WORK" variant="amber" />
+        <h2>Infrastructure we've <span class="accent-amber glow-medium-amber">built.</span></h2>
       </div>
 
       <div class="infra-examples__grid stagger-children">
@@ -264,7 +264,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <p class="infra-project__client text-secondary">Texas-based marketing firm, 25 employees</p>
           <p class="card__text">Network topology design. Cat6a cabling throughout. Network closet with managed switches and PoE. 25 workstations, phones, printers. WiFi access points.</p>
           <div class="infra-project__metric">
-            <span class="stat-number stat-number--emerald infra-project__stat">0</span> <span class="stat-number-unit stat-number--emerald">network issues</span>
+            <span class="stat-number stat-number--amber infra-project__stat">0</span> <span class="stat-number-unit stat-number--amber">network issues</span>
             <span class="infra-project__metric-label">first 6 months</span>
           </div>
           <p class="infra-project__result">Office was IT-ready on opening day.</p>
@@ -276,7 +276,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <p class="infra-project__client text-secondary">Professional services firm</p>
           <p class="card__text">New layout design. Proper racking, power distribution, cooling. New cabling for redundancy. Zero-downtime migration.</p>
           <div class="infra-project__metric">
-            <span class="stat-number stat-number--emerald infra-project__stat">0</span> <span class="stat-number-unit stat-number--emerald">downtime</span>
+            <span class="stat-number stat-number--amber infra-project__stat">0</span> <span class="stat-number-unit stat-number--amber">downtime</span>
             <span class="infra-project__metric-label">during migration</span>
           </div>
           <p class="infra-project__result">Servers run cooler. Future upgrades are straightforward.</p>
@@ -288,7 +288,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <p class="infra-project__client text-secondary">Real estate company</p>
           <p class="card__text">Network segmentation. Managed switches. Access points for full coverage. Firewall and endpoint protection.</p>
           <div class="infra-project__metric">
-            <span class="stat-number stat-number--emerald infra-project__stat">Enterprise-grade</span>
+            <span class="stat-number stat-number--amber infra-project__stat">Enterprise-grade</span>
             <span class="infra-project__metric-label">security and speed</span>
           </div>
           <p class="infra-project__result">Fast, reliable network. Staff productivity improved immediately.</p>
@@ -305,8 +305,8 @@ import ContactForm from '../../components/ContactForm.astro';
   <section class="section infra-team">
     <div class="container">
       <div class="infra-team__header animate-on-scroll">
-        <SectionBadge text="OUR TEAM" variant="info" />
-        <h2>Cisco-certified technicians. Across <span class="accent-violet glow-medium-violet">Texas.</span></h2>
+        <SectionBadge text="OUR TEAM" variant="amber" />
+        <h2>Cisco-certified technicians. Across <span class="accent-amber glow-medium-amber">Texas.</span></h2>
       </div>
 
       <div class="infra-team__split stagger-children">
@@ -372,8 +372,8 @@ import ContactForm from '../../components/ContactForm.astro';
   <section class="section infra-faq">
     <div class="container">
       <div class="infra-faq__header animate-on-scroll">
-        <SectionBadge text="FAQ" variant="feature" />
-        <h2>Questions about <span class="accent-blue glow-medium-blue">infrastructure?</span></h2>
+        <SectionBadge text="FAQ" variant="amber" />
+        <h2>Questions about <span class="accent-amber glow-medium-amber">infrastructure?</span></h2>
       </div>
 
       <div class="faq-list animate-on-scroll">
@@ -476,12 +476,12 @@ import ContactForm from '../../components/ContactForm.astro';
     right: 5%;
   }
 
-  .hero__glow--violet {
+  .hero__glow--amber-secondary {
     position: absolute;
     width: 400px;
     height: 350px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(181, 178, 255, 0.04) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.04) 0%, transparent 70%);
     filter: blur(60px);
     pointer-events: none;
     bottom: 10%;
@@ -527,6 +527,12 @@ import ContactForm from '../../components/ContactForm.astro';
 
   .infra-services__grid .card__title {
     margin-top: var(--space-sm);
+  }
+
+  .infra-services__grid .card--feature {
+    border-left-color: var(--accent-amber);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
+    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
   }
 
   /* ── Section 4: How We Work (Timeline) ── */
@@ -591,6 +597,9 @@ import ContactForm from '../../components/ContactForm.astro';
 
   .infra-timeline__card {
     flex-grow: 1;
+    border-left: 2px solid var(--accent-amber);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
+    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
   }
 
   .infra-timeline__badge {
@@ -616,6 +625,12 @@ import ContactForm from '../../components/ContactForm.astro';
   }
 
   /* ── Section 5: Why Do It Right ── */
+  .infra-why__card.card--feature {
+    border-left-color: var(--accent-amber);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
+    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
+  }
+
   .infra-why__header {
     text-align: center;
     max-width: 900px;
@@ -691,6 +706,12 @@ import ContactForm from '../../components/ContactForm.astro';
   }
 
   /* ── Section 7: Team & Service Area ── */
+  .infra-team__card.card--feature {
+    border-left-color: var(--accent-amber);
+    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
+    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
+  }
+
   .infra-team__header {
     text-align: center;
     max-width: 900px;
@@ -777,7 +798,7 @@ import ContactForm from '../../components/ContactForm.astro';
     background: radial-gradient(
       ellipse at center,
       rgba(55, 147, 255, 0.05) 0%,
-      rgba(181, 178, 255, 0.03) 40%,
+      rgba(245, 158, 11, 0.03) 40%,
       transparent 70%
     );
     pointer-events: none;

@@ -11,11 +11,11 @@ import ContactForm from '../../components/ContactForm.astro';
        Section 1: Hero
        ════════════════════════════════════════ -->
   <section class="hero">
-    <div class="hero__glow hero__glow--violet"></div>
-    <div class="hero__glow hero__glow--blue"></div>
+    <div class="hero__glow hero__glow--blue-main"></div>
+    <div class="hero__glow hero__glow--blue-secondary"></div>
     <div class="container">
       <div class="hero__content hero-animate">
-        <h1 class="hero__title">Stop doing work your <span class="accent-violet glow-heavy-violet">tools</span> should handle.</h1>
+        <h1 class="hero__title">Stop doing work your <span class="accent-blue glow-heavy-blue">tools</span> should handle.</h1>
         <p class="hero__subtitle">Your team spends hours every week on manual tasks that are boring, repetitive, and expensive. We build AI agents that handle them — and it keeps working after we're done.</p>
         <div class="hero__actions">
           <a href="#contact-form" class="btn btn--primary">Get Your Free Audit</a>
@@ -34,11 +34,11 @@ import ContactForm from '../../components/ContactForm.astro';
     <div class="container">
       <div class="ai-stats__grid animate-on-scroll">
         <div class="ai-stats__item">
-          <span class="stat-number stat-number--violet">90</span> <span class="stat-number-unit stat-number--violet">days</span>
+          <span class="stat-number stat-number--blue">90</span> <span class="stat-number-unit stat-number--blue">days</span>
           <span class="ai-stats__label">To measurable results</span>
         </div>
         <div class="ai-stats__item">
-          <span class="stat-number stat-number--emerald">10–15</span> <span class="stat-number-unit stat-number--emerald">hrs</span>
+          <span class="stat-number stat-number--blue">10–15</span> <span class="stat-number-unit stat-number--blue">hrs</span>
           <span class="ai-stats__label">Saved per week</span>
         </div>
         <div class="ai-stats__item">
@@ -163,17 +163,17 @@ import ContactForm from '../../components/ContactForm.astro';
   <section class="section ai-process">
     <div class="container">
       <div class="ai-process__header animate-on-scroll">
-        <SectionBadge text="HOW WE WORK" variant="solution" />
-        <h2>Phased approach. <span class="accent-emerald glow-medium-emerald">Proven</span> results.</h2>
+        <SectionBadge text="HOW WE WORK" variant="feature" />
+        <h2>Phased approach. <span class="accent-blue glow-medium-blue">Proven</span> results.</h2>
         <p class="text-large text-secondary">We don't try to automate everything at once. We move fast, but smart.</p>
       </div>
 
       <div class="ai-timeline stagger-children">
         <div class="ai-timeline__step">
           <div class="ai-timeline__node">
-            <span class="ai-timeline__number accent-emerald glow-medium-emerald">01</span>
+            <span class="ai-timeline__number accent-blue glow-medium-blue">01</span>
           </div>
-          <div class="card card--solution ai-timeline__card">
+          <div class="card card--feature ai-timeline__card">
             <span class="ai-timeline__badge">1–2 weeks</span>
             <h3 class="card__title">Audit & Design</h3>
             <p class="card__text">We watch your team work and map where time disappears. We identify quick wins and design the workflows.</p>
@@ -182,9 +182,9 @@ import ContactForm from '../../components/ContactForm.astro';
 
         <div class="ai-timeline__step">
           <div class="ai-timeline__node">
-            <span class="ai-timeline__number accent-emerald glow-medium-emerald">02</span>
+            <span class="ai-timeline__number accent-blue glow-medium-blue">02</span>
           </div>
-          <div class="card card--solution ai-timeline__card">
+          <div class="card card--feature ai-timeline__card">
             <span class="ai-timeline__badge">4–6 weeks</span>
             <h3 class="card__title">Build & Test</h3>
             <p class="card__text">We build agents configured for your tools. We test thoroughly, train your team, and refine based on feedback.</p>
@@ -193,9 +193,9 @@ import ContactForm from '../../components/ContactForm.astro';
 
         <div class="ai-timeline__step">
           <div class="ai-timeline__node">
-            <span class="ai-timeline__number accent-emerald glow-medium-emerald">03</span>
+            <span class="ai-timeline__number accent-blue glow-medium-blue">03</span>
           </div>
-          <div class="card card--solution ai-timeline__card">
+          <div class="card card--feature ai-timeline__card">
             <span class="ai-timeline__badge">Ongoing</span>
             <h3 class="card__title">Launch & Support</h3>
             <p class="card__text">We launch with monitoring in place. We catch issues before they break. We measure impact and optimize.</p>
@@ -278,7 +278,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <span class="ai-expect__col-header accent-emerald glow-medium-emerald">WHAT WE DELIVER</span>
         </div>
         <div class="ai-expect__col">
-          <span class="ai-expect__col-header accent-amber glow-medium-amber">WHAT WE DON'T PROMISE</span>
+          <span class="ai-expect__col-header accent-coral glow-medium-coral">WHAT WE DON'T PROMISE</span>
         </div>
       </div>
 
@@ -287,7 +287,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <div class="card card--solution ai-expect__card">
             <p class="card__text">Your team gets back 10–15 hours per week. That's 500+ hours per year.</p>
           </div>
-          <div class="card card--amber ai-expect__card">
+          <div class="card card--problem ai-expect__card">
             <p class="card__text">Overnight transformation. Real results take 90 days.</p>
           </div>
         </div>
@@ -296,7 +296,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <div class="card card--solution ai-expect__card">
             <p class="card__text">Document accuracy at 95%+. Machines don't have off days.</p>
           </div>
-          <div class="card card--amber ai-expect__card">
+          <div class="card card--problem ai-expect__card">
             <p class="card__text">Zero errors ever. Edge cases happen — we monitor and fix within 24 hours.</p>
           </div>
         </div>
@@ -305,7 +305,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <div class="card card--solution ai-expect__card">
             <p class="card__text">Handle volume growth without hiring. Automation scales with you.</p>
           </div>
-          <div class="card card--amber ai-expect__card">
+          <div class="card card--problem ai-expect__card">
             <p class="card__text">Replacing your team. AI handles tasks, not judgment calls.</p>
           </div>
         </div>
@@ -420,19 +420,19 @@ import ContactForm from '../../components/ContactForm.astro';
   .accent-amber { color: var(--accent-amber); }
 
   /* Hero ambient glows */
-  .hero__glow--violet {
+  .hero__glow--blue-main {
     position: absolute;
     width: 500px;
     height: 400px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(181, 178, 255, 0.06) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(55, 147, 255, 0.06) 0%, transparent 70%);
     filter: blur(60px);
     pointer-events: none;
     top: 10%;
     right: 5%;
   }
 
-  .hero__glow--blue {
+  .hero__glow--blue-secondary {
     position: absolute;
     width: 400px;
     height: 350px;
@@ -538,7 +538,7 @@ import ContactForm from '../../components/ContactForm.astro';
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, var(--accent-emerald), rgba(74, 222, 128, 0.15));
+    background: linear-gradient(180deg, var(--accent-blue), rgba(55, 147, 255, 0.15));
     border-radius: 1px;
   }
 
@@ -557,10 +557,10 @@ import ContactForm from '../../components/ContactForm.astro';
     align-items: center;
     justify-content: center;
     background: var(--bg-deep);
-    border: 2px solid var(--accent-emerald);
+    border: 2px solid var(--accent-blue);
     border-radius: 50%;
     z-index: 1;
-    box-shadow: 0 0 12px var(--accent-emerald-glow);
+    box-shadow: 0 0 12px var(--accent-blue-glow);
   }
 
   .ai-timeline__number {
@@ -669,13 +669,6 @@ import ContactForm from '../../components/ContactForm.astro';
 
   .ai-expect__card {
     padding: var(--space-lg);
-  }
-
-  /* Amber card variant (for "What We Don't Promise") */
-  .card--amber {
-    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
-    border-left: 2px solid var(--accent-amber);
-    box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
   }
 
   /* ── Section 9: FAQ ── */
