@@ -335,7 +335,7 @@ p {
 }
 
 .site-logo img {
-  height: 32px;
+  height: 38px;
   width: auto;
 }
 
@@ -1050,6 +1050,11 @@ button.nav-link {
   .hero-break {
     display: block;
   }
+}
+
+/* Controlled heading line break — always active, mobile wraps naturally */
+.heading-break {
+  display: block;
 }
 
 .hero__subtitle {
@@ -1799,6 +1804,14 @@ button.nav-link {
   text-shadow: 0 0 10px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.3), 0 0 80px rgba(245, 158, 11, 0.1);
 }
 
+/* Stat number unit — separate span for the unit part to avoid monospace space width */
+.stat-number-unit {
+  font-family: var(--font-mono);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-left: 0.15em;
+}
+
 
 /* ========================================
   14. Section Badges
@@ -1935,6 +1948,10 @@ button.nav-link {
     font-size: 3.5rem;
   }
 
+  .stat-number-unit {
+    font-size: 3.5rem;
+  }
+
   .hero {
     padding-block: calc(var(--header-height) + var(--space-3xl)) var(--space-3xl);
   }
@@ -2008,6 +2025,11 @@ button.nav-link {
   /* Desktop nav visible */
   .nav-desktop {
     display: flex;
+    gap: var(--space-md);
+  }
+
+  .nav-link {
+    font-size: 0.875rem;
   }
 
   .header-cta {

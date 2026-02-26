@@ -115,7 +115,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <span class="uc-stats__label">Oversells</span>
         </div>
         <div class="uc-stats__item">
-          <span class="stat-number stat-number--violet">4+ hrs</span>
+          <span class="stat-number stat-number--violet">4+</span> <span class="stat-number-unit stat-number--violet">hrs</span>
           <span class="uc-stats__label">Saved per day</span>
         </div>
         <div class="uc-stats__item">
@@ -179,7 +179,7 @@ import ContactForm from '../../components/ContactForm.astro';
   /* ── Section Headers ── */
   .uc-section-header {
     text-align: center;
-    max-width: 700px;
+    max-width: 900px;
     margin-inline: auto;
     margin-bottom: var(--space-xl);
   }
@@ -217,7 +217,7 @@ import ContactForm from '../../components/ContactForm.astro';
     text-align: center;
     max-width: 900px;
     margin-inline: auto;
-    padding: var(--space-lg) 0;
+    padding-bottom: var(--space-lg);
   }
 
   .uc-stats__item {
@@ -234,6 +234,7 @@ import ContactForm from '../../components/ContactForm.astro';
 
   .uc-results__note {
     text-align: center;
+    margin-inline: auto;
     font-size: 0.8125rem;
     color: var(--text-secondary);
     margin-top: var(--space-lg);
