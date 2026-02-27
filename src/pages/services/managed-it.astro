@@ -253,7 +253,7 @@ import ContactForm from '../../components/ContactForm.astro';
         </div>
       </div>
 
-      <p class="mit-process__note accent-violet glow-medium-violet animate-on-scroll">One person. One number. Same answer every time.</p>
+      <p class="mit-process__note accent-violet glow-medium-violet animate-on-scroll" style="text-align: center">One person. One number. Same answer every time.</p>
     </div>
   </section>
 
@@ -700,33 +700,44 @@ import ContactForm from '../../components/ContactForm.astro';
   }
 
   /* ── Page-specific violet button/link overrides ── */
-  .hero .btn--primary,
-  .mit-cta .btn--primary {
-    background: var(--accent-violet);
-    box-shadow: 0 0 15px var(--accent-violet-glow), 0 0 40px rgba(181, 178, 255, 0.2);
-    border-color: rgba(181, 178, 255, 0.3);
-    color: var(--bg-deep);
+  .hero :global(.btn--primary) {
+    background: var(--accent-violet) !important;
+    box-shadow: 0 0 15px var(--accent-violet-glow), 0 0 40px rgba(181, 178, 255, 0.2) !important;
+    border-color: rgba(181, 178, 255, 0.3) !important;
+    color: var(--bg-deep) !important;
   }
 
-  .hero .btn--primary:hover,
-  .mit-cta .btn--primary:hover {
-    background: var(--accent-violet-hover);
-    box-shadow: 0 0 20px var(--accent-violet-glow), 0 0 60px rgba(181, 178, 255, 0.3);
+  .hero :global(.btn--primary:hover) {
+    background: var(--accent-violet-hover) !important;
+    box-shadow: 0 0 20px var(--accent-violet-glow), 0 0 60px rgba(181, 178, 255, 0.3) !important;
   }
 
-  .mit-pricing .btn--ghost:hover {
+  /* Violet button override - using :global() to reach into ContactForm component */
+  .mit-cta :global(.btn--primary) {
+    background: var(--accent-violet) !important;
+    box-shadow: 0 0 15px var(--accent-violet-glow), 0 0 40px rgba(181, 178, 255, 0.2) !important;
+    border-color: rgba(181, 178, 255, 0.3) !important;
+    color: var(--bg-deep) !important;
+  }
+
+  .mit-cta :global(.btn--primary:hover) {
+    background: var(--accent-violet-hover) !important;
+    box-shadow: 0 0 20px var(--accent-violet-glow), 0 0 60px rgba(181, 178, 255, 0.3) !important;
+  }
+
+  .mit-pricing :global(.btn--ghost:hover) {
     border-color: var(--accent-violet);
     color: var(--accent-violet);
     text-shadow: 0 0 6px var(--accent-violet-glow);
   }
 
-  .mit-cta .contact-form__note a {
-    color: var(--accent-violet);
+  .mit-cta :global(.contact-form__note a) {
+    color: var(--accent-violet) !important;
     text-shadow: 0 0 6px var(--accent-violet-glow);
   }
 
-  .mit-cta .contact-form__note a:hover {
-    color: var(--accent-violet-hover);
+  .mit-cta :global(.contact-form__note a:hover) {
+    color: var(--accent-violet-hover) !important;
   }
 
   /* ── Responsive ── */

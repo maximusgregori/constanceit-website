@@ -669,6 +669,8 @@ import ContactForm from '../../components/ContactForm.astro';
   .infra-project-card {
     border-left: 2px solid var(--accent-amber);
     background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.02) 50%, var(--bg-elevated) 100%);
+    display: flex;
+    flex-direction: column;
   }
 
   .infra-project__client {
@@ -680,7 +682,7 @@ import ContactForm from '../../components/ContactForm.astro';
     display: flex;
     flex-direction: column;
     gap: var(--space-xs);
-    margin-top: var(--space-lg);
+    margin-top: auto;
     padding-top: var(--space-lg);
     border-top: 1px solid var(--border-subtle);
   }
@@ -827,27 +829,38 @@ import ContactForm from '../../components/ContactForm.astro';
   }
 
   /* ── Page-specific amber button/link overrides ── */
-  .hero .btn--primary,
-  .infra-cta .btn--primary {
-    background: var(--accent-amber);
-    box-shadow: 0 0 15px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.2);
-    border-color: rgba(245, 158, 11, 0.3);
-    color: var(--bg-deep);
+  .hero :global(.btn--primary) {
+    background: var(--accent-amber) !important;
+    box-shadow: 0 0 15px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.2) !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+    color: var(--bg-deep) !important;
   }
 
-  .hero .btn--primary:hover,
-  .infra-cta .btn--primary:hover {
-    background: var(--accent-amber-hover);
-    box-shadow: 0 0 20px var(--accent-amber-glow), 0 0 60px rgba(245, 158, 11, 0.3);
+  .hero :global(.btn--primary:hover) {
+    background: var(--accent-amber-hover) !important;
+    box-shadow: 0 0 20px var(--accent-amber-glow), 0 0 60px rgba(245, 158, 11, 0.3) !important;
   }
 
-  .infra-cta .contact-form__note a {
-    color: var(--accent-amber);
+  /* Amber button override - using :global() to reach into ContactForm component */
+  .infra-cta :global(.btn--primary) {
+    background: var(--accent-amber) !important;
+    box-shadow: 0 0 15px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.2) !important;
+    border-color: rgba(245, 158, 11, 0.3) !important;
+    color: var(--bg-deep) !important;
+  }
+
+  .infra-cta :global(.btn--primary:hover) {
+    background: var(--accent-amber-hover) !important;
+    box-shadow: 0 0 20px var(--accent-amber-glow), 0 0 60px rgba(245, 158, 11, 0.3) !important;
+  }
+
+  .infra-cta :global(.contact-form__note a) {
+    color: var(--accent-amber) !important;
     text-shadow: 0 0 6px var(--accent-amber-glow);
   }
 
-  .infra-cta .contact-form__note a:hover {
-    color: var(--accent-amber-hover);
+  .infra-cta :global(.contact-form__note a:hover) {
+    color: var(--accent-amber-hover) !important;
   }
 
   /* ── Responsive ── */
