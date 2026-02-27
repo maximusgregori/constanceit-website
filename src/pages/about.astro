@@ -153,6 +153,7 @@ import ContactForm from '../components/ContactForm.astro';
 
         <div class="about-founder__photo">
           <img src="/images/Max_Headshot.jpeg" alt="Max Gregori, founder of Constance IT" class="about-founder__img" />
+          <span class="about-founder__name">Max Gregori</span>
         </div>
       </div>
     </div>
@@ -326,6 +327,8 @@ import ContactForm from '../components/ContactForm.astro';
     padding-left: var(--space-lg);
     border-left: 2px solid var(--border-subtle);
     transition: border-color 0.3s ease;
+    max-width: none;
+    margin-inline: 0;
   }
 
   .about-founder__block:hover {
@@ -338,6 +341,18 @@ import ContactForm from '../components/ContactForm.astro';
     border-radius: 12px;
     border: 1px solid var(--border-subtle);
     display: block;
+    margin-inline: auto;
+  }
+
+  .about-founder__name {
+    display: block;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-top: var(--space-md);
+    max-width: 360px;
     margin-inline: auto;
   }
 
