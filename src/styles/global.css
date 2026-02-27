@@ -193,6 +193,7 @@ h3 {
 
 p {
   max-width: var(--body-max-width);
+  margin-inline: auto;
 }
 
 .text-secondary {
