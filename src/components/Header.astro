@@ -137,26 +137,44 @@ const useCaseGroups = [
   <nav class="nav-mobile" id="mobile-nav" aria-label="Mobile navigation">
     <a href="/" class="nav-mobile-link">Home</a>
 
-    <span class="nav-mobile-group-label">Services</span>
-    <a href="/services/" class="nav-mobile-sub-link nav-mobile-view-all">View All Services <span aria-hidden="true">&rarr;</span></a>
-    {serviceLinks.map(link => (
-      <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
-    ))}
+    <!-- Services Accordion -->
+    <button type="button" class="nav-mobile-accordion-toggle" aria-expanded="false">
+      <span class="nav-mobile-group-label">Services</span>
+      <span class="nav-mobile-accordion-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="nav-mobile-accordion-panel" hidden>
+      <a href="/services/" class="nav-mobile-sub-link nav-mobile-view-all">View All Services <span aria-hidden="true">&rarr;</span></a>
+      {serviceLinks.map(link => (
+        <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
+      ))}
+    </div>
 
-    <span class="nav-mobile-group-label">Industries</span>
-    {industryLinks.map(link => (
-      <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
-    ))}
+    <!-- Industries Accordion -->
+    <button type="button" class="nav-mobile-accordion-toggle" aria-expanded="false">
+      <span class="nav-mobile-group-label">Industries</span>
+      <span class="nav-mobile-accordion-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="nav-mobile-accordion-panel" hidden>
+      {industryLinks.map(link => (
+        <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
+      ))}
+    </div>
 
-    <span class="nav-mobile-group-label">Use Cases</span>
-    {useCaseGroups.map(group => (
-      <>
-        <span class={`nav-mobile-category accent-${group.color} glow-subtle-${group.color}`}>{group.category}</span>
-        {group.links.map(link => (
-          <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
-        ))}
-      </>
-    ))}
+    <!-- Use Cases Accordion -->
+    <button type="button" class="nav-mobile-accordion-toggle" aria-expanded="false">
+      <span class="nav-mobile-group-label">Use Cases</span>
+      <span class="nav-mobile-accordion-icon" aria-hidden="true">+</span>
+    </button>
+    <div class="nav-mobile-accordion-panel" hidden>
+      {useCaseGroups.map(group => (
+        <>
+          <span class={`nav-mobile-category accent-${group.color} glow-subtle-${group.color}`}>{group.category}</span>
+          {group.links.map(link => (
+            <a href={link.href} class="nav-mobile-sub-link">{link.label}</a>
+          ))}
+        </>
+      ))}
+    </div>
 
     <a href="/blog/" class="nav-mobile-link">Blog</a>
     <a href="/about/" class="nav-mobile-link">About</a>

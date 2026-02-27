@@ -60,6 +60,16 @@
       if (openIcon) openIcon.style.display = 'block';
       if (closeIcon) closeIcon.style.display = 'none';
       document.body.style.overflow = '';
+
+      // Reset accordion panels when menu closes
+      const panels = mobileNav.querySelectorAll('.nav-mobile-accordion-panel');
+      const toggles = mobileNav.querySelectorAll('.nav-mobile-accordion-toggle');
+      panels.forEach(panel => { panel.hidden = true; });
+      toggles.forEach(t => {
+        t.setAttribute('aria-expanded', 'false');
+        const icon = t.querySelector('.nav-mobile-accordion-icon');
+        if (icon) icon.textContent = '+';
+      });
     }
 
     toggle.addEventListener('click', () => {
@@ -82,6 +92,27 @@
     // Close on link click
     mobileNav.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', closeMenu);
+    });
+
+    // Mobile nav accordion toggles
+    const accordionToggles = document.querySelectorAll('.nav-mobile-accordion-toggle');
+    accordionToggles.forEach((toggle) => {
+      toggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const panel = toggle.nextElementSibling;
+        const icon = toggle.querySelector('.nav-mobile-accordion-icon');
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+
+        if (isOpen) {
+          toggle.setAttribute('aria-expanded', 'false');
+          panel.hidden = true;
+          if (icon) icon.textContent = '+';
+        } else {
+          toggle.setAttribute('aria-expanded', 'true');
+          panel.hidden = false;
+          if (icon) icon.textContent = '\u2212';
+        }
+      });
     });
   }
 

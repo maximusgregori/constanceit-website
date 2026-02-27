@@ -647,6 +647,47 @@ button.nav-link {
   padding-top: var(--space-lg);
 }
 
+/* ── Mobile Nav Accordion ── */
+.nav-mobile-accordion-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-lg) var(--space-md) var(--space-sm);
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-mobile-accordion-toggle .nav-mobile-group-label {
+  padding: 0;
+}
+
+.nav-mobile-accordion-icon {
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  line-height: 1;
+  transition: color 0.15s ease;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.nav-mobile-accordion-toggle[aria-expanded="true"] .nav-mobile-accordion-icon {
+  color: var(--accent-blue);
+}
+
+.nav-mobile-accordion-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-mobile-accordion-panel[hidden] {
+  display: none;
+}
+
 
 /* ========================================
    6. Footer
@@ -965,6 +1006,31 @@ button.nav-link {
   background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(245, 158, 11, 0.03) 50%, var(--bg-elevated) 100%);
   border-left: 2px solid var(--accent-amber);
   box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.02);
+}
+
+/* ── Comparison VS Divider (mobile only) ── */
+.comparison-vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xs) 0;
+}
+
+.comparison-vs-divider span {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  padding: 2px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border-subtle);
+}
+
+@media (min-width: 768px) {
+  .comparison-vs-divider {
+    display: none;
+  }
 }
 
 /* Monospace card category label */
