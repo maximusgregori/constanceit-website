@@ -152,10 +152,7 @@ import ContactForm from '../components/ContactForm.astro';
         </div>
 
         <div class="about-founder__photo">
-          <div class="about-founder__placeholder" aria-hidden="true">
-            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>
-            <span>Max Gregori</span>
-          </div>
+          <img src="/images/Max_Headshot.jpeg" alt="Max Gregori, founder of Constance IT" class="about-founder__img" />
         </div>
       </div>
     </div>
@@ -335,34 +332,13 @@ import ContactForm from '../components/ContactForm.astro';
     border-color: var(--accent-blue);
   }
 
-  .about-founder__placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: var(--space-md);
+  .about-founder__img {
     width: 100%;
     max-width: 360px;
-    aspect-ratio: 3 / 4;
-    background: linear-gradient(135deg, var(--bg-elevated) 0%, rgba(55, 147, 255, 0.03) 50%, var(--bg-elevated) 100%);
-    border: 1px solid var(--border-subtle);
     border-radius: 12px;
-    color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    display: block;
     margin-inline: auto;
-  }
-
-  .about-founder__placeholder svg {
-    opacity: 0.4;
-    color: var(--accent-blue);
-    filter: drop-shadow(0 0 4px var(--accent-blue-glow));
-  }
-
-  .about-founder__placeholder span {
-    font-family: var(--font-heading);
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    opacity: 0.6;
   }
 
   /* ── Section 6: CTA ── */
