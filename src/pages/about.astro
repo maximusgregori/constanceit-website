@@ -142,18 +142,19 @@ import ContactForm from '../components/ContactForm.astro';
 
       <div class="about-founder__layout stagger-children">
         <div class="about-founder__bio">
-          <p class="about-founder__block">Born in Germany, lived in South Africa for six years, eventually made my way to the US. Studied Management and Entrepreneurship at UT Austin.</p>
+          <p class="about-founder__block">I was born in Germany, lived in South Africa for six years, and eventually made my way to the US. I studied Management and Entrepreneurship at UT Austin.</p>
 
-          <p class="about-founder__block">Eight years in the startup and IT space, mostly business development. Co-founded a digital agency at 18, managed 250+ technology projects across 500+ healthcare facilities, built AI systems that cut operational overhead by 70%.</p>
+          <p class="about-founder__block">I've spent eight years in the startup and IT space, mostly in business development. I co-founded a digital agency at 18, managed 250+ technology projects across 500+ healthcare facilities, and built AI systems that cut operational overhead by 70%.</p>
 
-          <p class="about-founder__block">PMP-certified. Bilingual in German and English.</p>
+          <p class="about-founder__block">I'm PMP-certified and bilingual in German and English.</p>
 
           <p class="about-founder__block">I started Constance IT because I kept seeing the same thing: small businesses had access to great tools but nobody sticking around to make sure they worked. I'm based in Austin and you'll work with me directly.</p>
+
+          <span class="about-founder__signature">Max Gregori</span>
         </div>
 
         <div class="about-founder__photo">
           <img src="/images/Max_Headshot.jpeg" alt="Max Gregori, founder of Constance IT" class="about-founder__img" />
-          <span class="about-founder__name">Max Gregori</span>
         </div>
       </div>
     </div>
@@ -344,16 +345,14 @@ import ContactForm from '../components/ContactForm.astro';
     margin-inline: auto;
   }
 
-  .about-founder__name {
+  .about-founder__signature {
     display: block;
-    text-align: center;
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    margin-top: var(--space-md);
-    max-width: 360px;
-    margin-inline: auto;
+    font-family: 'Caveat', cursive;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    padding-left: var(--space-lg);
+    margin-top: var(--space-sm);
   }
 
   /* ── Section 6: CTA ── */
