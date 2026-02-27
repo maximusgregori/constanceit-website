@@ -13,7 +13,7 @@ import SectionDivider from '../components/SectionDivider.astro';
     <div class="hero__glow hero__glow--1"></div>
     <div class="container">
       <div class="hero__content hero-animate">
-        <h1 class="hero__title">Let's <span class="accent-violet glow-heavy-violet">talk.</span></h1>
+        <h1 class="hero__title">Let's <span class="accent-blue glow-heavy-blue">talk.</span></h1>
         <p class="hero__subtitle">Tell us what you're working on. We'll listen.</p>
       </div>
     </div>
@@ -101,8 +101,8 @@ import SectionDivider from '../components/SectionDivider.astro';
   <section class="section contact-direct">
     <div class="container">
       <div class="contact-direct__header animate-on-scroll">
-        <SectionBadge text="DIRECT CONTACT" variant="info" />
-        <h2>Or reach out <span class="accent-violet glow-medium-violet">directly.</span></h2>
+        <SectionBadge text="DIRECT CONTACT" variant="feature" />
+        <h2>Or reach out <span class="accent-blue glow-medium-blue">directly.</span></h2>
       </div>
 
       <div class="grid grid--3 stagger-children" style="margin-top: var(--space-xl);">
@@ -169,19 +169,6 @@ import SectionDivider from '../components/SectionDivider.astro';
     </div>
   </section>
 
-  <SectionDivider />
-
-  <!-- ════════════════════════════════════════
-       Section 5: Final CTA — scroll to form
-       ════════════════════════════════════════ -->
-  <section class="section contact-final-cta">
-    <div class="container">
-      <div class="contact-final-cta__inner animate-on-scroll">
-        <h2>Ready? Let's start a <span class="accent-blue glow-medium-blue">conversation.</span></h2>
-        <a href="#contact-form" class="btn btn--primary">Send a Message</a>
-      </div>
-    </div>
-  </section>
 
 </BaseLayout>
 
@@ -351,14 +338,4 @@ import SectionDivider from '../components/SectionDivider.astro';
     margin-bottom: var(--space-sm);
   }
 
-  /* Final CTA */
-  .contact-final-cta__inner {
-    text-align: center;
-    max-width: 600px;
-    margin-inline: auto;
-  }
-
-  .contact-final-cta__inner h2 {
-    margin-bottom: var(--space-lg);
-  }
 </style>

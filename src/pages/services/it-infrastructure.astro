@@ -264,7 +264,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <p class="infra-project__client text-secondary">Texas-based marketing firm, 25 employees</p>
           <p class="card__text">Network topology design. Cat6a cabling throughout. Network closet with managed switches and PoE. 25 workstations, phones, printers. WiFi access points.</p>
           <div class="infra-project__metric">
-            <span class="stat-number stat-number--amber infra-project__stat">0</span> <span class="stat-number-unit stat-number--amber">network issues</span>
+            <span class="stat-number stat-number--amber infra-project__stat">0 network issues</span>
             <span class="infra-project__metric-label">first 6 months</span>
           </div>
           <p class="infra-project__result">Office was IT-ready on opening day.</p>
@@ -276,7 +276,7 @@ import ContactForm from '../../components/ContactForm.astro';
           <p class="infra-project__client text-secondary">Professional services firm</p>
           <p class="card__text">New layout design. Proper racking, power distribution, cooling. New cabling for redundancy. Zero-downtime migration.</p>
           <div class="infra-project__metric">
-            <span class="stat-number stat-number--amber infra-project__stat">0</span> <span class="stat-number-unit stat-number--amber">downtime</span>
+            <span class="stat-number stat-number--amber infra-project__stat">0 downtime</span>
             <span class="infra-project__metric-label">during migration</span>
           </div>
           <p class="infra-project__result">Servers run cooler. Future upgrades are straightforward.</p>
@@ -449,7 +449,7 @@ import ContactForm from '../../components/ContactForm.astro';
     <div class="infra-cta__glow"></div>
     <div class="container">
       <div class="infra-cta__inner animate-on-scroll">
-        <h2 class="infra-cta__headline">Ready to plan your <span class="accent-blue glow-medium-blue">infrastructure</span> project?</h2>
+        <h2 class="infra-cta__headline">Ready to plan your <span class="accent-amber glow-medium-amber">infrastructure</span> project?</h2>
         <p class="infra-cta__subtext text-secondary">Whether you have a question, need a quote, or just want to learn more about how we work, we're here. We respond within a day, every time.</p>
         <ContactForm source="infrastructure" />
       </div>
@@ -685,7 +685,7 @@ import ContactForm from '../../components/ContactForm.astro';
     border-top: 1px solid var(--border-subtle);
   }
 
-  .infra-project__stat {
+  .infra-project__stat.stat-number {
     font-size: 2rem;
     line-height: 1.2;
   }
@@ -824,6 +824,30 @@ import ContactForm from '../../components/ContactForm.astro';
     margin-inline: auto;
     margin-bottom: var(--space-xl);
     line-height: 1.7;
+  }
+
+  /* ── Page-specific amber button/link overrides ── */
+  .hero .btn--primary,
+  .infra-cta .btn--primary {
+    background: var(--accent-amber);
+    box-shadow: 0 0 15px var(--accent-amber-glow), 0 0 40px rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.3);
+    color: var(--bg-deep);
+  }
+
+  .hero .btn--primary:hover,
+  .infra-cta .btn--primary:hover {
+    background: var(--accent-amber-hover);
+    box-shadow: 0 0 20px var(--accent-amber-glow), 0 0 60px rgba(245, 158, 11, 0.3);
+  }
+
+  .infra-cta .contact-form__note a {
+    color: var(--accent-amber);
+    text-shadow: 0 0 6px var(--accent-amber-glow);
+  }
+
+  .infra-cta .contact-form__note a:hover {
+    color: var(--accent-amber-hover);
   }
 
   /* ── Responsive ── */
