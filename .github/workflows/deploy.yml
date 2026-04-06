@@ -36,6 +36,10 @@ jobs:
             set ftp:ssl-allow yes;
             set ftp:ssl-force no;
             set ftp:passive-mode yes;
+            set net:timeout 30;
+            set net:max-retries 3;
+            set net:reconnect-interval-base 5;
+            set ftp:ssl-protect-data yes;
             open -u ${FTP_USER},${FTP_PASS} ${FTP_HOST};
             mirror --reverse --delete --exclude health/ --exclude .private/ --verbose ./dist/ /;
             quit
